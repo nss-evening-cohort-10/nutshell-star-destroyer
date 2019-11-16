@@ -1,0 +1,30 @@
+{
+  "person1": {
+  "id": "person1",
+  "name": "Stormtrooper",
+  "secorId": "",
+  "weaponId": "weapon1",
+  "uid": ""
+  },
+  "person2": {
+  "id": "person2",
+  "name": "Imperial Officer",
+  "secorId": "",
+  "weaponId": "weapon2",
+  "uid": ""
+  },
+  "person3": {
+  "id": "person3",
+  "name": "TIE Fighter Pilot",
+  "secorId": "",
+  "weaponId": "weapon3",
+  "uid": ""
+  },
+  "person4": {
+  "id": "person4",
+  "name": "Star Gunner",
+  "secorId": "",
+  "weaponId": "weapon4",
+  "uid": ""
+  }
+  }
