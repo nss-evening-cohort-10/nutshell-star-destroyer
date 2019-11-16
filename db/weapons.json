@@ -1,0 +1,38 @@
+{
+  "weapon1": {
+    "name": "XX-9 Turbolaser",
+    "isActive": true,
+    "teamSize": 4,
+    "type": "ship-to-ship"
+  },
+  "weapon2": {
+    "name": "TIE Starfighter",
+    "isActive": false,
+    "teamSize": 1,
+    "type": "ship-to-ship"
+  },
+  "weapon3": {
+    "name": "AT-AT",
+    "isActive": true,
+    "teamSize": 5,
+    "type": "ground-assault"
+  },
+  "weapon4": {
+    "name": "AT-ST",
+    "isActive": true,
+    "teamSize": 2,
+    "type": "ground-assault"
+  },
+  "weapon5": {
+    "name": "NK-7 Ion Cannon",
+    "isActive": true,
+    "teamSize": 2,
+    "type": "ship-to-ship"
+  },
+  "weapon6": {
+    "name": "Q7 Tractor Beam Projector",
+    "isActive": true,
+    "teamSize": 10,
+    "type": "ship-to-ship"
+  }
+}
