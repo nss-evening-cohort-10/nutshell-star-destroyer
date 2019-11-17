@@ -2,7 +2,7 @@ import $ from 'jquery';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 
-import googlebutton from './googlebutton.png';
+import googlebutton from './google.png';
 import utilities from '../../helpers/utilities';
 
 const signMeIn = () => {

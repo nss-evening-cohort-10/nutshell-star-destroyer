@@ -1,0 +1,90 @@
+  {
+  "sector1": {
+  "id": "sector1",
+  "sectorImg": "../images/sectorMaps/fullMap.png",
+  "name": "Deep Core",
+  "isAlly": "true",
+  "size": "3750 Parsecs",
+  "info": "The Deep Core, sometimes referred to as the Core of the Galaxy, is a brightly lit region of the galaxy that lay at its very heart. A densely packed mass of stars and planets, the Deep Core is dangerous to navigate and largely left alone by galactic explorers. At its center exists an ancient, supermassive black hole that binds the galaxy together. Travelling towards the Core and away from the galactic rim was referred to as going 'coreward.'"
+  },
+  "sector2": {
+  "id": "sector2",
+  "sectorImg": "../images/sectorMaps/fullMap.png",
+  "name": "Core",
+  "isAlly": "true",
+  "size": "6000 Parsecs",
+  "info": "The Core Worlds, also known as the Coruscant Core, the Core systems, or simply the Core, is the area of the galaxy that borders the Deep Core and contains some of the wealthiest and most prestigious planets. Coruscant, the galactic capital during the time of the Galactic Republic and subsequent Galactic Empire, was located in the Core Worlds."
+  },
+  "sector3": {
+  "id": "sector3",
+  "sectorImg": "../images/sectorMaps/fullMap.png",
+  "name": "Colonies",
+  "isAlly": "true",
+  "size": "7875 Parsecs",
+  "info": "The Colonies iss a region of the galaxy located between the Core Worlds and the Inner Rim. It contains numerous planets, including Abednedo, Bardotta, Devaron, Carida, Castell,Cato Neimoidia, Fondor, Halcyon, Narq, Neimoidia, and Uquine. The Colonies sit along major trade routes, and some of them are extremely wealthy."
+  },
+  "sector4": {
+  "id": "sector4",
+  "sectorImg": "../images/sectorMaps/fullMap.png",
+  "name": "Inner Rim",
+  "isAlly": "true",
+  "size": "10500 Parsecs",
+  "info": "The Inner Rim, originally known simply as the Rim, is a region of the galaxy located between the Colonies and the Expansion Region. The planet Jakku as well as the planets Bastatha, Arreyel, Li-Toran, Denon, Pasher, Gorse and its moon, Cynda, as well as Onderon are located in the Inner Rim."
+  },
+  "sector5": {
+  "id": "sector5",
+  "sectorImg": "../images/sectorMaps/fullMap.png",
+  "name": "Mid Rim",
+  "isAlly": "true",
+  "size": "16,500 Parsecs",
+  "info": "The Mid Rim is a region of the galaxy located between the Expansion Region and the Outer Rim Territories. The planets Kashyyyk, Malastare, Naboo, Kamino, and Ord Mantell are all located within the Mid Rim."
+  },
+  "sector6": {
+  "id": "sector6",
+  "sectorImg": "../images/sectorMaps/fullMap.png",
+  "name": "Outer Rim",
+  "isAlly": "false",
+  "size": "19,500 Parsecs",
+  "info": "The Outer Rim Territories, also known as the Outer Rim or Outer Systems, is a sparsely populated region of the galaxy located outside the Mid Rim before Wild Space and the Unknown Regions. The largest region in the galaxy, it is home to diverse worlds and rugged, primitive frontier planets. Tatooine,Polis Massa, Kessel, Mon Calamari, Yavin, Dantooine, Dagobah, Mustafar, Dathomir, and Manadlore are all planets in the Outer Rim. Hutt Space is also considered part of the Outer Rim Territories"
+  },
+  "sector7": {
+  "id": "sector7",
+  "sectorImg": "../images/sectorMaps/fullMap.png",
+  "name": "Expansion Region",
+  "isAlly": "false",
+  "size": "12750 Parsecs",
+  "info": "The Expansion Region is a region of the galaxy located between the Inner Rim and the Mid Rim. In addition to the Ghost Nebula, which contains the Umbara system, the Expansion Region includes the Cvetaen and Sumitra star systems, as well as the planets Aquaris, Kerkoidia, Thustra, and Sibensko."
+  },
+  "sector8": {
+  "id": "sector8",
+  "sectorImg": "../images/sectorMaps/fullMap.png",
+  "name": "Unknown Regions",
+  "isAlly": "false",
+  "size": "27,000 Parsecs",
+  "info": "The Unknown Regions, also referred to as Unknown Space and the Unknown Territories, iss a region of the galaxy located in the galactic west beyond the Outer Rim. Largely unexplored throughout galactic history, it remains a mystery to space travelers and serves as a source of tales and wonders."
+  },
+  "sector9": {
+  "id": "sector9",
+  "sectorImg": "../images/sectorMaps/fullMap.png",
+  "name": "Wild Space",
+  "isAlly": "false",
+  "size": "31,500 Parsecs",
+  "info": "Wild Space is the name given to the unmapped expanse beyond the Outer Rim. It iss located 'off the edge of the map', where no one knows what is on the other side. In contrast, the so-called Unknown Regions are mapped but largely unexplored."
+  },
+  "sector10": {
+  "id": "sector10",
+  "sectorImg": "../images/sectorMaps/huttSpace.png",
+  "name": "Hutt Space",
+  "isAlly": "false",
+  "size": "4500 Parsecs",
+  "info": "Hutt Space iss a region of the galaxy on the border between the Mid Rim and the Outer Rim Territories that is located to the galactic east of the Core Worlds, and is under the control of the Hutt Clan. Largely noted as being a haven to the disreputable denizens of the galaxy, it manages to avoid outright Imperial control owing to its cooperation with Imperial Coruscant, however following the Battle of Yavin, it has seen increasing attempts by the Empire to cut into its trade in an effort to decrease its independence. Following the demise of the Hutt crime lord Jabba Desilijic Tiure, Hutt Space has since been embroiled in conflict as the Hutts attempt to carve up his territory."
+  },
+  "sector11": {
+  "id": "sector11",
+  "sectorImg": "../images/sectorMaps/chissAscendancy.png",
+  "name": "Chiss Ascendancy",
+  "isAlly": "true",
+  "size": "3000 Parsecs",
+  "info": "The Chiss Ascendancy is the oligarchic government of the Chiss species that controlls a portion of the Unknown Regions. They are very secretive and have had little contact with the rest of the galaxy. It is governed by members of prominent ruling families known as the Aristocra."
+  }
+  }

@@ -1,0 +1,56 @@
+{
+    "enemy1": {
+        "id": "enemy1",
+        "imageUrl": "https://lumiere-a.akamaihd.net/v1/images/luke-skywalker-main_5a38c454_461eebf5.jpeg?region=0%2C0%2C1536%2C864",
+        "name": "Luke Skywalker",
+        "base-sector": "sector1",
+        "LKL": "sector6",
+        "isDead": true,
+        "isCaptured": false
+    },
+    "enemy2": {
+        "id": "enemy2",
+        "imageUrl": "https://lumiere-a.akamaihd.net/v1/images/han-solo-main_a4c8ff79.jpeg?region=0%2C0%2C1920%2C1080&width=1536",
+        "name": "Han Solo",
+        "base-sector": "sector2",
+        "LKL": "sector5",
+        "isDead": true,
+        "isCaptured": false
+    },
+    "enemy3": {
+        "id": "enemy3",
+        "imageUrl": "https://lumiere-a.akamaihd.net/v1/images/leia-organa-feature-image_d0f5e953.jpeg?region=0%2C0%2C1280%2C720",
+        "name": "Leia Organa",
+        "base-sector": "sector3",
+        "LKL": "sector4",
+        "isDead": false,
+        "isCaptured": true
+    },
+    "enemy4": {
+        "id": "enemy4",
+        "imageUrl": "https://lumiere-a.akamaihd.net/v1/images/poe-dameron_70f5aee2.jpeg?region=0%2C0%2C1560%2C878&width=1536",
+        "name": "Poe Dameron",
+        "base-sector": "sector4",
+        "LKL": "sector3",
+        "isDead": false,
+        "isCaptured": false
+    },
+    "enemy5": {
+        "id": "enemy5",
+        "imageUrl": "https://lumiere-a.akamaihd.net/v1/images/talj-rey-main-image-2_668bb5dc.jpeg?region=0%2C0%2C1560%2C878&width=1536",
+        "name": "Rey",
+        "base-sector": "sector5",
+        "LKL": "sector2",
+        "isDead": false,
+        "isCaptured": false
+    },
+    "enemy6": {
+        "id": "enemy6",
+        "imageUrl": "https://lumiere-a.akamaihd.net/v1/images/finn-main_952e10d2.jpeg?region=0%2C0%2C1560%2C878&width=1536",
+        "name": "Finn",
+        "base-sector": "sector6",
+        "LKL": "sector1",
+        "isDead": false,
+        "isCaptured": true
+    }
+}

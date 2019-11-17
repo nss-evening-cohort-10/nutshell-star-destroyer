@@ -2,25 +2,25 @@
   "person1": {
   "id": "person1",
   "name": "Stormtrooper",
-  "secorId": "",
+  "secorId": "sector1",
   "weaponId": "weapon1"
   },
   "person2": {
   "id": "person2",
   "name": "Imperial Officer",
-  "secorId": "",
+  "secorId": "sector2",
   "weaponId": "weapon2"
   },
   "person3": {
   "id": "person3",
   "name": "TIE Fighter Pilot",
-  "secorId": "",
+  "secorId": "sector3",
   "weaponId": "weapon3"
   },
   "person4": {
   "id": "person4",
   "name": "Star Gunner",
-  "secorId": "",
+  "secorId": "sector4",
   "weaponId": "weapon4"
   }
   }
