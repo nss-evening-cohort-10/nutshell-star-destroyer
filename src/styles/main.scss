@@ -1,7 +1,30 @@
 @import "~bootstrap/scss/bootstrap";
 
 body {
-  background-color: lightgray;
+  background-color: #000000;
+}
+
+#box {
+  border: 5px solid #FFFFFF;
+  display: flex;
+  justify-content: center;
+  margin: 1em;
+}
+
+.navbar {
+  color: white;
+
+  .fab {
+    color: 	#BC1E22;
+    padding: 10px;
+  }
+
+  #logout-button {
+    color:white;
+    display: inherit;
+    justify-content: flex-end;
+    margin-left: 1em;
+  }
 }
 
 .hide {
