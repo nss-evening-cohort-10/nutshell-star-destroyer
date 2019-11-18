@@ -1,4 +1,6 @@
 import enemyData from '../../helpers/data/enemyData';
+import enemyCard from './EnemyCard/enemyCard';
+import utilities from '../../helpers/utilities';
 
 // const getEmpireEnemies = () => {
 // const empireEnemies = enemies.getAllEnemies();
@@ -10,16 +12,12 @@ const enemiesBuilder = () => {
   // this function should display the array of enemies onto cards in the DOM
   enemyData.getAllEnemies()
     .then((enemies) => {
-      console.log('the enemies', enemies);
-    // let domString = `<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-    //  Add Board
-    // </button>`;
-    // domString += '<div id="boardSection" class="d-flex flex-wrap">';
-    // enemies.forEach((enemy) => {
-    // domString += enemyCard.makeEnemyCard(enemyCard);
-    // });
-    // domString += '</div>';
-    // utilities.printToDom('boards', domString);
+    // console.log('the enemies', enemies);
+      let domString = '';
+      enemies.forEach((enemy) => {
+        domString += enemyCard.makeEnemyCard(enemy);
+      });
+      utilities.printToDom('enemiesSection', domString);
     });
   // .catch((error) => console.error(error));
 };
