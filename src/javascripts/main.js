@@ -6,6 +6,7 @@ import auth from './components/Auth/auth';
 import authData from './helpers/data/authData';
 import ourNavbar from './components/OurNavbar/ourNavbar';
 import sectors from './components/Sectors/sectors';
+import personnelDisplay from './components/Personnel/personnel';
 
 const init = () => {
   firebase.initializeApp(apiKeys.firebaseKeys);
@@ -13,6 +14,7 @@ const init = () => {
   auth.loginButton();
   ourNavbar.logoutEvent();
   sectors.displaySectors();
+  personnelDisplay.clickCrew();
 };
 
 init();
