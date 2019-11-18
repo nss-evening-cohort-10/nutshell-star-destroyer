@@ -7,6 +7,30 @@ import weaponsData from '../../helpers/data/weaponsData';
 import './weapons.scss';
 import utilities from '../../helpers/utilities';
 
+const showDeets = (e) => {
+  e.preventDefault();
+  const clickedWeapon = e.target.id;
+  let string = '';
+  weaponsData.getOneWeapon(clickedWeapon)
+    .then((weppen) => {
+      string += `<div class="row no-gutters">
+        <div class="col-md-6">
+          <img id="${weppen.id}" src="${weppen.img}" class="card-img" alt="${weppen.name}">
+        </div>
+      <div class="col-md-6">
+        <div class="card-body">
+          <h5 class="card-title">${weppen.name}</h5>
+          <p class="card-text">${weppen.isActive ? 'Active' : 'Inactive'}</p>
+          <p class="card-text">Crew of ${weppen.teamSize}</p>
+          <p class="card-text">Type: ${weppen.type}</p>
+        </div>
+      </div>
+    </div>`;
+      utilities.printToDom(`${clickedWeapon}-card`, string);
+    })
+    .catch((error) => console.error(error));
+};
+
 const showTheWeapons = (e) => {
   e.preventDefault();
   $('#dashboard').addClass('hide');
@@ -17,19 +41,9 @@ const showTheWeapons = (e) => {
       weppens.forEach((weppen) => {
         domString += `
         <div class="col-sm-6">
-          <div class="card mb-3">
+          <div class="card mb-3" id="${weppen.id}-card">
             <div class="card-body">
-            <div class="col-md-4">
-              <img src="${weppen.img}" class="card-img" alt="${weppen.name}">
-            </div>
-              <h5 class="card-title">${weppen.name}</h5>
-              <p class="card-text">${weppen.isActive ? 'Active' : 'Inactive'}</p>
-              <p class="card-text">Crew of ${weppen.teamSize}</p>
-              <p class="card-text">Type: ${weppen.type}</p>
-              <form class="form-inline justify-content-between">
-                <a href="#" class="btn btn-outline-light show-weapon" id="${weppen.id}">Show weapon</a>
-                <a href="#" class="btn btn-outline-danger delete-weapon" id="delete-${weppen.id}">Delete weapon</a>
-              </form>
+            <img id="${weppen.id}" src="${weppen.img}" class="card-img" alt="${weppen.name}">
             </div>
           </div>
         </div>
@@ -37,6 +51,7 @@ const showTheWeapons = (e) => {
       });
       domString += '</div>';
       utilities.printToDom('weapons', domString);
+      $('#weapons').on('click', '.card-img', showDeets);
     })
     .catch((error) => console.error(error));
 };

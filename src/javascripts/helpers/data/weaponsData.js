@@ -17,4 +17,14 @@ const getWeapons = () => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
-export default { getWeapons };
+const getOneWeapon = (weaponId) => new Promise((resolve, reject) => {
+  axios.get(`${baseUrl}/weapons/${weaponId}.json`)
+    .then((response) => {
+      const datWeapon = response.data;
+      datWeapon.id = weaponId;
+      resolve(datWeapon);
+    })
+    .catch((error) => reject(error));
+});
+
+export default { getWeapons, getOneWeapon };
