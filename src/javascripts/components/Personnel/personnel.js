@@ -10,6 +10,7 @@ const displayCrew = (e) => {
     .then((personnel) => {
       console.log(personnel);
       let domString = '<h1>Personnel</h1>';
+      domString += '<button id="add-personnel">Add New Personnel</button>';
       domString += '<div class="row">';
       personnel.forEach((person) => {
         domString += `
@@ -30,6 +31,12 @@ const displayCrew = (e) => {
     })
     .catch((error) => console.error(error));
 };
+
+const addNewPersonnel = () => {
+  e.preventDefault();
+  personnelData.CreateNewPersonnel()
+};
+
 
 const clickCrew = () => {
   // $('#person-button').click(console.log('tacos'));
