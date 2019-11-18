@@ -23,8 +23,8 @@ const showTheWeapons = (e) => {
               <p class="card-text">Crew of ${weppen.teamSize}</p>
               <p class="card-text">Type: ${weppen.type}</p>
               <form class="form-inline justify-content-between">
-                <a href="#" class="btn btn-primary show-weapon" id="${weppen.id}">Show weapon</a>
-                <a href="#" class="btn btn-danger delete-weapon" id="delete-${weppen.id}">Delete weapon</a>
+                <a href="#" class="btn btn-outline-light show-weapon" id="${weppen.id}">Show weapon</a>
+                <a href="#" class="btn btn-outline-danger delete-weapon" id="delete-${weppen.id}">Delete weapon</a>
               </form>
             </div>
           </div>

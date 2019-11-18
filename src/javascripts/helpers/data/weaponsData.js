@@ -17,6 +17,4 @@ const getWeapons = () => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
-// const deleteWeapon = (weaponId) => axios.delete(`${baseUrl}/weapons/${weaponId}.json`);
-
-export default { getWeapons /* deleteWeapon */ };
+export default { getWeapons };
