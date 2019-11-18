@@ -3,28 +3,28 @@
   "id": "person1",
   "personImg":"https://www.sideshow.com/storage/product-images/300526/stormtrooper_star-wars_gallery_5c4d051fc7b0b.jpg",
   "name": "Stormtrooper",
-  "secorId": "sector1",
+  "sectorId": "sector1",
   "weaponId": "weapon1"
   },
   "person2": {
   "id": "person2",
   "personImg":"https://i.pinimg.com/originals/d6/24/00/d62400ed1b2741c4bbfbd9c2d80fed34.jpg",
   "name": "Imperial Officer",
-  "secorId": "sector2",
+  "sectorId": "sector2",
   "weaponId": "weapon2"
   },
   "person3": {
   "id": "person3",
   "personImg":"https://images-na.ssl-images-amazon.com/images/I/814vLoaRV6L._AC_SL1500_.jpg",
   "name": "TIE Fighter Pilot",
-  "secorId": "sector3",
+  "sectorId": "sector3",
   "weaponId": "weapon3"
   },
   "person4": {
   "id": "person4",
   "personImg":"http://www.simplytoys.com.sg/31733-thickbox_default/hot-toys-star-wars-anh-death-star-gunner-sixth-scale-figure.jpg",
   "name": "Star Gunner",
-  "secorId": "sector4",
+  "sectorId": "sector4",
   "weaponId": "weapon4"
   }
   }
