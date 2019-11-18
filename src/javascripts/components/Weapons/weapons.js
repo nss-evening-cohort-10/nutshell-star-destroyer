@@ -9,15 +9,19 @@ import utilities from '../../helpers/utilities';
 
 const showTheWeapons = (e) => {
   e.preventDefault();
+  $('#dashboard').addClass('hide');
   weaponsData.getWeapons()
     .then((weppens) => {
-      let domString = '<h1>Weapons</h1>';
+      let domString = '<h1>Armory</h1>';
       domString += '<div class="row">';
       weppens.forEach((weppen) => {
         domString += `
-        <div class="col-sm-4">
-          <div class="card">
+        <div class="col-sm-6">
+          <div class="card mb-3">
             <div class="card-body">
+            <div class="col-md-4">
+              <img src="${weppen.img}" class="card-img" alt="${weppen.name}">
+            </div>
               <h5 class="card-title">${weppen.name}</h5>
               <p class="card-text">${weppen.isActive ? 'Active' : 'Inactive'}</p>
               <p class="card-text">Crew of ${weppen.teamSize}</p>

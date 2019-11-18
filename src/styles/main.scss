@@ -1,7 +1,9 @@
 @import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Saira&display=swap');
 
 body {
   background-color: #000000;
+  font-family: Saira, sans-serif;
 }
 
 #box {
