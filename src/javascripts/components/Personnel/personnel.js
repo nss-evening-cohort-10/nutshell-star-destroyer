@@ -2,26 +2,26 @@ import $ from 'jquery';
 import './personnel.scss';
 import personnelData from '../../helpers/data/personnelData';
 import utilities from '../../helpers/utilities';
-import 'firebase/auth';
 
-const addNewPersonnel = (e) => {
-  e.stopImmediatePropagation();
-  personnelData.CreateNewPersonnel();
-  const { uid } = firebase.auth().currentUser;
+const addNewPersonnel = () => {
   const newPersonnel = {
-    personImg: $('#person-image-url').val(),
-    name: $('#person-name').val(),
-    sectorId: $('#person-sectorId').val(),
-    weaponId: $('#person-weaponId').val(),
-    uid,
+    personImg: $('#image-url').val(),
+    name: $('#name-id').val(),
+    sectorId: $('#sector-id').val(),
+    weaponId: $('#weapon-id').val(),
   };
-  personnelData.addNewPersonnel(newPersonnel)
+  console.log(newPersonnel);
+  personnelData.CreateNewPersonnel(newPersonnel)
     .then(() => {
-      $('#exampleModal').modal('hide');
+      $('#exampleModalCenter').modal('hide');
       // eslint-disable-next-line no-use-before-define
-      displayCrew(uid);
+      displayCrew();
     })
     .catch((error) => console.error(error));
+};
+
+const clickAddNew = () => {
+  $('#add-new-personnel').click(addNewPersonnel);
 };
 
 const displayCrew = (e) => {
@@ -70,7 +70,7 @@ const displayCrew = (e) => {
       domString += '<div class="row">';
       personnel.forEach((person) => {
         domString += `
-        <div class="col-sm-4">
+        <div class="col-md-6">
           <div class="card">
           <img src="${person.personImg}" class="card-img-top" alt="...">
             <div class="card-body">
@@ -85,6 +85,7 @@ const displayCrew = (e) => {
       domString += '</div>';
       // console.log(domString);
       utilities.printToDom('personnel', domString);
+      clickAddNew();
     })
     .catch((error) => console.error(error));
 };
