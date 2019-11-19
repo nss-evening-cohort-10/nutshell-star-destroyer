@@ -8,6 +8,8 @@ import ourNavbar from './components/OurNavbar/ourNavbar';
 import sectors from './components/Sectors/sectors';
 import enemies from './components/Enemies/enemies';
 import personnelDisplay from './components/Personnel/personnel';
+import weapons from './components/Weapons/weapons';
+
 
 const init = () => {
   firebase.initializeApp(apiKeys.firebaseKeys);
@@ -17,6 +19,7 @@ const init = () => {
   sectors.displayAllSectors();
   enemies.enemiesBuilder();
   personnelDisplay.clickCrew();
+  weapons.clickWeapons();
 };
 
 init();
