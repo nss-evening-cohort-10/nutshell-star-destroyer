@@ -10,27 +10,26 @@
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-#000000">
-        <a class="navbar-brand" href="#"><i class="fab fa-empire fa-3x"></i></a>
+        <a class="navbar-brand" href="#"><i id="logoLink" class="fab fa-empire fa-3x"></i></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Personnel <span class="sr-only">(current)</span></a>
-              <button id="person-button">click for personnel</button>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="personnelLink">Personnel <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Rebel Scum</a>
-            </li>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" tabindex="-1" aria-disabled="false">Weapons</a>
+              <a class="nav-link" href="#" id="enemiesLink">Rebel Scum</a>
             </li>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" tabindex="-1" aria-disabled="false">Galaxy</a>
+              <a class="nav-link" href="#" tabindex="-1" aria-disabled="false" id="weaponsLink">Weapons</a>
+            </li>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" tabindex="-1" aria-disabled="false" id="sectorsLink">Galaxy</a>
             </li>
           </ul>
           <form class="form-inline my-2 my-lg-0">
@@ -40,11 +39,14 @@
           </form>
         </div>
       </nav>
-  <container id="box">
-    <!-- make sure that all your divs that you are printing to got into this container! for styling purposes  -->
+  <container id="box">Container
+    <div class="fullPage hide" id="homePage">HomePage</div>
+    <div class="fullPage hide" id="enemiesPage">Enemies</div>
+    <div class="fullPage hide" id="sectors">Sectors</div>
+    <div class="fullPage hide" id="weaponsPage">Weapons</div>
+    <div class="fullPage hide" id="personnel">Personnel</div>
+    <!-- make sure that all your divs that you are printing to got into this container! for styling purposes :) -->
     <div id="auth"></div>
-    <div id="dashboard" class="hide">database</div>
-    <div id="personnel"></div>
 
   </container>
 </body>
