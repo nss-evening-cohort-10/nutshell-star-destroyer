@@ -83,7 +83,7 @@ const displayCrew = (e) => {
       });
       domString += '</div>';
       console.log(domString);
-      utilities.printToDom('#personnel', domString);
+      utilities.printToDom('personnel', domString);
     })
     .catch((error) => console.error(error));
 };
