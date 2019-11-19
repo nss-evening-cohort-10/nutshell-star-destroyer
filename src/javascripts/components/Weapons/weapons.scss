@@ -8,4 +8,14 @@ h1 {
   color: #FFFFFF;
   // border: 1px solid #64696C;
   text-shadow: 0 0 0.625em #fff, 0 0 1.5625em #fff, -0.0625em 0 0.125em rgba(0,0,0,0.5);
+  height: 25em;
+  .card-body{
+    /* display: flex;
+    justify-content: center; */
+    .card-img {
+      max-height: 22em;
+      width: unset;
+    }
+  }
 }
+    
