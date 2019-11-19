@@ -2,6 +2,7 @@ import $ from 'jquery';
 import './personnel.scss';
 import personnelData from '../../helpers/data/personnelData';
 import utilities from '../../helpers/utilities';
+import 'firebase/auth';
 
 const addNewPersonnel = (e) => {
   e.stopImmediatePropagation();
@@ -27,7 +28,7 @@ const displayCrew = (e) => {
   e.preventDefault();
   personnelData.getPersonnelData()
     .then((personnel) => {
-      console.log(personnel);
+      // console.log(personnel);
       let domString = '<h1>Personnel</h1>';
       domString += '<button id="add-personnel" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Add New Personnel</button>';
       domString += `<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -82,7 +83,7 @@ const displayCrew = (e) => {
         `;
       });
       domString += '</div>';
-      console.log(domString);
+      // console.log(domString);
       utilities.printToDom('personnel', domString);
     })
     .catch((error) => console.error(error));
@@ -90,7 +91,7 @@ const displayCrew = (e) => {
 
 const clickCrew = () => {
   // $('#person-button').click(console.log('tacos'));
-  $('#person-button').click(displayCrew);
+  $('#personnelLink').click(displayCrew);
 };
 
 export default { clickCrew };
