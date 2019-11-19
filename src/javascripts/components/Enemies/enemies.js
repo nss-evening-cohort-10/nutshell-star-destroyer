@@ -1,12 +1,8 @@
+import $ from 'jquery';
 import enemyData from '../../helpers/data/enemyData';
 import enemyCard from './EnemyCard/enemyCard';
 import utilities from '../../helpers/utilities';
 
-// const getEmpireEnemies = () => {
-// const empireEnemies = enemies.getAllEnemies();
-// this function should get the array of enemies from enemyData.js
-// console.log(empireEnemies);
-// };
 
 const addNewEnemy = (e) => {
   e.stopImmediatePropagation();
@@ -18,7 +14,7 @@ const addNewEnemy = (e) => {
     isDead: $('#enemyDead').val(),
     isCaptured: $('#enemyCaptured').val(),
   };
-  console.log(newEnemy);
+  // console.log(newEnemy);
   enemyData.addEnemy(newEnemy)
     .then(() => {
       $('#exampleModal').modal('hide');
@@ -29,16 +25,16 @@ const addNewEnemy = (e) => {
 };
 
 const enemiesBuilder = () => {
-  // this function should display the array of enemies onto cards in the DOM
   enemyData.getAllEnemies()
     .then((enemies) => {
-    // console.log('the enemies', enemies);
-      let domString = `<button type="button" id="addNewEnemyBtn" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-      Add Enemy
+      let domString = `<button id="addNewEnemyBtn" type="button" data-toggle="modal" data-target="#newEnemyModal"">
+      Add New Enemy
     </button>`;
+      domString += '<div id="boardSection" class="d-flex flex-wrap">';
       enemies.forEach((enemy) => {
         domString += enemyCard.makeEnemyCard(enemy);
       });
+      domString += '</div>';
       utilities.printToDom('enemiesPage', domString);
       $('#addNewEnemyBtn').click(addNewEnemy);
     });

@@ -22,7 +22,6 @@ const logoutEvent = () => {
 const buttonClick = (e) => {
   e.preventDefault();
   const page = e.target.id;
-  console.log(page);
   if (page === 'logoLink') {
     $('#enemiesPage').addClass('hide');
     $('#sectors').addClass('hide');
@@ -30,7 +29,6 @@ const buttonClick = (e) => {
     $('#personnel').addClass('hide');
     $('#homePage').removeClass('hide');
   } else if (page === 'personnelLink') {
-    console.log('personnellllllll');
     $('#enemiesPage').addClass('hide');
     $('#sectors').addClass('hide');
     $('#weaponsPage').addClass('hide');

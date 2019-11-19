@@ -8,7 +8,6 @@ const displayCrew = (e) => {
   e.preventDefault();
   personnelData.getPersonnelData()
     .then((personnel) => {
-      console.log(personnel);
       let domString = '<h1>Personnel</h1>';
       domString += '<div class="row">';
       personnel.forEach((person) => {
@@ -25,7 +24,6 @@ const displayCrew = (e) => {
         `;
       });
       domString += '</div>';
-      console.log(domString);
       utilities.printToDom('personnel', domString);
     })
     .catch((error) => console.error(error));
