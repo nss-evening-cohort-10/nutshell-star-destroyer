@@ -1,7 +1,7 @@
 import $ from 'jquery';
 
 const printToDom = (divId, textToPrint) => {
-  const selectedDiv = $(`${divId}`);
+  const selectedDiv = $(`#${divId}`);
   selectedDiv.html(textToPrint);
 };
 

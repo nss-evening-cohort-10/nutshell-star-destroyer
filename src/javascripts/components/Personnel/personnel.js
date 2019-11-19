@@ -24,7 +24,8 @@ const displayCrew = (e) => {
         `;
       });
       domString += '</div>';
-      utilities.printToDom('#personnel', domString);
+      console.log(domString);
+      utilities.printToDom('personnel', domString);
     })
     .catch((error) => console.error(error));
 };
