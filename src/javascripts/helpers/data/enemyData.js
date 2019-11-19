@@ -19,4 +19,6 @@ const getAllEnemies = () => new Promise((resolve, reject) => {
 
 const makeEnemy = (newEnemy) => axios.post(`${baseUrl}/enemies.json`, newEnemy);
 
-export default { getAllEnemies, makeEnemy };
+const deleteEnemy = (enemyId) => axios.delete(`${baseUrl}/enemies/${enemyId}.json`);
+
+export default { getAllEnemies, makeEnemy, deleteEnemy };
