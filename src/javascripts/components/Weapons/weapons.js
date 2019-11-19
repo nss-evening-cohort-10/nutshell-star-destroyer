@@ -9,29 +9,11 @@ import utilities from '../../helpers/utilities';
 
 const showDeets = (e) => {
   e.preventDefault();
-  // eslint-disable-next-line no-use-before-define
-  showTheWeapons(e);
   const clickedWeapon = e.target.id;
-  let string = '';
-  weaponsData.getOneWeapon(clickedWeapon)
-    .then((weppen) => {
-      string += `
-      <div class="row no-gutters">
-        <div class="col-md-6">
-          <img id="${weppen.id}" src="${weppen.img}" class="card-img" alt="${weppen.name}">
-        </div>
-        <div class="col-md-6">
-          <div class="card-body">
-            <h5 class="card-title">${weppen.name}</h5>
-            <p class="card-text">${weppen.isActive ? 'Active' : 'Inactive'}</p>
-            <p class="card-text">Crew of ${weppen.teamSize}</p>
-            <p class="card-text">Use: ${weppen.type}</p>
-          </div>
-        </div>
-      </div>`;
-      utilities.printToDom(`${clickedWeapon}-card`, string);
-    })
-    .catch((error) => console.error(error));
+  $('.deets').addClass('hide');
+  $('.full-img').removeClass('hide');
+  $(`#${clickedWeapon}-deets`).removeClass('hide');
+  $(`#${clickedWeapon}-full-img`).addClass('hide');
 };
 
 const showTheWeapons = (e) => {
@@ -45,7 +27,20 @@ const showTheWeapons = (e) => {
         domString += `
         <div class="col-sm-6">
           <div class="card mb-3" id="${weppen.id}-card">
-            <div class="card-body">
+            <div id="${weppen.id}-deets" class="row no-gutters deets hide">
+              <div class="col-md-6">
+                <img id="${weppen.id}" src="${weppen.img}" class="card-img" alt="${weppen.name}">
+              </div>
+              <div class="col-md-6">
+                <div class="card-body">
+                  <h5 class="card-title">${weppen.name}</h5>
+                  <p class="card-text">${weppen.isActive ? 'Active' : 'Inactive'}</p>
+                  <p class="card-text">Crew of ${weppen.teamSize}</p>
+                  <p class="card-text">Use: ${weppen.type}</p>
+                </div>
+              </div>
+            </div>
+            <div id="${weppen.id}-full-img" class="card-body full-img">
             <img id="${weppen.id}" src="${weppen.img}" class="card-img" alt="${weppen.name}">
             </div>
           </div>

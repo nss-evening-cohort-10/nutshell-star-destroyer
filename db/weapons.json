@@ -32,13 +32,13 @@
     "isActive": true,
     "teamSize": 2,
     "type": "ship-to-ship",
-    "img": "../../db/images/weapons/nk7ioncannon.jpg"
+    "img": "../../db/images/weapons/nk7ioncannon.png"
   },
   "weapon6": {
     "name": "Q7 Tractor Beam Projector",
     "isActive": true,
     "teamSize": 10,
     "type": "ship-to-ship",
-    "img": "../../db/images/weapons/Tractorbeam-projector.jpg"
+    "img": "../../db/images/weapons/tractor-beam-projector.png"
   }
 }
