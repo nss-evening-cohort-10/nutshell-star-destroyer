@@ -82,10 +82,7 @@ const displayCrew = (e) => {
         `;
       });
       domString += '</div>';
-<<<<<<< HEAD
-=======
       // console.log(domString);
->>>>>>> master
       utilities.printToDom('personnel', domString);
       clickAddNew();
     })
