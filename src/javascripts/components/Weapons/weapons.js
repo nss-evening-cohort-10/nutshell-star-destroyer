@@ -27,7 +27,7 @@ const makeNewWeapon = (e) => {
   };
   weaponsData.addNewWeapon(newWeapon)
     .then(() => {
-      $('#weaponsModal').modal('hide');
+      // $('#weaponsModal').modal('hide');
       // eslint-disable-next-line no-use-before-define
       showTheWeapons(e);
     })
@@ -88,7 +88,11 @@ const showTheWeapons = (e) => {
                 </div>
                 <div class="form-group">
                   <label for="weapon-status">Status</label>
-                  <input type="number" class="form-control" id="weapon-status" placeholder="Enter Status">
+                  <select class="form-control" id="weapon-status">
+                    <option>Enter status</option>
+                    <option value=true>Active</option>
+                    <option value=false>Inactive</option>
+                  </select>
                 </div>
                 <div class="form-group">
                   <label for="team-size">Crew</label>
@@ -96,7 +100,11 @@ const showTheWeapons = (e) => {
                 </div>
                 <div class="form-group">
                   <label for="weapon-use">Use</label>
-                  <input type="number" class="form-control" id="weapon-use" placeholder="Enter Status">
+                  <select class="form-control" id="weapon-use">
+                    <option>Enter type</option>
+                    <option value="ship-to-ship">Ship to ship</option>
+                    <option value="ground-assault">Ground Assault</option>
+                  </select>
                 </div>
                 <div class="form-group">
                   <label for="weapon-image-url">Image Url</label>
