@@ -1,4 +1,24 @@
-// import axios from 'axios';
-// import apiKeys from '../apiKeys.json';
-// import 'firebase/auth';
-// const firebaseUrl = apiKeys.firebaseKeys.databaseURL;
+import axios from 'axios';
+import apiKeys from '../apiKeys.json';
+import 'firebase/auth';
+
+const baseUrl = apiKeys.firebaseKeys.databaseURL;
+
+const getPersonnelData = () => new Promise((resolve, reject) => {
+  axios.get(`${baseUrl}/personnel.json`)
+    .then((response) => {
+      const demPersonnel = response.data;
+      const personnel = [];
+      Object.keys(demPersonnel).forEach((personId) => {
+        demPersonnel[personId].id = personId;
+        // let's make a new id on it called pId and shove it in there. Then we're pushing
+        personnel.push(demPersonnel[personId]);
+        // this should now give you back an array with one person
+      });
+
+      resolve(personnel);
+    })
+    .catch((error) => reject(error));
+});
+
+export default { getPersonnelData };

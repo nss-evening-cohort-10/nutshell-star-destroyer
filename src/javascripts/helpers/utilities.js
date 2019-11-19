@@ -1,6 +1,8 @@
+import $ from 'jquery';
+
 const printToDom = (divId, textToPrint) => {
-  const selectedDiv = document.getElementById(divId);
-  selectedDiv.innerHTML = textToPrint;
+  const selectedDiv = $(`#${divId}`);
+  selectedDiv.html(textToPrint);
 };
 
 export default { printToDom };
