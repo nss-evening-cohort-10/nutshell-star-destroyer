@@ -1,7 +1,7 @@
   {
   "sector1": {
   "id": "sector1",
-  "sectorImg": "../images/sectorMaps/fullMap.png",
+  "sectorImg": "https://raw.githubusercontent.com/nss-evening-cohort-10/nutshell-star-destroyer/master/db/images/sectorMaps/fullMap.PNG",
   "name": "Deep Core",
   "isAlly": "true",
   "size": "3750 Parsecs",
@@ -9,7 +9,7 @@
   },
   "sector2": {
   "id": "sector2",
-  "sectorImg": "../images/sectorMaps/fullMap.png",
+  "sectorImg": "https://raw.githubusercontent.com/nss-evening-cohort-10/nutshell-star-destroyer/master/db/images/sectorMaps/fullMap.PNG",
   "name": "Core",
   "isAlly": "true",
   "size": "6000 Parsecs",
@@ -17,7 +17,7 @@
   },
   "sector3": {
   "id": "sector3",
-  "sectorImg": "../images/sectorMaps/fullMap.png",
+  "sectorImg": "https://raw.githubusercontent.com/nss-evening-cohort-10/nutshell-star-destroyer/master/db/images/sectorMaps/fullMap.PNG",
   "name": "Colonies",
   "isAlly": "true",
   "size": "7875 Parsecs",
@@ -25,7 +25,7 @@
   },
   "sector4": {
   "id": "sector4",
-  "sectorImg": "../images/sectorMaps/fullMap.png",
+  "sectorImg": "https://raw.githubusercontent.com/nss-evening-cohort-10/nutshell-star-destroyer/master/db/images/sectorMaps/fullMap.PNG",
   "name": "Inner Rim",
   "isAlly": "true",
   "size": "10500 Parsecs",
@@ -33,7 +33,7 @@
   },
   "sector5": {
   "id": "sector5",
-  "sectorImg": "../images/sectorMaps/fullMap.png",
+  "sectorImg": "https://raw.githubusercontent.com/nss-evening-cohort-10/nutshell-star-destroyer/master/db/images/sectorMaps/fullMap.PNG",
   "name": "Mid Rim",
   "isAlly": "true",
   "size": "16,500 Parsecs",
@@ -41,7 +41,7 @@
   },
   "sector6": {
   "id": "sector6",
-  "sectorImg": "../images/sectorMaps/fullMap.png",
+  "sectorImg": "https://raw.githubusercontent.com/nss-evening-cohort-10/nutshell-star-destroyer/master/db/images/sectorMaps/fullMap.PNG",
   "name": "Outer Rim",
   "isAlly": "false",
   "size": "19,500 Parsecs",
@@ -49,7 +49,7 @@
   },
   "sector7": {
   "id": "sector7",
-  "sectorImg": "../images/sectorMaps/fullMap.png",
+  "sectorImg": "https://raw.githubusercontent.com/nss-evening-cohort-10/nutshell-star-destroyer/master/db/images/sectorMaps/fullMap.PNG",
   "name": "Expansion Region",
   "isAlly": "false",
   "size": "12750 Parsecs",
@@ -57,7 +57,7 @@
   },
   "sector8": {
   "id": "sector8",
-  "sectorImg": "../images/sectorMaps/fullMap.png",
+  "sectorImg": "https://raw.githubusercontent.com/nss-evening-cohort-10/nutshell-star-destroyer/master/db/images/sectorMaps/fullMap.PNG",
   "name": "Unknown Regions",
   "isAlly": "false",
   "size": "27,000 Parsecs",
@@ -65,7 +65,7 @@
   },
   "sector9": {
   "id": "sector9",
-  "sectorImg": "../images/sectorMaps/fullMap.png",
+  "sectorImg": "https://raw.githubusercontent.com/nss-evening-cohort-10/nutshell-star-destroyer/master/db/images/sectorMaps/fullMap.PNG",
   "name": "Wild Space",
   "isAlly": "false",
   "size": "31,500 Parsecs",
@@ -73,7 +73,7 @@
   },
   "sector10": {
   "id": "sector10",
-  "sectorImg": "../images/sectorMaps/huttSpace.png",
+  "sectorImg": "https://raw.githubusercontent.com/nss-evening-cohort-10/nutshell-star-destroyer/master/db/images/sectorMaps/huttSpace.PNG",
   "name": "Hutt Space",
   "isAlly": "false",
   "size": "4500 Parsecs",
@@ -81,7 +81,7 @@
   },
   "sector11": {
   "id": "sector11",
-  "sectorImg": "../images/sectorMaps/chissAscendancy.png",
+  "sectorImg": "https://raw.githubusercontent.com/nss-evening-cohort-10/nutshell-star-destroyer/master/db/images/sectorMaps/chissAscendancy.PNG",
   "name": "Chiss Ascendancy",
   "isAlly": "true",
   "size": "3000 Parsecs",

@@ -28,7 +28,6 @@ const displayCrew = (e) => {
   e.preventDefault();
   personnelData.getPersonnelData()
     .then((personnel) => {
-      // console.log(personnel);
       let domString = '<h1>Personnel</h1>';
       domString += '<button id="add-personnel" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Add New Personnel</button>';
       domString += `<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
