@@ -25,5 +25,12 @@ const getPersonnelData = () => new Promise((resolve, reject) => {
 const CreateNewPersonnel = (newPersonnel) => axios.post(`${baseUrl}/personnel.json`, newPersonnel);
 // axios.put is allowing us to update
 const updatePersonnel = (personId, updatedPersonnel) => axios.put(`${baseUrl}/personnel/${personId}.json`, updatedPersonnel);
+// axios.get useing ${personId} is going to grab the specific person we want to edit/update
+const getPersonnelById = (personId) => axios.get(`${baseUrl}/personnel/${personId}.json`);
 
-export default { getPersonnelData, CreateNewPersonnel, updatePersonnel };
+export default {
+  getPersonnelData,
+  CreateNewPersonnel,
+  updatePersonnel,
+  getPersonnelById,
+};

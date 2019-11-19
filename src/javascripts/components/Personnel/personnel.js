@@ -24,9 +24,19 @@ const clickAddNew = () => {
   $('#add-new-personnel').click(addNewPersonnel);
 };
 
-// const updatedPersonnel = () => {
+const updatePersonnel = (e) => {
+  $('#exampleModalCenter').modal('show');
+  const personId = e.target.id.split('edit-personnel--')[1];
+  personnelData.getPersonnelById(personId);
+    // eslint-disable-next-line no-use-before-define
+  .then(() => displayCrew())
+  .catch((error) => console.error(error));
+};
 
-// };
+const personnelEventListeners = () => {
+  $('#personnel').on('click', '.edit', updatePersonnel);
+  // $('#personnel').on('click', '.delete', deletePersonnel);
+};
 
 const displayCrew = (e) => {
   e.preventDefault();
@@ -80,8 +90,8 @@ const displayCrew = (e) => {
               <h5 class="card-title"> ${person.name}</h5>
               <p class="card-text">Sector: ${person.sectorId}</p>
               <p class="card-text">Weapon: ${person.weaponId}</p>
-              <button id="edit-personnel" class="btn btn-primary">Edit</button>
-              <button id="delete-personnel" class="btn btn-primary">Delete</button>
+              <button id="edit-personnel-${person.id}" class="btn btn-primary edit">Edit</button>
+              <button id="delete-personnel-${person.id}" class="btn btn-primary delete">Delete</button>
             </div>
           </div>
         </div>
@@ -91,6 +101,7 @@ const displayCrew = (e) => {
       // console.log(domString);
       utilities.printToDom('personnel', domString);
       clickAddNew();
+      personnelEventListeners();
     })
     .catch((error) => console.error(error));
 };
