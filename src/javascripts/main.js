@@ -14,7 +14,7 @@ const init = () => {
   authData.checkLoginStatus();
   auth.loginButton();
   ourNavbar.logoutEvent();
-  sectors.displaySectors();
+  sectors.displayAllSectors();
   enemies.enemiesBuilder();
   personnelDisplay.clickCrew();
 };

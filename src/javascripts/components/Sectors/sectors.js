@@ -3,17 +3,16 @@ import './sectors.scss';
 import utilities from '../../helpers/utilities';
 import sectorsData from '../../helpers/data/sectorsData';
 
-const displaySectors = (e) => {
-  e.preventDefault();
+const displayAllSectors = () => {
   sectorsData
-    .sectorsDataBySectorId()
+    .getAllSectors()
     .then((sectors) => {
       let domString = '';
       domString += `<div class="card mb-3" style="max-width: 540px;">
         <div class="row no-gutters">
         <div class="col-md-4">`;
       sectors.forEach((sector) => {
-        domString += `<img src="${sector.Img}" class="card-img" alt="...">
+        domString += `<img src="${sector.sectorImg}" class="card-img" alt="...">
         </div>
           <div class="col-md-8">
             <div class="card-body">
@@ -28,13 +27,13 @@ const displaySectors = (e) => {
           `;
       });
       domString += '</div>';
-      utilities.printToDom('#sectors', domString);
+      utilities.printToDom('sectors', domString);
       // $('body').on('click', '#update', addSectorInfo);
       // $('body').on('click', '#delete', deleteSector);
     })
     .catch((error) => console.error(error));
 };
 
-$('.body').on('click', displaySectors);
+$('#sectorsLink').on('click', displayAllSectors);
 
-export default { displaySectors };
+export default { displayAllSectors };
