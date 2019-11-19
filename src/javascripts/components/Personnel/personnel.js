@@ -24,6 +24,10 @@ const clickAddNew = () => {
   $('#add-new-personnel').click(addNewPersonnel);
 };
 
+// const updatedPersonnel = () => {
+
+// };
+
 const displayCrew = (e) => {
   e.preventDefault();
   personnelData.getPersonnelData()
@@ -76,6 +80,8 @@ const displayCrew = (e) => {
               <h5 class="card-title"> ${person.name}</h5>
               <p class="card-text">Sector: ${person.sectorId}</p>
               <p class="card-text">Weapon: ${person.weaponId}</p>
+              <button id="edit-personnel" class="btn btn-primary">Edit</button>
+              <button id="delete-personnel" class="btn btn-primary">Delete</button>
             </div>
           </div>
         </div>

@@ -23,5 +23,7 @@ const getPersonnelData = () => new Promise((resolve, reject) => {
 
 // axios.post is allowing us to create
 const CreateNewPersonnel = (newPersonnel) => axios.post(`${baseUrl}/personnel.json`, newPersonnel);
+// axios.put is allowing us to update
+const updatePersonnel = (personId, updatedPersonnel) => axios.put(`${baseUrl}/personnel/${personId}.json`, updatedPersonnel);
 
-export default { getPersonnelData, CreateNewPersonnel };
+export default { getPersonnelData, CreateNewPersonnel, updatePersonnel };
