@@ -22,33 +22,45 @@ const logoutEvent = () => {
 const buttonClick = (e) => {
   e.preventDefault();
   const page = e.target.id;
+  console.log(page);
   if (page === 'logoLink') {
-    $('#enemiesPage').style.display = 'none';
-    $('#sectors').style.display = 'none';
-    $('#weaponsPage').style.display = 'none';
-    $('#personnel').style.display = 'none';
+    $('#enemiesPage').addClass('hide');
+    $('#sectors').addClass('hide');
+    $('#weaponsPage').addClass('hide');
+    $('#personnel').addClass('hide');
+    $('#homePage').removeClass('hide');
   } else if (page === 'personnelLink') {
-    $('#enemiesPage').style.display = '';
-    $('#sectors').style.display = 'none';
-    $('#weaponsPage').style.display = 'none';
-  } else if (page === 'enemiesLinks') {
-    $('#sectors').style.display = 'none';
-    $('#weaponsPage').style.display = 'none';
-    $('#personnel').style.display = 'none';
+    console.log('personnellllllll');
+    $('#enemiesPage').addClass('hide');
+    $('#sectors').addClass('hide');
+    $('#weaponsPage').addClass('hide');
+    $('#personnel').removeClass('hide');
+    $('#homePage').addClass('hide');
+  } else if (page === 'enemiesLink') {
+    $('#sectors').addClass('hide');
+    $('#weaponsPage').addClass('hide');
+    $('#personnel').addClass('hide');
+    $('#enemiesPage').removeClass('hide');
+    $('#homePage').addClass('hide');
   } else if (page === 'weaponsLink') {
-    $('#enemiesPage').style.display = '';
-    $('#sectors').style.display = 'none';
-    $('#personnel').style.display = 'none';
+    $('#enemiesPage').addClass('hide');
+    $('#sectors').addClass('hide');
+    $('#personnel').addClass('hide');
+    $('#weaponsPage').removeClass('hide');
+    $('#homePage').addClass('hide');
   } else if (page === 'sectorsLink') {
-    $('#enemiesPage').style.display = '';
-    $('#weaponsPage').style.display = 'none';
-    $('#personnel').style.display = 'none';
+    $('#enemiesPage').addClass('hide');
+    $('#weaponsPage').addClass('hide');
+    $('#personnel').addClass('hide');
+    $('#sectors').removeClass('hide');
+    $('#homePage').addClass('hide');
   }
 };
 
-$('#enemiesPage').click(buttonClick);
-$('#sectors').click(buttonClick);
-$('#weaponsPage').click(buttonClick);
-$('#personnel').click(buttonClick);
+$('#enemiesLink').click(buttonClick);
+$('#sectorsLink').click(buttonClick);
+$('#weaponsLink').click(buttonClick);
+$('#personnelLink').click(buttonClick);
+$('#logoLink').click(buttonClick);
 
 export default { logoutEvent };

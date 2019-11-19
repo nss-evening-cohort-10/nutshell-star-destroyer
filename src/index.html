@@ -10,14 +10,14 @@
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-#000000">
-        <a class="navbar-brand" href="#"id="logoLink"><i class="fab fa-empire fa-3x"></i></a>
+        <a class="navbar-brand" href="#"><i id="logoLink" class="fab fa-empire fa-3x"></i></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
+            <li class="nav-item">
               <a class="nav-link" href="#" id="personnelLink">Personnel <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
@@ -39,15 +39,14 @@
           </form>
         </div>
       </nav>
-  <container id="box">
-    <div class="fullPage" id="enemiesPage"></div>
-    <div class="fullPage" id="sectors"></div>
-    <div class="fullPage" id="weaponsPage"></div>
-    <div class="fullPage" id="personnel"></div>
+  <container id="box">Container
+    <div class="fullPage hide" id="homePage">HomePage</div>
+    <div class="fullPage hide" id="enemiesPage">Enemies</div>
+    <div class="fullPage hide" id="sectors">Sectors</div>
+    <div class="fullPage hide" id="weaponsPage">Weapons</div>
+    <div class="fullPage hide" id="personnel">Personnel</div>
     <!-- make sure that all your divs that you are printing to got into this container! for styling purposes :) -->
     <div id="auth"></div>
-    <div id="dashboard" class="hide">database</div>
-    <div id="personnel"></div>
 
   </container>
 </body>
