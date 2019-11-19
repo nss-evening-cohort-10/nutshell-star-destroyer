@@ -17,7 +17,7 @@ const enemiesBuilder = () => {
       enemies.forEach((enemy) => {
         domString += enemyCard.makeEnemyCard(enemy);
       });
-      utilities.printToDom('enemiesSection', domString);
+      utilities.printToDom('enemiesPage', domString);
     });
   // .catch((error) => console.error(error));
 };

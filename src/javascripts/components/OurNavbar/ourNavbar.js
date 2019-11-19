@@ -19,4 +19,36 @@ const logoutEvent = () => {
   });
 };
 
+const buttonClick = (e) => {
+  e.preventDefault();
+  const page = e.target.id;
+  if (page === 'logoLink') {
+    $('#enemiesPage').style.display = 'none';
+    $('#sectors').style.display = 'none';
+    $('#weaponsPage').style.display = 'none';
+    $('#personnel').style.display = 'none';
+  } else if (page === 'personnelLink') {
+    $('#enemiesPage').style.display = '';
+    $('#sectors').style.display = 'none';
+    $('#weaponsPage').style.display = 'none';
+  } else if (page === 'enemiesLinks') {
+    $('#sectors').style.display = 'none';
+    $('#weaponsPage').style.display = 'none';
+    $('#personnel').style.display = 'none';
+  } else if (page === 'weaponsLink') {
+    $('#enemiesPage').style.display = '';
+    $('#sectors').style.display = 'none';
+    $('#personnel').style.display = 'none';
+  } else if (page === 'sectorsLink') {
+    $('#enemiesPage').style.display = '';
+    $('#weaponsPage').style.display = 'none';
+    $('#personnel').style.display = 'none';
+  }
+};
+
+$('#enemiesPage').click(buttonClick);
+$('#sectors').click(buttonClick);
+$('#weaponsPage').click(buttonClick);
+$('#personnel').click(buttonClick);
+
 export default { logoutEvent };
