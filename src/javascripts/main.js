@@ -6,6 +6,7 @@ import auth from './components/Auth/auth';
 import authData from './helpers/data/authData';
 import ourNavbar from './components/OurNavbar/ourNavbar';
 import enemies from './components/Enemies/enemies';
+import personnelDisplay from './components/Personnel/personnel';
 
 const init = () => {
   firebase.initializeApp(apiKeys.firebaseKeys);
@@ -13,6 +14,7 @@ const init = () => {
   auth.loginButton();
   ourNavbar.logoutEvent();
   enemies.enemiesBuilder();
+  personnelDisplay.clickCrew();
 };
 
 init();
