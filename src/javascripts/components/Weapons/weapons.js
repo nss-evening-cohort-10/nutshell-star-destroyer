@@ -48,14 +48,14 @@ const showTheWeapons = (e) => {
         `;
       });
       domString += '</div></div>';
-      utilities.printToDom('weapons', domString);
-      $('#weapons').on('click', '.card-img', showDeets);
+      utilities.printToDom('weaponsPage', domString);
+      $('#weaponsPage').on('click', '.card-img', showDeets);
     })
     .catch((error) => console.error(error));
 };
 
 const clickWeapons = () => {
-  $('#weapons-button').click(showTheWeapons);
+  $('#weaponsLink').click(showTheWeapons);
 };
 
 export default { clickWeapons };
