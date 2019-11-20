@@ -4,41 +4,41 @@
     "isActive": true,
     "teamSize": 4,
     "type": "ship-to-ship",
-    "img": "../../db/images/weapons/xx9.jpg"
+    "img": "https://raw.githubusercontent.com/nss-evening-cohort-10/nutshell-star-destroyer/master/db/images/weapons/xx9.jpg"
   },
   "weapon2": {
     "name": "TIE Starfighter",
     "isActive": false,
     "teamSize": 1,
     "type": "ship-to-ship",
-    "img": "../../db/images/weapons/tiefighter.jpg"
+    "img": "https://raw.githubusercontent.com/nss-evening-cohort-10/nutshell-star-destroyer/master/db/images/weapons/tiefighter.jpg"
   },
   "weapon3": {
     "name": "AT-AT",
     "isActive": true,
     "teamSize": 5,
     "type": "ground-assault",
-    "img": "../../db/images/weapons/AT-AT.jpg"
+    "img": "https://raw.githubusercontent.com/nss-evening-cohort-10/nutshell-star-destroyer/master/db/images/weapons/AT-AT.jpg"
   },
   "weapon4": {
     "name": "AT-ST",
     "isActive": true,
     "teamSize": 2,
     "type": "ground-assault",
-    "img": "../../db/images/weapons/AT-ST.jpg"
+    "img": "https://raw.githubusercontent.com/nss-evening-cohort-10/nutshell-star-destroyer/master/db/images/weapons/AT-ST.jpg"
   },
   "weapon5": {
     "name": "NK-7 Ion Cannon",
     "isActive": true,
     "teamSize": 2,
     "type": "ship-to-ship",
-    "img": "../../db/images/weapons/nk7ioncannon.png"
+    "img": "https://raw.githubusercontent.com/nss-evening-cohort-10/nutshell-star-destroyer/master/db/images/weapons/nk7ioncannon.png"
   },
   "weapon6": {
     "name": "Q7 Tractor Beam Projector",
     "isActive": true,
     "teamSize": 10,
     "type": "ship-to-ship",
-    "img": "../../db/images/weapons/tractor-beam-projector.png"
+    "img": "https://raw.githubusercontent.com/nss-evening-cohort-10/nutshell-star-destroyer/master/db/images/weapons/tractor-beam-projector.png"
   }
 }
