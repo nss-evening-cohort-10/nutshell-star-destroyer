@@ -29,6 +29,24 @@ const displayAllSectors = () => {
     .catch((error) => console.error(error));
 };
 
+const addNewSector = () => {
+  const newData = {
+    id: $('#sectorId').val(),
+    sectorImg: $('#sectorImage').val(),
+    name: $('#sectorName').val(),
+    isAlly: $('#isAlly').val(),
+    size: $('#parsecs').val(),
+    info: $('#info').val(),
+  };
+  sectorsData.createNewSector(newData)
+    .then(() => {
+      $('#addSectorDataModal').modal('hide');
+      displayAllSectors();
+    })
+    .catch((error) => console.error(error));
+};
+
 $('#sectorsLink').on('click', displayAllSectors);
+$('#save-button').on('click', addNewSector);
 
 export default { displayAllSectors };
