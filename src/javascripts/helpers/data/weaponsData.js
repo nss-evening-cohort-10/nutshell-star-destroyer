@@ -29,4 +29,8 @@ const getOneWeapon = (weaponId) => new Promise((resolve, reject) => {
 
 const addNewWeapon = (newWeapon) => axios.post(`${baseUrl}/weapons.json`, newWeapon);
 
-export default { getWeapons, getOneWeapon, addNewWeapon };
+const deleteWeapon = (weaponId) => axios.delete(`${baseUrl}/weapons/${weaponId}.json`);
+
+export default {
+  getWeapons, getOneWeapon, addNewWeapon, deleteWeapon,
+};
