@@ -27,4 +27,6 @@ const getOneWeapon = (weaponId) => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
-export default { getWeapons, getOneWeapon };
+const addNewWeapon = (newWeapon) => axios.post(`${baseUrl}/weapons.json`, newWeapon);
+
+export default { getWeapons, getOneWeapon, addNewWeapon };
