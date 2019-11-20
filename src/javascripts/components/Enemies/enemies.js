@@ -14,7 +14,6 @@ const addNewEnemy = (e) => {
     isDead: $('#enemyDead').val(),
     isCaptured: $('#enemyCaptured').val(),
   };
-  console.log(newEnemy);
   enemyData.makeEnemy(newEnemy)
     .then(() => {
       $('#newEnemyModal').modal('hide');
@@ -36,6 +35,38 @@ const deleteFromDatabase = (e) => {
     .catch((error) => console.error(error));
 };
 
+const getEnemyToUpdate = (e) => {
+  console.log(e.target.id);
+  const idOfEnemyToUpdate = e.target.id.split('enemy-enemy-')[1];
+  console.log(idOfEnemyToUpdate);
+  enemyData.getAllEnemies()
+    .then((enemies) => {
+      const enemiesToUpdate = enemies.filter((x) => x.id === `${idOfEnemyToUpdate}`);
+      const enemyToUpdate = enemiesToUpdate[0];
+      return enemyToUpdate;
+    })
+    .catch((error) => console.log(error));
+};
+const clickToUpdateEnemy = () => {
+  // e.preventDefault();
+  const actualEnemyToUpdate = getEnemyToUpdate();
+  console.log(actualEnemyToUpdate);
+  const changedEnemy = {
+    name: $('#enemyName').val(),
+    imageUrl: $('#enemyImage').val(),
+    baseSector: $('#enemySector').val(),
+    LKL: $('#enemyLKL').val(),
+    isDead: $('#enemyDead').val(),
+    isCaptured: $('#enemyCaptured').val(),
+  };
+  console.log(changedEnemy);
+  // enemyData.editEnemy(`${actualEnemyToUpdate.id}`, changedEnemy)
+  // .then(() => {
+  // $('#newEnemyModal').modal('hide');
+  // eslint-disable-next-line no-use-before-define
+  // enemiesBuilder();
+  // });
+};
 
 const enemiesBuilder = () => {
   enemyData.getAllEnemies()
@@ -50,6 +81,8 @@ const enemiesBuilder = () => {
       utilities.printToDom('enemiesPage', domString);
       $('#add-new-enemy').click(addNewEnemy);
       $('.deleteEnemy').on('click', deleteFromDatabase);
+      $('.editEnemy').on('click', getEnemyToUpdate);
+      $('#save-enemy-changes').on('click', clickToUpdateEnemy);
     })
     .catch((error) => console.error(error));
 };

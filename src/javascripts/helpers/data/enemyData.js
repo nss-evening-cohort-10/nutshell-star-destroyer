@@ -21,4 +21,8 @@ const makeEnemy = (newEnemy) => axios.post(`${baseUrl}/enemies.json`, newEnemy);
 
 const deleteEnemy = (enemyId) => axios.delete(`${baseUrl}/enemies/${enemyId}.json`);
 
-export default { getAllEnemies, makeEnemy, deleteEnemy };
+const editEnemy = (enemyId, updatedEnemy) => axios.put(`${baseUrl}/enemies/${enemyId}.json`, updatedEnemy);
+
+export default {
+  getAllEnemies, makeEnemy, deleteEnemy, editEnemy,
+};
