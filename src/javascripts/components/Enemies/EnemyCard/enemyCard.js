@@ -1,14 +1,24 @@
 import './enemyCard.scss';
+// import sectorData from '../../../helpers/data/sectorsData';
 
 const makeEnemyCard = (enemy) => {
   let domString = '';
   if (enemy.id) {
     domString += `
     <div class="card enemyCard">
-    <h5 class="title">${enemy.name}</h5>
-    <img src="${enemy.imageUrl}" class="cardImg" height="400px" width= "400px" alt="...">
-    <div class="card-body">
-    <button href="#" id="enemy-${enemy.id}" class="btn btn-danger deleteEnemy">Delete</button>
+      <div class="card-header">
+        <h5 class="title">${enemy.name}</h5>
+      </div>
+      <div class="card-body">
+        <img src="${enemy.imageUrl}" class="cardImg" height="400px" width= "400px" alt="...">
+        <p>Base Sector: ${enemy.baseSector}</p>
+        <p>Last Known Location: ${enemy.LKL}</p>
+        <p>Dead: ${enemy.isDead}</p>
+        <p>Captured: ${enemy.isCaptured}</p>
+      </div>
+      <div class="card-footer">
+        <button href="#" id="enemy-${enemy.id}" class="btn btn-danger deleteEnemy">Delete</button>
+      </div>
     </div>
     </div>
     `;
