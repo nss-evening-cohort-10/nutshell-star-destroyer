@@ -4,15 +4,14 @@ h1 {
 }
 
 .card {
-  display: flex;
-  justify-content: wrap;
   background-color: #000000;
   color: #FFFFFF;
-  border: 1px solid #64696C;
+  border: 2px solid #64696C;
   text-shadow: 0 0 0.625em #fff, 0 0 1.5625em #fff, -0.0625em 0 0.125em rgba(0,0,0,0.5);
-  height: 25em;
+  margin-bottom: 50em;
+  height: auto;
   .card-body{
-      .card-img {
+      .card-img-top {
       max-height: 5em;
       width: unset;
     }
