@@ -7,6 +7,18 @@ import weaponsData from '../../helpers/data/weaponsData';
 import './weapons.scss';
 import utilities from '../../helpers/utilities';
 
+const deleteWeapon = (e) => {
+  e.stopImmediatePropagation();
+  const weaponIdToDelete = e.target.id.split('delete-')[1];
+
+  weaponsData.deleteWeapon(weaponIdToDelete)
+    .then(() => {
+      // eslint-disable-next-line no-use-before-define
+      showTheWeapons(e);
+    })
+    .catch((err) => console.error(err));
+};
+
 const showDeets = (e) => {
   e.preventDefault();
   const clickedWeapon = e.target.id;
@@ -60,6 +72,7 @@ const showTheWeapons = (e) => {
                   <p class="card-text">${weppen.isActive ? 'Active' : 'Inactive'}</p>
                   <p class="card-text">Crew of ${weppen.teamSize}</p>
                   <p class="card-text">Use: ${weppen.type}</p>
+                  <button class="btn btn-outline-danger delete-weapon" id="delete-${weppen.id}">Delete</button>
                 </div>
               </div>
             </div>
@@ -72,6 +85,7 @@ const showTheWeapons = (e) => {
       });
       domString += '</div></div>';
       utilities.printToDom('weaponsPage', domString);
+      $('#weaponsPage').on('click', '.delete-weapon', deleteWeapon);
       $('#weaponsPage').on('click', '.card-img', showDeets);
       $('#weaponsModal').on('click', '#add-weapon-btn', makeNewWeapon);
     })
