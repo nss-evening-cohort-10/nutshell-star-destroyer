@@ -18,6 +18,7 @@ const makeEnemyCard = (enemy) => {
       </div>
       <div class="card-footer">
         <button href="#" id="enemy-${enemy.id}" class="btn btn-danger deleteEnemy">Delete</button>
+        <button href="#" id="enemy-enemy-${enemy.id}" class="btn btn-secondary editEnemy" type="button" data-toggle="modal" data-target="#newEnemyModal">Edit</button>
       </div>
     </div>
     </div>
