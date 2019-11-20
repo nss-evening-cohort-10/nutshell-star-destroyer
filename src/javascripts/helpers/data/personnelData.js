@@ -21,4 +21,7 @@ const getPersonnelData = () => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
-export default { getPersonnelData };
+// axios.post is allowing us to create
+const CreateNewPersonnel = (newPersonnel) => axios.post(`${baseUrl}/personnel.json`, newPersonnel);
+
+export default { getPersonnelData, CreateNewPersonnel };
