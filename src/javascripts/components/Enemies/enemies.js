@@ -24,10 +24,6 @@ const addNewEnemy = (e) => {
     .catch((error) => console.log(error));
 };
 
-// const clickToAddNewEnemy = () => {
-// $('#add-new-enemy').click(addNewEnemy);
-// };
-
 const deleteFromDatabase = (e) => {
   e.preventDefault();
   const enemyToDelete = e.target.id.split('enemy-')[1];
