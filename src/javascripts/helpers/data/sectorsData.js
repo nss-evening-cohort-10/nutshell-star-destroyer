@@ -18,4 +18,7 @@ const getAllSectors = () => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
-export default { getAllSectors };
+const createNewSector = (newData) => axios.post(`${baseUrl}/sectors.json`, newData);
+
+
+export default { getAllSectors, createNewSector };
