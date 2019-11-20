@@ -17,12 +17,12 @@ const showDeets = (e) => {
 };
 
 const makeNewWeapon = (e) => {
-  e.stopImmediatePropagation();
+  e.preventDefault();
   const newWeapon = {
     name: $('#weapon-name').val(),
     isActive: $('#weapon-status').val(),
     teamSize: $('#team-size').val() * 1,
-    type: $('weapon-use').val(),
+    type: $('#weapon-use').val(),
     img: $('#weapon-image-url').val(),
   };
   weaponsData.addNewWeapon(newWeapon)
