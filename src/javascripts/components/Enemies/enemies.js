@@ -24,8 +24,16 @@ const addNewEnemy = (e) => {
     .catch((error) => console.log(error));
 };
 
-const clickToAddNewEnemy = () => {
-  $('#add-new-enemy').click(addNewEnemy);
+const deleteFromDatabase = (e) => {
+  e.preventDefault();
+  const enemyToDelete = e.target.id.split('enemy-')[1];
+  console.log(enemyToDelete);
+  enemyData.deleteEnemy(enemyToDelete)
+    .then(() => {
+      // eslint-disable-next-line no-use-before-define
+      enemiesBuilder();
+    })
+    .catch((error) => console.error(error));
 };
 
 
@@ -40,7 +48,8 @@ const enemiesBuilder = () => {
       });
       domString += '</div>';
       utilities.printToDom('enemiesPage', domString);
-      clickToAddNewEnemy();
+      $('#add-new-enemy').click(addNewEnemy);
+      $('.deleteEnemy').on('click', deleteFromDatabase);
     })
     .catch((error) => console.error(error));
 };
