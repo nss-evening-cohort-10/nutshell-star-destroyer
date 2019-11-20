@@ -17,17 +17,18 @@ const showDeets = (e) => {
 };
 
 const makeNewWeapon = (e) => {
-  e.preventDefault();
+  e.stopImmediatePropagation();
+  const isCurrentWeaponActive = ($('#weapon-status').val() === 'true');
   const newWeapon = {
     name: $('#weapon-name').val(),
-    isActive: $('#weapon-status').val(),
+    isActive: isCurrentWeaponActive,
     teamSize: $('#team-size').val() * 1,
     type: $('#weapon-use').val(),
     img: $('#weapon-image-url').val(),
   };
   weaponsData.addNewWeapon(newWeapon)
     .then(() => {
-      // $('#weaponsModal').modal('hide');
+      $('#weaponsModal').modal('hide');
       // eslint-disable-next-line no-use-before-define
       showTheWeapons(e);
     })
@@ -70,59 +71,9 @@ const showTheWeapons = (e) => {
         `;
       });
       domString += '</div></div>';
-      domString += `
-      <div class="modal fade" id="weaponsModal" tabindex="-1" role="dialog" aria-labelledby="weaponsModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="weaponsModalLabel">New Weapon</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <form>
-                <div class="form-group">
-                  <label for="weapon-name">Name</label>
-                  <input type="text" class="form-control" id="weapon-name" placeholder="Enter Name">
-                </div>
-                <div class="form-group">
-                  <label for="weapon-status">Status</label>
-                  <select class="form-control" id="weapon-status">
-                    <option>Enter status</option>
-                    <option value=true>Active</option>
-                    <option value=false>Inactive</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="team-size">Crew</label>
-                  <input type="number" class="form-control" id="team-size" placeholder="Enter Crew Size">
-                </div>
-                <div class="form-group">
-                  <label for="weapon-use">Use</label>
-                  <select class="form-control" id="weapon-use">
-                    <option>Enter type</option>
-                    <option value="ship-to-ship">Ship to ship</option>
-                    <option value="ground-assault">Ground Assault</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="weapon-image-url">Image Url</label>
-                  <input type="text" class="form-control" id="weapon-image-url" placeholder="Enter image Url">
-                </div>
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary" id="add-weapon-btn">Save changes</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      `;
       utilities.printToDom('weaponsPage', domString);
       $('#weaponsPage').on('click', '.card-img', showDeets);
-      $('#weaponsPage').on('click', '#add-weapon-btn', makeNewWeapon);
+      $('#weaponsModal').on('click', '#add-weapon-btn', makeNewWeapon);
     })
     .catch((error) => console.error(error));
 };
