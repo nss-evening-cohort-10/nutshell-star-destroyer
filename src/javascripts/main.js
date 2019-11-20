@@ -17,7 +17,7 @@ const init = () => {
   auth.loginButton();
   ourNavbar.logoutEvent();
   sectors.displayAllSectors();
-  enemies.enemiesBuilder();
+  enemies.clickForEnemies();
   personnelDisplay.clickCrew();
   weapons.clickWeapons();
 };
