@@ -3,6 +3,8 @@ import enemyData from '../../helpers/data/enemyData';
 import enemyCard from './EnemyCard/enemyCard';
 import utilities from '../../helpers/utilities';
 
+let currentEditId = 0;
+
 
 const addNewEnemy = (e) => {
   e.preventDefault();
@@ -36,21 +38,22 @@ const deleteFromDatabase = (e) => {
 };
 
 const getEnemyToUpdate = (e) => {
-  console.log(e.target.id);
   const idOfEnemyToUpdate = e.target.id.split('enemy-enemy-')[1];
-  console.log(idOfEnemyToUpdate);
-  enemyData.getAllEnemies()
-    .then((enemies) => {
-      const enemiesToUpdate = enemies.filter((x) => x.id === `${idOfEnemyToUpdate}`);
-      const enemyToUpdate = enemiesToUpdate[0];
-      return enemyToUpdate;
-    })
-    .catch((error) => console.log(error));
+  enemyData.getEnemyById(idOfEnemyToUpdate)
+    .then((actualEnemyToUpdate) => {
+      console.log(actualEnemyToUpdate);
+      currentEditId = actualEnemyToUpdate.id;
+      $('#enemyName').val(actualEnemyToUpdate.name);
+      $('#enemyImage').val(actualEnemyToUpdate.imageUrl);
+      $('#enemySector').val(actualEnemyToUpdate.baseSector);
+      $('#enemyLKL').val(actualEnemyToUpdate.LKL);
+      $('#enemyDead').val(actualEnemyToUpdate.isDead);
+      $('#enemyCaptured').val(actualEnemyToUpdate.isCaptured);
+    });
 };
-const clickToUpdateEnemy = () => {
+
+const clickToUpdateEnemy = (e) => {
   // e.preventDefault();
-  const actualEnemyToUpdate = getEnemyToUpdate();
-  console.log(actualEnemyToUpdate);
   const changedEnemy = {
     name: $('#enemyName').val(),
     imageUrl: $('#enemyImage').val(),
@@ -59,13 +62,14 @@ const clickToUpdateEnemy = () => {
     isDead: $('#enemyDead').val(),
     isCaptured: $('#enemyCaptured').val(),
   };
+  console.log(e);
   console.log(changedEnemy);
-  // enemyData.editEnemy(`${actualEnemyToUpdate.id}`, changedEnemy)
-  // .then(() => {
-  // $('#newEnemyModal').modal('hide');
-  // eslint-disable-next-line no-use-before-define
-  // enemiesBuilder();
-  // });
+  enemyData.editEnemy(`${currentEditId}`, changedEnemy)
+    .then(() => {
+      $('#newEnemyModal').modal('hide');
+      // eslint-disable-next-line no-use-before-define
+      enemiesBuilder();
+    });
 };
 
 const enemiesBuilder = () => {

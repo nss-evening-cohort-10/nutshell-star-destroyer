@@ -5,7 +5,7 @@ const makeEnemyCard = (enemy) => {
   let domString = '';
   if (enemy.id) {
     domString += `
-    <div class="card enemyCard">
+    <div class="card enemyCard" id="${enemy.id}">
       <div class="card-header">
         <h5 class="title">${enemy.name}</h5>
       </div>

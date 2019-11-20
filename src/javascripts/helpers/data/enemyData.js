@@ -17,6 +17,14 @@ const getAllEnemies = () => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
+const getEnemyById = (enemyId) => new Promise((resolve, reject) => {
+  axios.get(`${baseUrl}/enemies/${enemyId}.json`)
+    .then((enemyResponse) => {
+      resolve(enemyResponse.data);
+    })
+    .catch((error) => reject(error));
+});
+
 const makeEnemy = (newEnemy) => axios.post(`${baseUrl}/enemies.json`, newEnemy);
 
 const deleteEnemy = (enemyId) => axios.delete(`${baseUrl}/enemies/${enemyId}.json`);
@@ -24,5 +32,5 @@ const deleteEnemy = (enemyId) => axios.delete(`${baseUrl}/enemies/${enemyId}.jso
 const editEnemy = (enemyId, updatedEnemy) => axios.put(`${baseUrl}/enemies/${enemyId}.json`, updatedEnemy);
 
 export default {
-  getAllEnemies, makeEnemy, deleteEnemy, editEnemy,
+  getAllEnemies, makeEnemy, deleteEnemy, editEnemy, getEnemyById,
 };
