@@ -34,7 +34,7 @@ const displayCrew = (e) => {
   personnelData.getPersonnelData()
     .then((personnel) => {
       let domString = '<h1>Personnel</h1>';
-      domString += '<button id="add-personnel" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Add New Personnel</button>';
+      domString += '<button id="add-personnel" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalCenter">Add New Personnel</button>';
       domString += `<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
@@ -65,12 +65,13 @@ const displayCrew = (e) => {
           </form>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" id="add-new-personnel">Save changes</button>
+            <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-dark" id="add-new-personnel">Save changes</button>
           </div>
         </div>
         </div>
         </div>`;
+      domString += '<div class="container">';
       domString += '<div class="row">';
       personnel.forEach((person) => {
         domString += `
@@ -81,8 +82,8 @@ const displayCrew = (e) => {
               <h5 class="card-title"> ${person.name}</h5>
               <p class="card-text">Sector: ${person.sectorId}</p>
               <p class="card-text">Weapon: ${person.weaponId}</p>
-              <button id="edit-personnel-${person.id}" class="btn btn-primary edit">Edit</button>
-              <button id="delete-personnel-${person.id}" class="btn btn-primary delete">Delete</button>
+              <button id="edit-personnel-${person.id}" class="btn btn-dark edit">Edit</button>
+              <button id="delete-personnel-${person.id}" class="btn btn-dark delete">Delete</button>
               </div>
               </div>
         </div>

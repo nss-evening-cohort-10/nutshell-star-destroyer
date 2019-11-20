@@ -6,15 +6,12 @@ h1 {
 .card {
   background-color: #000000;
   color: #FFFFFF;
-  border: 2px solid #64696C;
+  border: 1px solid #64696C;
   text-shadow: 0 0 0.625em #fff, 0 0 1.5625em #fff, -0.0625em 0 0.125em rgba(0,0,0,0.5);
-  margin-bottom: 50em;
-  height: auto;
-  .card-body{
-      .card-img-top {
-      max-height: 5em;
-      width: unset;
-    }
-  }
+  margin-bottom: 45em;
 }
 
+#add-personnel {
+   margin-bottom: 1em;
+   margin-left: 1.25%;
+}
