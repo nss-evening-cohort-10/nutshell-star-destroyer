@@ -17,4 +17,6 @@ const getAllEnemies = () => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
-export default { getAllEnemies };
+const makeEnemy = (newEnemy) => axios.post(`${baseUrl}/enemies.json`, newEnemy);
+
+export default { getAllEnemies, makeEnemy };

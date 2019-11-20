@@ -47,9 +47,55 @@
     <div class="fullPage hide" id="weaponsPage"></div>
     <div class="fullPage hide" id="personnel"></div>
     <!-- make sure that all your divs that you are printing to got into this container! for styling purposes :) -->
+    <div id="auth"></div>
   </container>
 
-<!-- Modal -->
+  <div class="modal fade" id="newEnemyModal" tabindex="-1" role="dialog" aria-labelledby="newEnemyModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="newEnemyModalLabel">New Enemy</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="addAnEnemy">
+              <div class="form-group">
+                <label for="enemyName">Name</label>
+                <input type="text" class="form-control" id="enemyName" placeholder="Enter Name">
+              </div>
+              <div class="form-group">
+                <label for="enemyImage">Photo</label>
+                <input type="number" class="form-control" id="enemyImage" placeholder="Enter Image Url">
+              </div>
+              <div class="form-group">
+                <label for="enemySector">Base Sector</label>
+                <input type="text" class="form-control" id="enemySector" placeholder="Enter Enemy Base Sector">
+              </div>
+              <div class="form-group">
+                  <label for="enemyLKL">Last Known Location</label>
+                  <input type="text" class="form-control" id="enemyLKL" placeholder="Enter Enemy's LKL">
+              </div>
+              <div class="form-group">
+                    <label for="enemyDead">Terminated</label>
+                    <input type="text" class="form-control" id="enemyDead">
+              </div>
+              <div class="form-group">
+                  <label for="enemyCaptured">Captured</label>
+                  <input type="text" class="form-control" id="enemyCaptured">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="add-new-enemy">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
 <div class="modal fade hide" id="addSectorDataModal" tabindex="-1" role="dialog" aria-labelledby="addSectorDataModalTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -94,6 +140,6 @@
     </div>
   </div>
 </div>
-  
+
 </body>
 </html>
