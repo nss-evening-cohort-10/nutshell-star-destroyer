@@ -8,7 +8,7 @@ const displayAllSectors = () => {
     .getAllSectors()
     .then((sectors) => {
       let domString = '';
-      domString += '<button type="button" class="btn btn-outline-light" id="addData">Add Data</button>';
+      domString += '<button type="button" class="btn btn-outline-light" id="addSectorData" data-toggle="modal" data-target="#addSectorDataModal">Add Data</button>';
       sectors.forEach((sector) => {
         domString += '<div class="card">';
         domString += '<div class="card-body">';
