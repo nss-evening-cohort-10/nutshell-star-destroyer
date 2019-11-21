@@ -1,14 +1,14 @@
 # Star-destroyer
 
 ## Description
-Use this application to perform different functions with your Tamagotchi pet, such as play, eat, fight, and sleep.
+Use this application to view the Star Destroyer Database and edit its content.
 
 ## Screenshots
-![Star Destroyer Preview](src/screenshots/mainview.png)
-![Star Destroyer Preview](src/screenshots/enemiesview.png)
-![Star Destroyer Preview](src/screenshots/personnelview.png)
-![Star Destroyer Preview](src/screenshots/sectorsview.png)
-![Star Destroyer Preview](src/screenshots/weaponsview.png)
+![Star Destroyer Preview](https://raw.githubusercontent.com/nss-evening-cohort-10/nutshell-star-destroyer/master/src/screenshots/mainview.png)
+![Star Destroyer Preview](https://raw.githubusercontent.com/nss-evening-cohort-10/nutshell-star-destroyer/master/src/screenshots/enemiesview.png)
+![Star Destroyer Preview](https://raw.githubusercontent.com/nss-evening-cohort-10/nutshell-star-destroyer/master/src/screenshots/personnelview.png)
+![Star Destroyer Preview](https://raw.githubusercontent.com/nss-evening-cohort-10/nutshell-star-destroyer/master/src/screenshots/sectorsview.png)
+![Star Destroyer Preview](https://raw.githubusercontent.com/nss-evening-cohort-10/nutshell-star-destroyer/master/src/screenshots/weaponsview.png)
  
 
 ## How to run
