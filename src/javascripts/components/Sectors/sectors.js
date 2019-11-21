@@ -9,17 +9,21 @@ const displayAllSectors = () => {
     .then((sectors) => {
       let domString = '';
       domString += '<button type="button" class="btn btn-outline-light" id="addSectorData" data-toggle="modal" data-target="#addSectorDataModal">Add Data</button>';
+      domString += '<div class="row">';
       sectors.forEach((sector) => {
+        domString += '<div class="col-sm-6">';
         domString += '<div class="card">';
         domString += '<div class="card-body">';
         domString += `<h5 class="card-title">${sector.name}</h5>
-        <p class="card-text">${sector.info}</p>
-        <p class="card-text"><small class="text-muted">${sector.size}</small></p>
-      </div>
-      <img src="${sector.sectorImg}" class="card-img-top" alt="...">
-      <button type="button" class="btn btn-light" d="update">Update</button>
-      <button type="button" class="btn btn-danger" id="delete">Delete</button>
-          `;
+            <p class="card-text">${sector.info}</p>
+            <p class="card-text"><small class="text-muted">${sector.size}</small></p>
+            <img src="${sector.sectorImg}" class="card-img-top" alt="...">
+            <button type="button" class="btn btn-light" d="update">Update</button>
+            <button type="button" class="btn btn-danger" id="delete">Delete</button>
+            </div>
+          </div>
+        </div>
+      `;
       });
       domString += '</div>';
       utilities.printToDom('sectors', domString);
