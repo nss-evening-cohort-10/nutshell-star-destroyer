@@ -2,7 +2,7 @@
   "name": "nutshell-star-destroyer",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/javascripts/main.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --open",
     "build": "webpack --mode production --module-bind js=babel-loader",
@@ -13,8 +13,8 @@
     "url": "git+https://github.com/nss-evening-cohort-10/nutshell-star-destroyer.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Connor Sullivan, Raymond Arceneaux, Randy Tate, John Johnson",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/nss-evening-cohort-10/nutshell-star-destroyer/issues"
   },
@@ -41,7 +41,7 @@
   "dependencies": {
     "axios": "^0.19.0",
     "bootstrap": "^4.3.1",
-    "firebase": "^7.4.0",
+    "firebase": "^7.5.0",
     "jquery": "^3.4.1",
     "popper.js": "^1.16.0"
   }
