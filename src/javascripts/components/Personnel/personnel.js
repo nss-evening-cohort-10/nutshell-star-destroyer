@@ -100,7 +100,7 @@ const displayCrew = (e) => {
 const updatePersonnel = (e) => {
   $('#exampleModalCenter').modal('show');
   const personId = e.target.id.split('edit-personnel-')[1];
-  console.log(personId);
+  console.error(personId);
   personnelData.getPersonnelById(personId)
   // eslint-disable-next-line no-use-before-define
   // ??????????????????????????????????

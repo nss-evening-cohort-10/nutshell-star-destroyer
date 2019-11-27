@@ -22,13 +22,13 @@ const addNewEnemy = (e) => {
       // eslint-disable-next-line no-use-before-define
       enemiesBuilder();
     })
-    .catch((error) => console.log(error));
+    .catch((error) => console.error(error));
 };
 
 const deleteFromDatabase = (e) => {
   e.preventDefault();
   const enemyToDelete = e.target.id.split('enemy-')[1];
-  console.log(enemyToDelete);
+  console.error(enemyToDelete);
   enemyData.deleteEnemy(enemyToDelete)
     .then(() => {
       // eslint-disable-next-line no-use-before-define
