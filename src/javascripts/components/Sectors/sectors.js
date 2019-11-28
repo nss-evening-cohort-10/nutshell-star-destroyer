@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import firebase from 'firebase';
 import './sectors.scss';
 import utilities from '../../helpers/utilities';
 import sectorsData from '../../helpers/data/sectorsData';
@@ -8,13 +9,15 @@ const displayAllSectors = () => {
     .getAllSectors()
     .then((sectors) => {
       let domString = '';
+      const user = firebase.auth().currentUser;
       domString += '<button type="button" class="btn btn-outline-light" id="addSectorData" data-toggle="modal" data-target="#addSectorDataModal">Add Data</button>';
       domString += '<div class="row">';
       sectors.forEach((sector) => {
-        domString += '<div class="col-sm-6">';
-        domString += '<div class="card">';
-        domString += '<div class="card-body">';
-        domString += `<h5 class="card-title">${sector.name}</h5>
+        if (user != null) {
+          domString += '<div class="col-sm-6">';
+          domString += '<div class="card">';
+          domString += '<div class="card-body">';
+          domString += `<h5 class="card-title">${sector.name}</h5>
             <p class="card-text">${sector.info}</p>
             <p class="card-text"><small class="text-muted">${sector.size}</small></p>
             <img src="${sector.sectorImg}" class="card-img-top" alt="...">
@@ -23,9 +26,23 @@ const displayAllSectors = () => {
             </div>
           </div>
         </div>
+      </div>
       `;
+        } else {
+          domString += '<div class="col-sm-6">';
+          domString += '<div class="card">';
+          domString += '<div class="card-body">';
+          domString += `<h5 class="card-title">${sector.name}</h5>
+            <p class="card-text">${sector.info}</p>
+            <p class="card-text"><small class="text-muted">${sector.size}</small></p>
+            <img src="${sector.sectorImg}" class="card-img-top" alt="...">
+            </div>
+          </div>
+        </div>
+      </div>
+      `;
+        }
       });
-      domString += '</div>';
       utilities.printToDom('sectors', domString);
       // $('body').on('click', '#update', addSectorInfo);
       // $('body').on('click', '#delete', deleteSector);
