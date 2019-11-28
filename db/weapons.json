@@ -1,5 +1,6 @@
 {
   "weapon1": {
+    "id": "weapon1",
     "name": "XX-9 Turbolaser",
     "isActive": true,
     "teamSize": 4,
@@ -7,6 +8,7 @@
     "img": "https://raw.githubusercontent.com/nss-evening-cohort-10/nutshell-star-destroyer/master/db/images/weapons/xx9.jpg"
   },
   "weapon2": {
+    "id": "weapon2",
     "name": "TIE Starfighter",
     "isActive": false,
     "teamSize": 1,
@@ -14,6 +16,7 @@
     "img": "https://raw.githubusercontent.com/nss-evening-cohort-10/nutshell-star-destroyer/master/db/images/weapons/tiefighter.jpg"
   },
   "weapon3": {
+    "id": "weapon3",
     "name": "AT-AT",
     "isActive": true,
     "teamSize": 5,
@@ -21,6 +24,7 @@
     "img": "https://raw.githubusercontent.com/nss-evening-cohort-10/nutshell-star-destroyer/master/db/images/weapons/AT-AT.jpg"
   },
   "weapon4": {
+    "id": "weapon4",
     "name": "AT-ST",
     "isActive": true,
     "teamSize": 2,
@@ -28,6 +32,7 @@
     "img": "https://raw.githubusercontent.com/nss-evening-cohort-10/nutshell-star-destroyer/master/db/images/weapons/AT-ST.jpg"
   },
   "weapon5": {
+    "id": "weapon5",
     "name": "NK-7 Ion Cannon",
     "isActive": true,
     "teamSize": 2,
@@ -35,6 +40,7 @@
     "img": "https://raw.githubusercontent.com/nss-evening-cohort-10/nutshell-star-destroyer/master/db/images/weapons/nk7ioncannon.png"
   },
   "weapon6": {
+    "id": "weapon6",
     "name": "Q7 Tractor Beam Projector",
     "isActive": true,
     "teamSize": 10,

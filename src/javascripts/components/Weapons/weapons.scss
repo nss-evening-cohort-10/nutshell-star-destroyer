@@ -1,18 +1,47 @@
-h1 {
-  color: #FFFFFF;
-  text-align: center;
+.weapon-image {
+   width: 100%;
+  height: 400px;
 }
 
-.card {
+.weapon-card {
   background-color: #000000;
   color: #FFFFFF;
   text-shadow: 0 0 0.625em #fff, 0 0 1.5625em #fff, -0.0625em 0 0.125em rgba(0,0,0,0.5);
-  height: 25em;
-  .card-body{
-    .card-img {
-      max-height: 22em;
-      width: unset;
-    }
-  }
+   margin: 15px;
 }
-    
+
+.weapons-title {
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: #BC1E22;
+  color: #000000;
+}
+
+.btn:focus {
+  outline:none;
+  box-shadow: none;
+}
+
+.delete-button {
+  border-color: #BC1E22;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+.edit-button {
+  border-color: #BC1E22;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+.add-button {
+  border-color: #BC1E22;
+  color: #FFFFFF;
+  font-weight: bold;
+  margin: 0 auto;
+}
+
+
+

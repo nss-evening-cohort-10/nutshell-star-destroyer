@@ -1,31 +1,25 @@
 import $ from 'jquery';
 import firebase from 'firebase/app';
 import 'firebase/auth';
-
 import weaponsData from '../../helpers/data/weaponsData';
-
 import './weapons.scss';
 import utilities from '../../helpers/utilities';
 
-const deleteWeapon = (e) => {
-  e.stopImmediatePropagation();
-  const weaponIdToDelete = e.target.id.split('delete-')[1];
+const displayWeapons = () => {
+  $('#weapons-link').on('click', () => {
 
-  weaponsData.deleteWeapon(weaponIdToDelete)
-    .then(() => {
-      // eslint-disable-next-line no-use-before-define
-      showTheWeapons(e);
-    })
-    .catch((err) => console.error(err));
+  });
 };
 
-const showDeets = (e) => {
+const deleteWeapon = (e) => {
   e.preventDefault();
-  const clickedWeapon = e.target.id;
-  $('.deets').addClass('hide');
-  $('.full-img').removeClass('hide');
-  $(`#${clickedWeapon}-deets`).removeClass('hide');
-  $(`#${clickedWeapon}-full-img`).addClass('hide');
+  const { weaponId } = e.target.id;
+  weaponsData.deleteWeapon(e.target.id)
+    .then(() => {
+      // eslint-disable-next-line no-use-before-define
+      createWeaponCard(weaponId);
+    })
+    .catch((err) => console.error(err));
 };
 
 const makeNewWeapon = (e) => {
@@ -42,58 +36,57 @@ const makeNewWeapon = (e) => {
     .then(() => {
       $('#weaponsModal').modal('hide');
       // eslint-disable-next-line no-use-before-define
-      showTheWeapons(e);
+      createWeaponCard(e);
     })
     .catch((error) => console.error(error));
 };
 
-const showTheWeapons = (e) => {
-  e.stopImmediatePropagation();
+const createWeaponCard = () => {
   const user = firebase.auth().currentUser;
-  $('#dashboard').addClass('hide');
-  weaponsData.getWeapons()
-    .then((weppens) => {
-      let domString = '<h1>Armory</h1>';
-      if (user) {
-        domString += '<button class="btn btn-outline-light" data-toggle="modal" data-target="#weaponsModal">Add Weapon</button>';
+  weaponsData.getAllWeapons()
+    .then((weapons) => {
+      let domString = '<h1 class="weapons-title text-#FFFFFF">Armory</h1>';
+      if (user != null) {
+        domString += '<button type="button" class="add-button btn ml-5"data-toggle="modal" data-target="#weaponsModal">ADD WEAPON</button>';
       }
-      domString += '<div class="row"><div class="card-group">';
-      weppens.forEach((weppen) => {
-        domString += `
-        <div class="col-sm-6">
-          <div class="card mb-3" id="${weppen.id}-card">
-            <div id="${weppen.id}-deets" class="row no-gutters deets hide">
-              <div class="col-md-6">
-                <img id="${weppen.id}" src="${weppen.img}" class="card-img" alt="${weppen.name}">
-              </div>
-              <div class="col-md-6">
-                <div class="card-body">
-                  <h5 class="card-title">${weppen.name}</h5>
-                  <p class="card-text">${weppen.isActive ? 'Active' : 'Inactive'}</p>
-                  <p class="card-text">Crew of ${weppen.teamSize}</p>
-                  <p class="card-text">Use: ${weppen.type}</p>
-                  <button class="btn btn-outline-danger delete-weapon" id="delete-${weppen.id}">Delete</button>
-                </div>
-              </div>
-            </div>
-            <div id="${weppen.id}-full-img" class="card-body full-img">
-            <img id="${weppen.id}" src="${weppen.img}" class="card-img" alt="${weppen.name}">
-            </div>
+      domString += '<div id="weapons-section" class="d-flex flex-wrap text-center offset-2">';
+      weapons.forEach((weapon) => {
+        if (user != null) {
+          domString += `
+        <div id="${weapon.id}" class="card weapon-card" style="width: 18rem;">
+        <img src="${weapon.img}" class="card-img-top weapon-image" alt="${weapon.name}">
+          <div class="card-body">
+                <h5 class="card-title">${weapon.name}</h5>
+                <p class="card-text">Crew of ${weapon.teamSize}</p>
+                <p class="card-text">Use: ${weapon.type}</p>
+                <button type="button" id="delete-${weapon.id}" class="btn delete-button" >DELETE</button>
+                <button type="button" id="delete-${weapon.id}" class="btn edit-button" >EDIT</button>
+             </div>
           </div>
-        </div>
         `;
+        } else {
+          domString += `
+      <div id="${weapon.id}" class="card weapon-card" style="width: 18rem;">
+      <img src="${weapon.img}" class="card-img-top weapon-image" alt="${weapon.name}">
+      <div class="card-body">
+      <h5 class="card-title">${weapon.name}</h5>
+      <p class="card-text">Crew of ${weapon.teamSize}</p>
+      <p class="card-text">Use: ${weapon.type}</p>
+      </div>
+      </div>
+      `;
+        }
       });
-      domString += '</div></div>';
+      domString += '</div>';
       utilities.printToDom('weaponsPage', domString);
-      $('#weaponsPage').on('click', '.delete-weapon', deleteWeapon);
-      $('#weaponsPage').on('click', '.card-img', showDeets);
+      $('.delete-button').on('click', deleteWeapon);
       $('#weaponsModal').on('click', '#add-weapon-btn', makeNewWeapon);
     })
     .catch((error) => console.error(error));
 };
 
 const clickWeapons = () => {
-  $('#weaponsLink').click(showTheWeapons);
+  $('#weaponsLink').click(createWeaponCard);
 };
 
-export default { clickWeapons, makeNewWeapon };
+export default { clickWeapons, displayWeapons, makeNewWeapon };
