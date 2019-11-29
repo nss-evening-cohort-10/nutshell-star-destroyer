@@ -7,6 +7,7 @@ const displayAllSectors = () => {
   sectorsData
     .getAllSectors()
     .then((sectors) => {
+      console.log(sectors);
       let domString = '';
       domString += '<button type="button" class="btn btn-outline-light" id="addSectorData" data-toggle="modal" data-target="#addSectorDataModal">Add Data</button>';
       domString += '<div class="row">';

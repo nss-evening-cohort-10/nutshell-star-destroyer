@@ -72,6 +72,8 @@ const deleteFromDatabase = (e) => {
 //     });
 // };
 
+// This function prints the enemy cards to the enemiesPage div in HTML
+
 const enemiesBuilder = () => {
   let domString = '<div id="button-holder" class="card">';
   domString += '<h1>Enemies</h1>';

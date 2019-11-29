@@ -6,6 +6,7 @@ const baseUrl = apiKeys.firebaseKeys.databaseURL;
 const getAllEnemies = () => new Promise((resolve, reject) => {
   axios.get(`${baseUrl}/enemies.json`)
     .then((response) => {
+      // console.log(response.data);
       const enemiesResults = response.data;
       const enemies = [];
       Object.keys(enemiesResults).forEach((enemyId) => {
