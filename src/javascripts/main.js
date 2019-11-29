@@ -10,7 +10,6 @@ import enemies from './components/Enemies/enemies';
 import personnelDisplay from './components/Personnel/personnel';
 import weapons from './components/Weapons/weapons';
 
-
 const init = () => {
   firebase.initializeApp(apiKeys.firebaseKeys);
   authData.checkLoginStatus();
@@ -19,6 +18,7 @@ const init = () => {
   sectors.displayAllSectors();
   enemies.clickForEnemies();
   personnelDisplay.clickCrew();
+  // personnelDisplay.displayCrew();
   weapons.clickWeapons();
 };
 
