@@ -6,11 +6,6 @@ import utilities from '../../helpers/utilities';
 import weaponsData from '../../helpers/data/weaponsData';
 import weaponCardBuilder from '../weaponCardBuilder/weaponCardBuilder';
 
-const displayWeapons = () => {
-  $('#weaponsLink').on('click', () => {
-
-  });
-};
 
 const makeNewWeapon = (e) => {
   e.stopImmediatePropagation();
@@ -24,7 +19,7 @@ const makeNewWeapon = (e) => {
   };
   weaponsData.addNewWeapon(newWeapon)
     .then(() => {
-      $('#weaponsModal').modal('hide');
+      $('#exampleModal').modal('hide');
       // eslint-disable-next-line no-use-before-define
       createWeaponCard();
     })
@@ -35,7 +30,7 @@ const createWeaponCard = () => {
   let domString = '<h1 class="text-center">Armory</h1>';
   const user = firebase.auth().currentUser;
   if (user != null) {
-    domString += '<div class="text-center"><button class="btn add-button" id="add-new-weapon" data-toggle="modal" data-target="#weaponsModal">ADD WEAPON</button></div>';
+    domString += '<div class="text-center"><button class="btn add-button" id="add-new-weapon" data-toggle="modal" data-target="#exampleModal">ADD WEAPON</button></div>';
   }
   domString += '<div id="weapons-section" class="d-flex flex-wrap">';
   weaponsData.getAllWeapons()
@@ -67,4 +62,4 @@ const deleteWeapon = (e) => {
     .catch((err) => console.error(err));
 };
 
-export default { clickWeapons, displayWeapons, makeNewWeapon };
+export default { clickWeapons, makeNewWeapon };
