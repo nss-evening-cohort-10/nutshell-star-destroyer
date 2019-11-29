@@ -7,7 +7,7 @@ import weaponsData from '../../helpers/data/weaponsData';
 import weaponCardBuilder from '../weaponCardBuilder/weaponCardBuilder';
 
 const displayWeapons = () => {
-  $('#weapons-link').on('click', () => {
+  $('#weaponsLink').on('click', () => {
 
   });
 };
