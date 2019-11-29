@@ -21,7 +21,6 @@ body {
 
   #logout-button {
     color:white;
-    display: inherit;
     justify-content: flex-end;
     margin-left: 1em;
   }
@@ -29,4 +28,9 @@ body {
 
 .hide {
   display: none;
+}
+
+.loginBtn {
+  height: 50px;
+  width: auto;
 }
