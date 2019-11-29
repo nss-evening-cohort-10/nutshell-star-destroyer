@@ -18,7 +18,7 @@ const singleWeaponCard = (weapon) => {
   } else {
     domString += `
         <div id="${weapon.id}" class="card weaponCard card-body text-center" style=" width: 20em; max-width: 500px; height: 100%; margin: 2em;">
-           <img src="${weapon.image}" class="card-img-top" style="width: 100%; height: auto;" alt="..."/>
+           <img src="${weapon.img}" class="card-img-top" style="width: 100%; height: auto;" alt="..."/>
            <br>
            <h5 class="card-title" id="weapon">${weapon.name}</h5>
             <p class="card-text">Crew of ${weapon.teamSize}</p>
