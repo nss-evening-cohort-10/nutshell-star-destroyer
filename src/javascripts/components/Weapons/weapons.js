@@ -1,25 +1,15 @@
 import $ from 'jquery';
 import firebase from 'firebase/app';
 import 'firebase/auth';
-import weaponsData from '../../helpers/data/weaponsData';
 import './weapons.scss';
 import utilities from '../../helpers/utilities';
+import weaponsData from '../../helpers/data/weaponsData';
+import weaponCardBuilder from '../weaponCardBuilder/weaponCardBuilder';
 
 const displayWeapons = () => {
   $('#weapons-link').on('click', () => {
 
   });
-};
-
-const deleteWeapon = (e) => {
-  e.preventDefault();
-  const { weaponId } = e.target.id;
-  weaponsData.deleteWeapon(e.target.id)
-    .then(() => {
-      // eslint-disable-next-line no-use-before-define
-      createWeaponCard(weaponId);
-    })
-    .catch((err) => console.error(err));
 };
 
 const makeNewWeapon = (e) => {
@@ -36,49 +26,26 @@ const makeNewWeapon = (e) => {
     .then(() => {
       $('#weaponsModal').modal('hide');
       // eslint-disable-next-line no-use-before-define
-      createWeaponCard(e);
+      createWeaponCard();
     })
     .catch((error) => console.error(error));
 };
 
 const createWeaponCard = () => {
+  let domString = '<h1 class="text-center">Armory</h1>';
   const user = firebase.auth().currentUser;
+  if (user != null) {
+    domString += '<div class="text-center"><button class="btn add-button" id="add-new-weapon" data-toggle="modal" data-target="#weaponsModal">ADD WEAPON</button></div>';
+  }
+  domString += '<div id="weapons-section" class="d-flex flex-wrap">';
   weaponsData.getAllWeapons()
     .then((weapons) => {
-      let domString = '<h1 class="weapons-title text-#FFFFFF">Armory</h1>';
-      if (user != null) {
-        domString += '<button type="button" class="add-button btn ml-5"data-toggle="modal" data-target="#weaponsModal">ADD WEAPON</button>';
-      }
-      domString += '<div id="weapons-section" class="d-flex flex-wrap text-center offset-2">';
       weapons.forEach((weapon) => {
-        if (user != null) {
-          domString += `
-        <div id="${weapon.id}" class="card weapon-card" style="width: 18rem;">
-        <img src="${weapon.img}" class="card-img-top weapon-image" alt="${weapon.name}">
-          <div class="card-body">
-                <h5 class="card-title">${weapon.name}</h5>
-                <p class="card-text">Crew of ${weapon.teamSize}</p>
-                <p class="card-text">Use: ${weapon.type}</p>
-                <button type="button" id="delete-${weapon.id}" class="btn delete-button" >DELETE</button>
-                <button type="button" id="delete-${weapon.id}" class="btn edit-button" >EDIT</button>
-             </div>
-          </div>
-        `;
-        } else {
-          domString += `
-      <div id="${weapon.id}" class="card weapon-card" style="width: 18rem;">
-      <img src="${weapon.img}" class="card-img-top weapon-image" alt="${weapon.name}">
-      <div class="card-body">
-      <h5 class="card-title">${weapon.name}</h5>
-      <p class="card-text">Crew of ${weapon.teamSize}</p>
-      <p class="card-text">Use: ${weapon.type}</p>
-      </div>
-      </div>
-      `;
-        }
+        domString += weaponCardBuilder.singleWeaponCard(weapon);
       });
       domString += '</div>';
       utilities.printToDom('weaponsPage', domString);
+      // eslint-disable-next-line no-use-before-define
       $('.delete-button').on('click', deleteWeapon);
       $('#weaponsModal').on('click', '#add-weapon-btn', makeNewWeapon);
     })
@@ -87,6 +54,17 @@ const createWeaponCard = () => {
 
 const clickWeapons = () => {
   $('#weaponsLink').click(createWeaponCard);
+};
+
+const deleteWeapon = (e) => {
+  e.preventDefault();
+  const { weaponId } = e.target.id;
+  weaponsData.deleteWeapon(e.target.id)
+    .then(() => {
+      // eslint-disable-next-line no-use-before-define
+      createWeaponCard(weaponId);
+    })
+    .catch((err) => console.error(err));
 };
 
 export default { clickWeapons, displayWeapons, makeNewWeapon };
