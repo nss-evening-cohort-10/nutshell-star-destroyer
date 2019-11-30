@@ -1,22 +1,31 @@
 .enemyCard{
-//    margin: 20px;
-   height: fit-content;
-//    display: flex;
-//    flex-direction: column;
-   align-items: center;
-   text-align: center;
-   margin-bottom: 5em;
-
+margin: 25px;
+// height: fit-content;
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
 }
     
 .cardImg{
-  padding: 20px;
-  width: 200px;
-  height: 150px;
+width: 400px;
+height: 400px;
 }
+
+
 // #enemiesPage {
 //     display: flex;
 //     flex-flow: row wrap;
 //     width: 100%;
 //     height: fit-content;
 // }
+
+.card{
+  height: 650px;
+  width:500px;
+}
+
+#addNewEnemyBtn{
+  background-color: #BC1E22;
+
+};

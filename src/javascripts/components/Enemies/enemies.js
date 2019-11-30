@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import firebase from 'firebase';
 import enemyData from '../../helpers/data/enemyData';
 import enemyCard from './EnemyCard/enemyCard';
 import utilities from '../../helpers/utilities';
@@ -72,15 +73,18 @@ const deleteFromDatabase = (e) => {
 //     });
 // };
 
-// This function prints the enemy cards to the enemiesPage div in HTML
+// This function prints the enemy cards to the enemiesPage div in HTML  updated  by 11-29-19 raymond
 
 const enemiesBuilder = () => {
-  let domString = '<div id="button-holder" class="card">';
-  domString += '<h1>Enemies</h1>';
-  domString += '<button id="addNewEnemyBtn" type="button" class="btn btn-primary" data-toggle="modal" data-target="#newEnemyModal">Add New Enemy</button>';
-  domString += '</div>';
   enemyData.getAllEnemies()
     .then((enemies) => {
+      let domString = '<div  class="text-center" id="button-holder">';
+      domString += '<h1>Enemies</h1>';
+      const user = firebase.auth().currentUser;
+      if (user != null) {
+        domString += '<button id="addNewEnemyBtn" type="button" class="btn" data-toggle="modal" data-target="#newEnemyModal">Add New Enemy</button>';
+        domString += '</div>';
+      }
       enemies.forEach((enemy) => {
         domString += enemyCard.makeEnemyCard(enemy);
       });
@@ -92,6 +96,7 @@ const enemiesBuilder = () => {
     })
     .catch((error) => console.error(error));
 };
+
 
 const clickForEnemies = () => {
   $('#enemiesLink').click(enemiesBuilder);
