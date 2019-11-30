@@ -20,9 +20,12 @@ body {
   }
 
   #logout-button {
-    color:white;
+    background-color: #BC1E22;
+    color:black;
+    font-weight: bold;
+    display: inherit;
     justify-content: flex-end;
-    margin-left: 1em;
+     margin-left: 1em;
   }
 }
 
