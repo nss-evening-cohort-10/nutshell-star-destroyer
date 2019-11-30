@@ -32,7 +32,7 @@ const weaponModal = (weapon) => {
   const domString = `<div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="weaponsModalLabel">New Weapon</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Add/Edit Weapon</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -72,7 +72,7 @@ const weaponModal = (weapon) => {
       </div>
       <div class="modal-footer" id="${weapon.id}">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" id="${weapon.id ? 'edit' : 'save'}">Save changes</button>
+        <button type="button" id="${weapon.id ? 'edit' : 'save'}"  class="btn btn-primary">Save</button>
       </div>
     </div>
   </div>`;

@@ -1,10 +1,9 @@
 import $ from 'jquery';
-import firebase from 'firebase/app';
-import 'firebase/auth';
+import firebase from 'firebase';
 import './weapons.scss';
-import utilities from '../../helpers/utilities';
 import weaponsData from '../../helpers/data/weaponsData';
 import weaponCardBuilder from '../weaponCardBuilder/weaponCardBuilder';
+import utilities from '../../helpers/utilities';
 
 const deleteWeapon = (e) => {
   e.preventDefault();
@@ -21,7 +20,7 @@ const addNewWeapon = (e) => {
   e.stopImmediatePropagation();
   const isCurrentWeaponActive = ($('#weapon-status').val() === 'true');
   const newWeapon = {
-    name: $('#weapon-name').val(),
+    name: $('#name').val(),
     isActive: isCurrentWeaponActive,
     teamSize: $('#team-size').val() * 1,
     type: $('#weapon-use').val(),
@@ -57,8 +56,8 @@ const editWeaponInfo = (e) => {
   weaponsData.updateWeapon(weaponid, updatedWeapon)
     .then(() => {
       $('#exampleModal').modal('hide');
-      // eslint-disable-next-line no-undef
-      singleWeaponCard();
+      // eslint-disable-next-line no-use-before-define
+      createWeaponCard();
     })
     .catch((error) => console.error(error));
 };
