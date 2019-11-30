@@ -6,16 +6,15 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script src="https://kit.fontawesome.com/dab618c464.js" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css?family=Saira&display=swap" rel="stylesheet">
-  <title>Document</title>
+  <title>Star Destoyer</title>
 </head>
 <body>
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-#000000">
+  
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-#000000">
         <a class="navbar-brand" href="#"><i id="logoLink" class="fab fa-empire fa-3x"></i></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
@@ -33,21 +32,19 @@
               <a class="nav-link" href="#" tabindex="-1" aria-disabled="false" id="sectorsLink">Galaxy</a>
             </li>
           </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Search</button>
-          </form>
-          <button type="button" class="btn btn-danger" id="logout-button">Logout</button>
+          <button type="button" class="btn btn-danger hide" id="logout-button">Logout</button>
+          <button type="button" class="btn btn-success" id="auth">
+            <img src="" alt="Google Login">
+          </button>
         </div>
       </nav>
-  <container id="box">
 
     <div class="fullPage hide" id="homePage"></div>
     <div class="fullPage hide " id="enemiesPage"></div>
     <div class="fullPage hide" id="sectors"></div>
     <div class="fullPage hide" id="weaponsPage"></div>
     <div class="fullPage hide" id="personnel"></div>
-    <div id="auth"></div>
+
     <div id="dashboard" class="d-none">database</div>
     <div class="modal fade" id="weaponsModal" tabindex="-1" role="dialog" aria-labelledby="weaponsModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
@@ -98,45 +95,48 @@
       </div>
     </div>
 
-  </container>
 
-  <div class="modal fade" id="newEnemyModal" tabindex="-1" role="dialog" aria-labelledby="newEnemyModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="newEnemyModalLabel">New Enemy</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <form id="addAnEnemy">
-              <div class="form-group">
-                <label for="enemyName">Name</label>
-                <input type="text" class="form-control" id="enemyName" placeholder="Enter Name">
-              </div>
-              <div class="form-group">
-                <label for="enemyImage">Photo</label>
-                <input type="text" class="form-control" id="enemyImage" placeholder="Enter Image Url">
-              </div>
-              <div class="form-group">
-                <label for="enemySector">Base Sector</label>
-                <input type="text" class="form-control" id="enemySector" placeholder="Enter Enemy Base Sector">
-              </div>
-              <div class="form-group">
-                  <label for="enemyLKL">Last Known Location</label>
-                  <input type="text" class="form-control" id="enemyLKL" placeholder="Enter Enemy's LKL">
-              </div>
-              <div class="form-group">
-                    <label for="enemyDead">Terminated</label>
-                    <input type="text" class="form-control" id="enemyDead">
-              </div>
-              <div class="form-group">
-                  <label for="enemyCaptured">Captured</label>
-                  <input type="text" class="form-control" id="enemyCaptured">
-              </div>
-            </form>
-          </div>
+<div class="modal fade" id="weaponsModal" tabindex="-1" role="dialog" aria-labelledby="weaponsModalLabel" aria-hidden="true">
+  
+</div>
+
+<div class="modal fade" id="newEnemyModal" tabindex="-1" role="dialog" aria-labelledby="newEnemyModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="newEnemyModalLabel">New Enemy</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="addAnEnemy">
+            <div class="form-group">
+              <label for="enemyName">Name</label>
+              <input type="text" class="form-control" id="enemyName" placeholder="Enter Name">
+            </div>
+            <div class="form-group">
+              <label for="enemyImage">Photo</label>
+              <input type="text" class="form-control" id="enemyImage" placeholder="Enter Image Url">
+            </div>
+            <div class="form-group">
+              <label for="enemySector">Base Sector</label>
+              <input type="text" class="form-control" id="enemySector" placeholder="Enter Enemy Base Sector">
+            </div>
+            <div class="form-group">
+                <label for="enemyLKL">Last Known Location</label>
+                <input type="text" class="form-control" id="enemyLKL" placeholder="Enter Enemy's LKL">
+            </div>
+            <div class="form-group">
+                  <label for="enemyDead">Terminated</label>
+                  <input type="text" class="form-control" id="enemyDead">
+            </div>
+            <div class="form-group">
+                <label for="enemyCaptured">Captured</label>
+                <input type="text" class="form-control" id="enemyCaptured">
+            </div>
+          </form>
+        </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
             <button type="button" class="btn btn-primary" id="save-new-enemy">Save New Enemy</button>
