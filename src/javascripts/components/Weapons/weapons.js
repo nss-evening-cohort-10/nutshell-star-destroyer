@@ -6,8 +6,18 @@ import utilities from '../../helpers/utilities';
 import weaponsData from '../../helpers/data/weaponsData';
 import weaponCardBuilder from '../weaponCardBuilder/weaponCardBuilder';
 
+const deleteWeapon = (e) => {
+  e.preventDefault();
+  const { weaponId } = e.target.id;
+  weaponsData.deleteWeapon(e.target.id)
+    .then(() => {
+      // eslint-disable-next-line no-use-before-define
+      createWeaponCard(weaponId);
+    })
+    .catch((err) => console.error(err));
+};
 
-const makeNewWeapon = (e) => {
+const addNewWeapon = (e) => {
   e.stopImmediatePropagation();
   const isCurrentWeaponActive = ($('#weapon-status').val() === 'true');
   const newWeapon = {
@@ -26,6 +36,43 @@ const makeNewWeapon = (e) => {
     .catch((error) => console.error(error));
 };
 
+const newWeaponInfo = (weapon) => {
+  let domString = '';
+  domString += weaponCardBuilder.weaponModal(weapon);
+  utilities.printToDom('exampleModal', domString);
+  $('#save').click(addNewWeapon);
+};
+
+const editWeaponInfo = (e) => {
+  e.stopImmediatePropagation();
+  const isCurrentWeaponActive = ($('#weapon-status').val() === 'true');
+  const weaponid = e.target.parentNode.id;
+  const updatedWeapon = {
+    name: $('#name').val(),
+    isActive: isCurrentWeaponActive,
+    teamSize: $('#team-size').val() * 1,
+    type: $('#weapon-use').val(),
+    img: $('#weapon-image-url').val(),
+  };
+  weaponsData.updateWeapon(weaponid, updatedWeapon)
+    .then(() => {
+      $('#exampleModal').modal('hide');
+      // eslint-disable-next-line no-undef
+      singleWeaponCard();
+    })
+    .catch((error) => console.error(error));
+};
+
+const updateAWeapon = (e) => {
+  weaponsData.getWeaponById(e.target.id)
+    .then((response) => {
+      $('#exampleModal').modal('show');
+      response.id = e.target.id;
+      newWeaponInfo(response);
+      $('#edit').click(editWeaponInfo);
+    });
+};
+
 const createWeaponCard = () => {
   let domString = '<h1 class="text-center">Armory</h1>';
   const user = firebase.auth().currentUser;
@@ -41,8 +88,9 @@ const createWeaponCard = () => {
       domString += '</div>';
       utilities.printToDom('weaponsPage', domString);
       // eslint-disable-next-line no-use-before-define
-      $('.delete-button').on('click', deleteWeapon);
-      $('#weaponsModal').on('click', '#add-weapon-btn', makeNewWeapon);
+      $('#weaponsPage').on('click', '.delete-button', deleteWeapon);
+      $('#add-weapon').on('click', newWeaponInfo);
+      $('#weaponsPage').on('click', '.edit-button', updateAWeapon);
     })
     .catch((error) => console.error(error));
 };
@@ -51,15 +99,4 @@ const clickWeapons = () => {
   $('#weaponsLink').click(createWeaponCard);
 };
 
-const deleteWeapon = (e) => {
-  e.preventDefault();
-  const { weaponId } = e.target.id;
-  weaponsData.deleteWeapon(e.target.id)
-    .then(() => {
-      // eslint-disable-next-line no-use-before-define
-      createWeaponCard(weaponId);
-    })
-    .catch((err) => console.error(err));
-};
-
-export default { clickWeapons, makeNewWeapon };
+export default { clickWeapons, addNewWeapon };
