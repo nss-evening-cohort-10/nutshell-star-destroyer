@@ -5,6 +5,11 @@ import weaponsData from '../../helpers/data/weaponsData';
 import weaponCardBuilder from '../weaponCardBuilder/weaponCardBuilder';
 import utilities from '../../helpers/utilities';
 
+const displayWeapons = () => {
+  // eslint-disable-next-line no-use-before-define
+  $('#weaponsLink').click(createWeaponCard);
+};
+
 const deleteWeapon = (e) => {
   e.preventDefault();
   const { weaponId } = e.target.id;
@@ -88,14 +93,11 @@ const createWeaponCard = () => {
       utilities.printToDom('weaponsPage', domString);
       // eslint-disable-next-line no-use-before-define
       $('#weaponsPage').on('click', '.delete-button', deleteWeapon);
-      $('#add-weapon').on('click', newWeaponInfo);
+      $('#add-new-weapon').on('click', newWeaponInfo);
       $('#weaponsPage').on('click', '.edit-button', updateAWeapon);
     })
     .catch((error) => console.error(error));
 };
 
-const clickWeapons = () => {
-  $('#weaponsLink').click(createWeaponCard);
-};
 
-export default { clickWeapons, addNewWeapon };
+export default { displayWeapons, addNewWeapon };

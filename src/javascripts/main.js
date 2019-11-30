@@ -19,7 +19,7 @@ const init = () => {
   sectors.displayAllSectors();
   enemies.clickForEnemies();
   personnelDisplay.clickCrew();
-  weapons.clickWeapons();
+  weapons.displayWeapons();
 };
 
 init();
