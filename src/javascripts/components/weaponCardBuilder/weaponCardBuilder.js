@@ -62,6 +62,7 @@ const weaponModal = (weapon) => {
               <option value="ship-to-ship">Ship to ship</option>
               <option value="ground-assault">Ground Assault</option>
               <option value="personal">Personal</option>
+              <option value="transport">Troop-Transport</option>
             </select>
           </div>
           <div class="form-group">
