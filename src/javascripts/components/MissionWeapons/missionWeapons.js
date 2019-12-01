@@ -5,16 +5,16 @@ import missionWeaponCardBuilder from '../missionWeaponCardBuilder/missionWeaponC
 import utilities from '../../helpers/utilities';
 
 const createMissionWeaponCard = () => {
-  let domString = '<h1 class="text-center">Armory</h1>';
+  let domString = '<h1 class="text-center">Mission Weapons</h1>';
   const user = firebase.auth().currentUser;
   if (user != null) {
     domString += '<div class="text-center"><button class="btn add-button" id="add-new-missionWeapon" data-toggle="modal" data-target="#exampleModal">ADD WEAPON</button></div>';
   }
   domString += '<div id="missionWeapons-section" class="d-flex flex-wrap">';
   missionWeaponsData.getMissionWeapons()
-    .then((weapons) => {
-      weapons.forEach((weapon) => {
-        domString += missionWeaponCardBuilder.singleMissionWeaponCard(weapon);
+    .then((missionWeapons) => {
+      missionWeapons.forEach((missionWeapon) => {
+        domString += missionWeaponCardBuilder.singleMissionWeaponCard(missionWeapon);
       });
       domString += '</div>';
       utilities.printToDom('missionWeapons', domString);
