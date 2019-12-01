@@ -9,6 +9,7 @@ import sectors from './components/Sectors/sectors';
 import enemies from './components/Enemies/enemies';
 import personnelDisplay from './components/Personnel/personnel';
 import weapons from './components/Weapons/weapons';
+import missionData from './helpers/data/missionData';
 
 
 const init = () => {
@@ -20,6 +21,7 @@ const init = () => {
   enemies.clickForEnemies();
   personnelDisplay.clickCrew();
   weapons.clickWeapons();
+  missionData.getAllMissions();
 };
 
 init();

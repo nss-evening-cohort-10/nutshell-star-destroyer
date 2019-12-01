@@ -1,0 +1,14 @@
+{
+  "mission1": {
+    "id": "mission1",
+    "missionTitle": "Order 66",
+    "systemID": "system1",
+    "enemyID": "enemy1"
+  },
+  "mission2": {
+    "id": "mission2",
+    "missionTitle": "Order 2020",
+    "systemID": "system2",
+    "enemyID": "enemy2"
+  }
+}

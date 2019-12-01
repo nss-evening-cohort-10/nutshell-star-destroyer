@@ -40,6 +40,36 @@ const newEnemyModal = (enemy) => {
   utilities.printToDom('newEnemyModal', domString);
   $('#save').click(addNewEnemy);
 };
+
+const editEnemyInfo = (e) => {
+  e.stopImmediatePropagation();
+  const enemyId = e.target.id.split('enemy-')[1];
+  console.log(enemyId);
+  const updatedEnemy = {
+    name: $('#enemyName').val(),
+    imageUrl: $('#enemyImage').val(),
+    baseSector: $('#enemySector').val(),
+    LKL: $('#enemyLKL').val(),
+  };
+  enemyData.editEnemy(enemyId, updatedEnemy)
+    .then(() => {
+      $('#newEnemyModal').modal('hide');
+      // eslint-disable-next-line no-use-before-define
+      enemiesBuilder();
+    })
+    .catch((error) => console.error(error));
+};
+
+const updateAEnemy = (e) => {
+  enemyData.getEnemyById(e.target.id.split('enemy-')[1])
+    .then((response) => {
+      console.log(response);
+      $('#newEnemyModal').modal('show');
+      response.Id = e.target.id;
+      newEnemyModal(response);
+      $('#edit').click(editEnemyInfo);
+    });
+};
 // This function prints the enemy cards to the enemiesPage div in HTML  updated  by 11-29-19 raymond
 
 const enemiesBuilder = () => {
@@ -58,6 +88,7 @@ const enemiesBuilder = () => {
       utilities.printToDom('enemiesPage', domString);
       $('#addNewEnemyBtn').click(newEnemyModal);
       $('.deleteEnemy').on('click', deleteFromDatabase);
+      $('body').on('click', '.editEnemy', updateAEnemy);
     })
     .catch((error) => console.error(error));
 };
