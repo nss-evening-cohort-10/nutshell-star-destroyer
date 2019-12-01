@@ -78,5 +78,61 @@
     "teamSize": 1,
     "type": "ship-to-ship",
     "img": "https://1.bp.blogspot.com/-_u1jhI2SkX4/V4D-pBDtcTI/AAAAAAAB3ac/rvSKyAyWRzQ_VJfgOnC___jv5d1Mlz77QCLcB/s640/tie_interceptor_02.jpg"
+  },
+  "weapon11": {
+    "id": "weapon11",
+    "name": "TIE/rp Reaper attack lander",
+    "isActive": true,
+    "teamSize": 2,
+    "type": "troop-transport",
+    "img": "https://swgoh.gg/static/img/assets/ships/tex.charui_tiereaper.png"
+  },
+  "weapon12": {
+    "id": "weapon12",
+    "name": "TIE Boarding Craft",
+    "isActive": true,
+    "teamSize": 1,
+    "type": "troop-transport",
+    "img": "http://www.brickshelf.com/gallery/walter-kovacs/TIEs/UCS-Scale-TIE-Models/TIE-Boarding-Craft/tie_boarding_craft.jpg"
+  },
+  "weapon13": {
+    "id": "weapon13",
+    "name": "Lambda-class T-4a shuttle",
+    "isActive": true,
+    "teamSize": 2,
+    "type": "troop-transport",
+    "img": "http://new-republic.net/wiki/images/7/75/Lambda_Shuttle.png"
+  },
+  "weapon14": {
+    "id": "weapon14",
+    "name": "E-Web Repeating Blaster",
+    "isActive": true,
+    "teamSize": 2,
+    "type": "ground-assault",
+    "img": "http://img.swcombine.com//items/192/large.jpg"
+  },
+  "weapon15": {
+    "id": "weapon15",
+    "name": "DXR-6 Disruptor Rifle",
+    "isActive": true,
+    "teamSize": 1,
+    "type": "personal",
+    "img": "http://img.swcombine.com/items/174/large.jpg"
+  },
+  "weapon16": {
+    "id": "weapon16",
+    "name": "Stouker Concussion Rifle",
+    "isActive": true,
+    "teamSize": 1,
+    "type": "personal",
+    "img": "http://img.swcombine.com//items/219/large.jpg"
+  },
+  "weapon17": {
+    "id": "weapon17",
+    "name": "Class-A Thermal Detonator",
+    "isActive": true,
+    "teamSize": 1,
+    "type": "personal",
+    "img": "https://img.swcombine.com//items/207/large.jpg"
   }
 }

@@ -18,7 +18,7 @@ const singleWeaponCard = (weapon) => {
   } else {
     domString += `
         <div id="${weapon.id}" class="card weaponCard card-body text-center" style=" width: 20em; max-width: 500px; height: 100%; margin: 2em;">
-           <img src="${weapon.image}" class="card-img-top" style="width: 100%; height: auto;" alt="..."/>
+           <img src="${weapon.img}" class="card-img-top" style="width: 100%; height: auto;" alt="..."/>
            <br>
            <h5 class="card-title" id="weapon">${weapon.name}</h5>
             <p class="card-text">Crew of ${weapon.teamSize}</p>
@@ -28,11 +28,11 @@ const singleWeaponCard = (weapon) => {
   return domString;
 };
 
-const weaponModal = () => {
+const weaponModal = (weapon) => {
   const domString = `<div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="weaponsModalLabel">New Weapon</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Add/Edit Weapon</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -40,8 +40,8 @@ const weaponModal = () => {
       <div class="modal-body">
         <form>
           <div class="form-group">
-            <label for="weapon-name">Name</label>
-            <input type="text" class="form-control" id="weapon-name" placeholder="Enter Name">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" value="${weapon.name ? weapon.name : ''}">
           </div>
           <div class="form-group">
             <label for="weapon-status">Status</label>
@@ -53,7 +53,7 @@ const weaponModal = () => {
           </div>
           <div class="form-group">
             <label for="team-size">Crew</label>
-            <input type="number" class="form-control" id="team-size" placeholder="Enter Crew Size">
+            <input type="number" class="form-control" id="team-size" value="${weapon.teamSize ? weapon.teamSize : ''}">
           </div>
           <div class="form-group">
             <label for="weapon-use">Use</label>
@@ -62,17 +62,18 @@ const weaponModal = () => {
               <option value="ship-to-ship">Ship to ship</option>
               <option value="ground-assault">Ground Assault</option>
               <option value="personal">Personal</option>
+              <option value="transport">Troop-Transport</option>
             </select>
           </div>
           <div class="form-group">
             <label for="weapon-image-url">Image Url</label>
-            <input type="text" class="form-control" id="weapon-image-url" placeholder="Enter image Url">
+            <input type="text" class="form-control" id="weapon-image-url" value="${weapon.img ? weapon.img : ''}">
           </div>
         </form>
       </div>
-      <div class="modal-footer">
+      <div class="modal-footer" id="${weapon.id}">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" id="add-weapon-btn">Save changes</button>
+        <button type="button" id="${weapon.id ? 'edit' : 'save'}"  class="btn btn-primary">Save</button>
       </div>
     </div>
   </div>`;
