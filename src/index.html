@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script src="https://kit.fontawesome.com/dab618c464.js" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css?family=Saira&display=swap" rel="stylesheet">
-  <title>Star Destoyer</title>
+  <title>Star Destroyer</title>
 </head>
 <body>
   
@@ -44,13 +44,20 @@
     <div class="fullPage hide" id="sectors"></div>
     <div class="fullPage hide" id="weaponsPage"></div>
     <div class="fullPage hide" id="personnel"></div>
-
-    <div id="dashboard" class="d-none">database</div>
-    <div class="modal fade" id="weaponsModal" tabindex="-1" role="dialog" aria-labelledby="weaponsModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
+    
+    <!-- This is the div that you will target and print to, for whatever printToDom function you use to create your modal contents -->
+    <div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    
+    <!-- This is the button you'll use to generate your custom modal, that targets the div above -->
+    <!--     
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Open modal for @mdo</button> -->
+    
+    <!-- This is what you're going to use to create your domString for your custom modal -->
+    <!-- 
+       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="weaponsModalLabel">New Weapon</h5>
+            <h5 class="modal-title" id="exampleModalLabel">New message</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -58,47 +65,31 @@
           <div class="modal-body">
             <form>
               <div class="form-group">
-                <label for="weapon-name">Name</label>
-                <input type="text" class="form-control" id="weapon-name" placeholder="Enter Name">
+                <label for="recipient-name" class="col-form-label">Recipient:</label>
+                <input type="text" class="form-control" id="recipient-name">
               </div>
               <div class="form-group">
-                <label for="weapon-status">Status</label>
-                <select class="form-control" id="weapon-status">
-                  <option>Enter status</option>
-                  <option value=true>Active</option>
-                  <option value=false>Inactive</option>
-                </select>
+                <label for="message-text" class="col-form-label">Message:</label>
+                <textarea class="form-control" id="message-text"></textarea>
               </div>
               <div class="form-group">
-                <label for="team-size">Crew</label>
-                <input type="number" class="form-control" id="team-size" placeholder="Enter Crew Size">
+                <label for="message-text" class="col-form-label">Message:</label>
+                <textarea class="form-control" id="message-text"></textarea>
               </div>
               <div class="form-group">
-                <label for="weapon-use">Use</label>
-                <select class="form-control" id="weapon-use">
-                  <option>Enter type</option>
-                  <option value="ship-to-ship">Ship to ship</option>
-                  <option value="ground-assault">Ground Assault</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="weapon-image-url">Image Url</label>
-                <input type="text" class="form-control" id="weapon-image-url" placeholder="Enter image Url">
+                <label for="message-text" class="col-form-label">Message:</label>
+                <textarea class="form-control" id="message-text"></textarea>
               </div>
             </form>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" id="add-weapon-btn">Save changes</button>
+            <button type="button" class="btn btn-primary">Send message</button>
           </div>
         </div>
-      </div>
+      </div>  -->
     </div>
 
-
-<div class="modal fade" id="weaponsModal" tabindex="-1" role="dialog" aria-labelledby="weaponsModalLabel" aria-hidden="true">
-  
-</div>
 
 <div class="modal fade" id="newEnemyModal" tabindex="-1" role="dialog" aria-labelledby="newEnemyModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
