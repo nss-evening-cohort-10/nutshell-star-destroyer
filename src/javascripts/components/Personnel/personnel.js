@@ -7,14 +7,13 @@ import utilities from '../../helpers/utilities';
 
 const deletePersonOnClick = (e) => {
   e.preventDefault();
-  console.log(e);
-  // const { personId } = e.target.id;
-  // personnelData.deletePersonData(e.target.id)
-  //   .then(() => {
-  //     // eslint-disable-next-line no-use-before-define
-  //     displayCrew(personId);
-  //   })
-  //   .catch((error) => console.error(error));
+  const { personId } = e.target.id;
+  personnelData.deletePersonData(e.target.id)
+    .then(() => {
+      // eslint-disable-next-line no-use-before-define
+      displayCrew(personId);
+    })
+    .catch((error) => console.error(error));
 };
 
 const addNewPersonnel = () => {
@@ -40,7 +39,7 @@ const clickAddNew = () => {
 const personnelEventListeners = () => {
   // eslint-disable-next-line no-use-before-define
   $('#personnel').on('click', '.edit', updatePersonnel);
-  $('#personnel').on('click', '#delete-personnel', deletePersonOnClick);
+  $('#personnel').on('click', '.delete-personnel', deletePersonOnClick);
 };
 
 const displayCrew = () => {
@@ -95,14 +94,14 @@ const displayCrew = () => {
           domString += `
           <div class="col-md-6">
             <div class="card personnel-card">
-            <img src="${person.personImg}" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title"> ${person.name}</h5>
-              <p class="card-text">Sector: ${person.sectorId}</p>
-              <p class="card-text">Weapon: ${person.weaponId}</p>
-              <button id="edit-personnel-${person.id}" class="btn btn-dark edit">Edit</button>
-              <button id="delete-personnel" data-boardID="${person.id}" class="btn btn-dark delete-personnel">Delete</button>
-            </div>
+              <img src="${person.personImg}" class="card-img-top personImage" alt="...">
+              <div class="card-body">
+                <h5 class="card-title"> ${person.name}</h5>
+                <p class="card-text">Sector: ${person.sectorId}</p>
+                <p class="card-text">Weapon: ${person.weaponId}</p>
+                <button id="edit-personnel-${person.id}" class="btn btn-dark edit">Edit</button>
+                <button id="${person.id}" data-boardID="${person.id}" class="btn btn-dark delete-personnel">Delete</button>
+              </div>
             </div>
           </div>
           `;
@@ -110,12 +109,12 @@ const displayCrew = () => {
           domString += `
           <div class="col-md-6">
             <div class="card personnel-card">
-            <img src="${person.personImg}" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title"> ${person.name}</h5>
-              <p class="card-text">Sector: ${person.sectorId}</p>
-              <p class="card-text">Weapon: ${person.weaponId}</p>
-            </div>
+              <img src="${person.personImg}" class="card-img-top personImage" alt="...">
+              <div class="card-body">
+                <h5 class="card-title"> ${person.name}</h5>
+                <p class="card-text">Sector: ${person.sectorId}</p>
+                <p class="card-text">Weapon: ${person.weaponId}</p>
+              </div>
             </div>
           </div>
           `;
