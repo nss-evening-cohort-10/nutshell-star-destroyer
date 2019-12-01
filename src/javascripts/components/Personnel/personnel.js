@@ -7,13 +7,14 @@ import utilities from '../../helpers/utilities';
 
 const deletePersonOnClick = (e) => {
   e.preventDefault();
-  const { personId } = e.target.id;
-  personnelData.deletePersonData(e.target.id)
-    .then(() => {
-      // eslint-disable-next-line no-use-before-define
-      displayCrew(personId);
-    })
-    .catch((error) => console.error(error));
+  console.log(e);
+  // const { personId } = e.target.id;
+  // personnelData.deletePersonData(e.target.id)
+  //   .then(() => {
+  //     // eslint-disable-next-line no-use-before-define
+  //     displayCrew(personId);
+  //   })
+  //   .catch((error) => console.error(error));
 };
 
 const addNewPersonnel = () => {
