@@ -6,7 +6,7 @@ const baseUrl = apiKeys.firebaseKeys.databaseURL;
 const getAllMissions = () => new Promise((resolve, reject) => {
   axios.get(`${baseUrl}/missions.json`)
     .then((response) => {
-      console.log(response.data);
+      console.log(response);
       const daMissions = response.data;
       const missions = [];
       Object.keys(daMissions).forEach((fbId) => {
