@@ -28,12 +28,12 @@ const updatePersonnel = (personId, updatedPersonnel) => axios.put(`${baseUrl}/pe
 // axios.get using ${personId} is going to grab the specific person we want to edit/update
 const getPersonnelById = (personId) => axios.get(`${baseUrl}/personnel/${personId}.json`);
 
-const deletePersonData = (personId) => axios.delete(`${baseUrl}/personnel/${personId}.json`);
+const deletePersonData = (id) => axios.delete(`${baseUrl}/personnel/${id}.json`);
 
 export default {
   getPersonnelData,
+  deletePersonData,
   CreateNewPersonnel,
   updatePersonnel,
   getPersonnelById,
-  deletePersonData,
 };

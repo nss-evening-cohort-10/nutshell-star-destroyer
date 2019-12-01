@@ -1,8 +1,20 @@
 import firebase from 'firebase';
 import $ from 'jquery';
 import './personnel.scss';
+
 import personnelData from '../../helpers/data/personnelData';
 import utilities from '../../helpers/utilities';
+
+const deletePersonOnClick = (e) => {
+  e.preventDefault();
+  const { personId } = e.target.id;
+  personnelData.deletePersonData(e.target.id)
+    .then(() => {
+      // eslint-disable-next-line no-use-before-define
+      displayCrew(personId);
+    })
+    .catch((error) => console.error(error));
+};
 
 const addNewPersonnel = () => {
   const newPersonnel = {
@@ -27,7 +39,7 @@ const clickAddNew = () => {
 const personnelEventListeners = () => {
   // eslint-disable-next-line no-use-before-define
   $('#personnel').on('click', '.edit', updatePersonnel);
-  // $('#personnel').on('click', '.delete', deletePersonnel);
+  $('#personnel').on('click', '#delete-personnel', deletePersonOnClick);
 };
 
 const displayCrew = () => {
@@ -88,7 +100,7 @@ const displayCrew = () => {
               <p class="card-text">Sector: ${person.sectorId}</p>
               <p class="card-text">Weapon: ${person.weaponId}</p>
               <button id="edit-personnel-${person.id}" class="btn btn-dark edit">Edit</button>
-              <button id="delete-personnel-${person.id}" class="btn btn-dark delete">Delete</button>
+              <button id="delete-personnel" data-boardID="${person.id}" class="btn btn-dark delete-personnel">Delete</button>
             </div>
             </div>
           </div>
@@ -119,7 +131,6 @@ const displayCrew = () => {
 const updatePersonnel = (e) => {
   $('#exampleModalCenter').modal('show');
   const personId = e.target.id.split('edit-personnel-')[1];
-  console.log(personId);
   personnelData.getPersonnelById(personId)
   // eslint-disable-next-line no-use-before-define
   // ??????????????????????????????????
