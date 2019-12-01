@@ -1,5 +1,6 @@
 {
   "weapon1": {
+    "id": "weapon1",
     "name": "XX-9 Turbolaser",
     "isActive": true,
     "teamSize": 4,
@@ -7,27 +8,31 @@
     "img": "https://raw.githubusercontent.com/nss-evening-cohort-10/nutshell-star-destroyer/master/db/images/weapons/xx9.jpg"
   },
   "weapon2": {
+    "id": "weapon2",
     "name": "TIE Starfighter",
     "isActive": false,
     "teamSize": 1,
     "type": "ship-to-ship",
-    "img": "https://raw.githubusercontent.com/nss-evening-cohort-10/nutshell-star-destroyer/master/db/images/weapons/tiefighter.jpg"
+    "img": "https://avatarfiles.alphacoders.com/931/93146.jpg"
   },
   "weapon3": {
+    "id": "weapon3",
     "name": "AT-AT",
     "isActive": true,
     "teamSize": 5,
     "type": "ground-assault",
-    "img": "https://raw.githubusercontent.com/nss-evening-cohort-10/nutshell-star-destroyer/master/db/images/weapons/AT-AT.jpg"
+    "img": "https://cdn.newsapi.com.au/image/v1/0ebb8420a744cff7d7eba38dd58f3d16"
   },
   "weapon4": {
+    "id": "weapon4",
     "name": "AT-ST",
     "isActive": true,
     "teamSize": 2,
     "type": "ground-assault",
-    "img": "https://raw.githubusercontent.com/nss-evening-cohort-10/nutshell-star-destroyer/master/db/images/weapons/AT-ST.jpg"
+    "img": "https://vignette.wikia.nocookie.net/starwars-exodus/images/3/3f/ATST.jpg/revision/latest?cb=20070415224918"
   },
   "weapon5": {
+    "id": "weapon5",
     "name": "NK-7 Ion Cannon",
     "isActive": true,
     "teamSize": 2,
@@ -35,10 +40,43 @@
     "img": "https://raw.githubusercontent.com/nss-evening-cohort-10/nutshell-star-destroyer/master/db/images/weapons/nk7ioncannon.png"
   },
   "weapon6": {
+    "id": "weapon6",
     "name": "Q7 Tractor Beam Projector",
     "isActive": true,
     "teamSize": 10,
     "type": "ship-to-ship",
     "img": "https://raw.githubusercontent.com/nss-evening-cohort-10/nutshell-star-destroyer/master/db/images/weapons/tractor-beam-projector.png"
+  },
+  "weapon7": {
+    "id": "weapon7",
+    "name": "Tie Bomber",
+    "isActive": true,
+    "teamSize": 1,
+    "type": "ship-to-ship",
+    "img": "https://qph.fs.quoracdn.net/main-qimg-eb25e6c7154ead814c3195f141a03225.webp"
+  },
+  "weapon8": {
+    "id": "weapon8",
+    "name": "SE-14r Blaster Pistol",
+    "isActive": true,
+    "teamSize": 1,
+    "type": "personal",
+    "img": "https://designedby3d.com/wp-content/uploads/2017/03/DSC_0402-min-300x300.png"
+  },
+  "weapon9": {
+    "id": "weapon9",
+    "name": "E-11 Blaster Rifle",
+    "isActive": true,
+    "teamSize": 1,
+    "type": "personal",
+    "img": "https://static.highsnobiety.com/thumbor/q2osmMHA9CHfrlmv9ZU0cPFFYOg=/fit-in/480x320/smart/static.highsnobiety.com/wp-content/uploads/2019/03/07111113/star-wars-gun-01.jpg"
+  },
+  "weapon10": {
+    "id": "weapon10",
+    "name": "Tie Interceptor",
+    "isActive": true,
+    "teamSize": 1,
+    "type": "ship-to-ship",
+    "img": "https://1.bp.blogspot.com/-_u1jhI2SkX4/V4D-pBDtcTI/AAAAAAAB3ac/rvSKyAyWRzQ_VJfgOnC___jv5d1Mlz77QCLcB/s640/tie_interceptor_02.jpg"
   }
 }

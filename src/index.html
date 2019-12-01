@@ -9,13 +9,12 @@
   <title>Star Destoyer</title>
 </head>
 <body>
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-#000000">
+  
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-#000000">
         <a class="navbar-brand" href="#"><i id="logoLink" class="fab fa-empire fa-3x"></i></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
@@ -39,7 +38,6 @@
           </div>
         </div>
       </nav>
-  <container id="box">
 
     <div class="fullPage hide" id="homePage"></div>
     <div class="fullPage hide " id="enemiesPage"></div>
@@ -97,45 +95,48 @@
       </div>
     </div>
 
-  </container>
 
-  <div class="modal fade" id="newEnemyModal" tabindex="-1" role="dialog" aria-labelledby="newEnemyModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="newEnemyModalLabel">New Enemy</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <form id="addAnEnemy">
-              <div class="form-group">
-                <label for="enemyName">Name</label>
-                <input type="text" class="form-control" id="enemyName" placeholder="Enter Name">
-              </div>
-              <div class="form-group">
-                <label for="enemyImage">Photo</label>
-                <input type="text" class="form-control" id="enemyImage" placeholder="Enter Image Url">
-              </div>
-              <div class="form-group">
-                <label for="enemySector">Base Sector</label>
-                <input type="text" class="form-control" id="enemySector" placeholder="Enter Enemy Base Sector">
-              </div>
-              <div class="form-group">
-                  <label for="enemyLKL">Last Known Location</label>
-                  <input type="text" class="form-control" id="enemyLKL" placeholder="Enter Enemy's LKL">
-              </div>
-              <div class="form-group">
-                    <label for="enemyDead">Terminated</label>
-                    <input type="text" class="form-control" id="enemyDead">
-              </div>
-              <div class="form-group">
-                  <label for="enemyCaptured">Captured</label>
-                  <input type="text" class="form-control" id="enemyCaptured">
-              </div>
-            </form>
-          </div>
+<div class="modal fade" id="weaponsModal" tabindex="-1" role="dialog" aria-labelledby="weaponsModalLabel" aria-hidden="true">
+  
+</div>
+
+<div class="modal fade" id="newEnemyModal" tabindex="-1" role="dialog" aria-labelledby="newEnemyModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="newEnemyModalLabel">New Enemy</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="addAnEnemy">
+            <div class="form-group">
+              <label for="enemyName">Name</label>
+              <input type="text" class="form-control" id="enemyName" placeholder="Enter Name">
+            </div>
+            <div class="form-group">
+              <label for="enemyImage">Photo</label>
+              <input type="text" class="form-control" id="enemyImage" placeholder="Enter Image Url">
+            </div>
+            <div class="form-group">
+              <label for="enemySector">Base Sector</label>
+              <input type="text" class="form-control" id="enemySector" placeholder="Enter Enemy Base Sector">
+            </div>
+            <div class="form-group">
+                <label for="enemyLKL">Last Known Location</label>
+                <input type="text" class="form-control" id="enemyLKL" placeholder="Enter Enemy's LKL">
+            </div>
+            <div class="form-group">
+                  <label for="enemyDead">Terminated</label>
+                  <input type="text" class="form-control" id="enemyDead">
+            </div>
+            <div class="form-group">
+                <label for="enemyCaptured">Captured</label>
+                <input type="text" class="form-control" id="enemyCaptured">
+            </div>
+          </form>
+        </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
             <button type="button" class="btn btn-primary" id="save-new-enemy">Save New Enemy</button>

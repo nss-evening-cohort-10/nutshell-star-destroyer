@@ -1,7 +1,7 @@
 import '../styles/main.scss';
 import 'bootstrap';
 import firebase from 'firebase/app';
-import apiKeys from './helpers/apiKeys.json';
+import apiKeys from './helpers/apiKeys';
 import auth from './components/Auth/auth';
 import authData from './helpers/data/authData';
 import ourNavbar from './components/OurNavbar/ourNavbar';
@@ -18,7 +18,6 @@ const init = () => {
   sectors.displayAllSectors();
   enemies.clickForEnemies();
   personnelDisplay.clickCrew();
-  // personnelDisplay.displayCrew();
   weapons.clickWeapons();
 };
 
