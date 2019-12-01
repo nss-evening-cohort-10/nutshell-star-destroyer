@@ -102,5 +102,37 @@
     "teamSize": 2,
     "type": "troop-transport",
     "img": "http://new-republic.net/wiki/images/7/75/Lambda_Shuttle.png"
+  },
+  "weapon14": {
+    "id": "weapon14",
+    "name": "E-Web Repeating Blaster",
+    "isActive": true,
+    "teamSize": 2,
+    "type": "ground-assault",
+    "img": "http://img.swcombine.com//items/192/large.jpg"
+  },
+  "weapon15": {
+    "id": "weapon15",
+    "name": "DXR-6 Disruptor Rifle",
+    "isActive": true,
+    "teamSize": 1,
+    "type": "personal",
+    "img": "http://img.swcombine.com/items/174/large.jpg"
+  },
+  "weapon16": {
+    "id": "weapon16",
+    "name": "Stouker Concussion Rifle",
+    "isActive": true,
+    "teamSize": 1,
+    "type": "personal",
+    "img": "http://img.swcombine.com//items/219/large.jpg"
+  },
+  "weapon17": {
+    "id": "weapon17",
+    "name": "Class-A Thermal Detonator",
+    "isActive": true,
+    "teamSize": 1,
+    "type": "personal",
+    "img": "https://img.swcombine.com//items/207/large.jpg"
   }
 }
