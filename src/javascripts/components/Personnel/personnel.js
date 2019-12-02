@@ -16,7 +16,8 @@ const deletePersonOnClick = (e) => {
     .catch((error) => console.error(error));
 };
 
-const addNewPersonnel = () => {
+const addNewPersonnel = (e) => {
+  e.stopImmediatePropagation();
   const newPersonnel = {
     personImg: $('#image-url').val(),
     name: $('#name-id').val(),
@@ -40,6 +41,8 @@ const personnelEventListeners = () => {
   // eslint-disable-next-line no-use-before-define
   $('#personnel').on('click', '.edit', updatePersonnel);
   $('#personnel').on('click', '.delete-personnel', deletePersonOnClick);
+  // eslint-disable-next-line no-use-before-define
+  $('#personnel').on('click', '.edit', updateAPerson);
 };
 
 const displayCrew = () => {
@@ -99,7 +102,7 @@ const displayCrew = () => {
                 <h5 class="card-title"> ${person.name}</h5>
                 <p class="card-text">Sector: ${person.sectorId}</p>
                 <p class="card-text">Weapon: ${person.weaponId}</p>
-                <button id="edit-personnel-${person.id}" class="btn btn-dark edit">Edit</button>
+                <button id="${person.id}" class="btn btn-dark edit">Edit</button>
                 <button id="${person.id}" data-boardID="${person.id}" class="btn btn-dark delete-personnel">Delete</button>
               </div>
             </div>
@@ -129,15 +132,31 @@ const displayCrew = () => {
 };
 
 const updatePersonnel = (e) => {
-  $('#exampleModalCenter').modal('show');
-  const personId = e.target.id.split('edit-personnel-')[1];
-  personnelData.getPersonnelById(personId)
-  // eslint-disable-next-line no-use-before-define
-  // ??????????????????????????????????
+  // $('#exampleModalCenter').modal('show');
+  e.stopImmediatePropagation();
+  const personId = e.target.parentNode.id;
+  const updatedPersonnel = {
+    personImg: $('#image-url').val(),
+    name: $('#name-id').val(),
+    sectorId: $('#sector-id').val(),
+    weaponId: $('#weapon-id').val(),
+  };
+  personnelData.updatePersonnel(personId, updatedPersonnel)
     .then(() => {
-      // displayCrew();
+      $('#exampleModalCenter').modal('hide');
+      displayCrew();
     })
     .catch((error) => console.error(error));
+};
+
+const updateAPerson = (e) => {
+  personnelData.getPersonnelById(e.target.id)
+    .then((response) => {
+      $('#exampleModalCenter').modal('show');
+      response.id = e.target.id;
+      clickAddNew(response);
+      $('#edit').click(updatePersonnel);
+    });
 };
 
 const clickCrew = () => {
