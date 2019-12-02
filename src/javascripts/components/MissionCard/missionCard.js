@@ -9,6 +9,7 @@ const makeMissionCard = (mission) => {
   <div class="card-body text-center" ${mission.id}>
   <h1 class="card-title">Mission: ${mission.missionTitle}</h1>
   <img class="missionPics" src="${mission.missionImg}">
+  <button id="${mission.id}" class="btn btn-danger viewMission">View Details</button>
   </div>
   <div id="missionBtns">`;
   if (user != null) {

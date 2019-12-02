@@ -18,4 +18,6 @@ const getAllMissions = () => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
-export default { getAllMissions };
+const makeMission = (newMission) => axios.post(`${baseUrl}/missions.json`, newMission);
+
+export default { getAllMissions, makeMission };

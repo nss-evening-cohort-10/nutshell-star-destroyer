@@ -1,8 +1,15 @@
-// import $ from 'jquery';
+import $ from 'jquery';
 import firebase from 'firebase';
 import missionData from '../../helpers/data/missionData';
 import missionCard from '../MissionCard/missionCard';
 import utilities from '../../helpers/utilities';
+
+const addNewMission = (e) => {
+  e.stopImmediatePropagation();
+  const newMission = {
+    
+  }
+}
 
 const missionBuilder = () => {
   missionData.getAllMissions()
@@ -20,6 +27,7 @@ const missionBuilder = () => {
       });
       domString += '</div>';
       utilities.printToDom('missions', domString);
+      $('#addNewMission').click(addNewMission);
     })
     .catch((error) => console.error(error));
 };
