@@ -2,18 +2,16 @@
 @import url('https://fonts.googleapis.com/css?family=Saira&display=swap');
 
 body {
-  background-color: #000000;
+  background: url(https://wallpaperplay.com/walls/full/f/f/b/124147.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   font-family: 'Saira', sans-serif;
 }
 
-#box {
-  border: 5px solid #FFFFFF;
-  display: flex;
-  justify-content: center;
-  margin: 1em;
-}
-
 .navbar {
+  background-color: black;
   color: white;
 
   .fab {
@@ -22,13 +20,20 @@ body {
   }
 
   #logout-button {
-    color:white;
+    background-color: #BC1E22;
+    color:black;
+    font-weight: bold;
     display: inherit;
     justify-content: flex-end;
-    margin-left: 1em;
+     margin-left: 1em;
   }
 }
 
 .hide {
   display: none;
+}
+
+.loginBtn {
+  height: 50px;
+  width: auto;
 }

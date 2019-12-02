@@ -1,38 +1,31 @@
 import $ from 'jquery';
-import firebase from 'firebase/app';
-import 'firebase/auth';
-
-import weaponsData from '../../helpers/data/weaponsData';
-
+import firebase from 'firebase';
 import './weapons.scss';
+import weaponsData from '../../helpers/data/weaponsData';
+import weaponCardBuilder from '../weaponCardBuilder/weaponCardBuilder';
 import utilities from '../../helpers/utilities';
 
-const deleteWeapon = (e) => {
-  e.stopImmediatePropagation();
-  const weaponIdToDelete = e.target.id.split('delete-')[1];
+const displayWeapons = () => {
+  // eslint-disable-next-line no-use-before-define
+  $('#weaponsLink').click(createWeaponCard);
+};
 
-  weaponsData.deleteWeapon(weaponIdToDelete)
+const deleteWeapon = (e) => {
+  e.preventDefault();
+  const { weaponId } = e.target.id;
+  weaponsData.deleteWeapon(e.target.id)
     .then(() => {
       // eslint-disable-next-line no-use-before-define
-      showTheWeapons(e);
+      createWeaponCard(weaponId);
     })
     .catch((err) => console.error(err));
 };
 
-const showDeets = (e) => {
-  e.preventDefault();
-  const clickedWeapon = e.target.id;
-  $('.deets').addClass('hide');
-  $('.full-img').removeClass('hide');
-  $(`#${clickedWeapon}-deets`).removeClass('hide');
-  $(`#${clickedWeapon}-full-img`).addClass('hide');
-};
-
-const makeNewWeapon = (e) => {
+const addNewWeapon = (e) => {
   e.stopImmediatePropagation();
   const isCurrentWeaponActive = ($('#weapon-status').val() === 'true');
   const newWeapon = {
-    name: $('#weapon-name').val(),
+    name: $('#name').val(),
     isActive: isCurrentWeaponActive,
     teamSize: $('#team-size').val() * 1,
     type: $('#weapon-use').val(),
@@ -40,60 +33,71 @@ const makeNewWeapon = (e) => {
   };
   weaponsData.addNewWeapon(newWeapon)
     .then(() => {
-      $('#weaponsModal').modal('hide');
+      $('#exampleModal').modal('hide');
       // eslint-disable-next-line no-use-before-define
-      showTheWeapons(e);
+      createWeaponCard();
     })
     .catch((error) => console.error(error));
 };
 
-const showTheWeapons = (e) => {
+const newWeaponInfo = (weapon) => {
+  let domString = '';
+  domString += weaponCardBuilder.weaponModal(weapon);
+  utilities.printToDom('exampleModal', domString);
+  $('#save').click(addNewWeapon);
+};
+
+const editWeaponInfo = (e) => {
   e.stopImmediatePropagation();
-  const user = firebase.auth().currentUser;
-  $('#dashboard').addClass('hide');
-  weaponsData.getWeapons()
-    .then((weppens) => {
-      let domString = '<h1>Armory</h1>';
-      if (user) {
-        domString += '<button class="btn btn-outline-light" data-toggle="modal" data-target="#weaponsModal">Add Weapon</button>';
-      }
-      domString += '<div class="row"><div class="card-group">';
-      weppens.forEach((weppen) => {
-        domString += `
-        <div class="col-sm-6">
-          <div class="card mb-3" id="${weppen.id}-card">
-            <div id="${weppen.id}-deets" class="row no-gutters deets hide">
-              <div class="col-md-6">
-                <img id="${weppen.id}" src="${weppen.img}" class="card-img" alt="${weppen.name}">
-              </div>
-              <div class="col-md-6">
-                <div class="card-body">
-                  <h5 class="card-title">${weppen.name}</h5>
-                  <p class="card-text">${weppen.isActive ? 'Active' : 'Inactive'}</p>
-                  <p class="card-text">Crew of ${weppen.teamSize}</p>
-                  <p class="card-text">Use: ${weppen.type}</p>
-                  <button class="btn btn-outline-danger delete-weapon" id="delete-${weppen.id}">Delete</button>
-                </div>
-              </div>
-            </div>
-            <div id="${weppen.id}-full-img" class="card-body full-img">
-            <img id="${weppen.id}" src="${weppen.img}" class="card-img" alt="${weppen.name}">
-            </div>
-          </div>
-        </div>
-        `;
-      });
-      domString += '</div></div>';
-      utilities.printToDom('weaponsPage', domString);
-      $('#weaponsPage').on('click', '.delete-weapon', deleteWeapon);
-      $('#weaponsPage').on('click', '.card-img', showDeets);
-      $('#weaponsModal').on('click', '#add-weapon-btn', makeNewWeapon);
+  const isCurrentWeaponActive = ($('#weapon-status').val() === 'true');
+  const weaponid = e.target.parentNode.id;
+  const updatedWeapon = {
+    name: $('#name').val(),
+    isActive: isCurrentWeaponActive,
+    teamSize: $('#team-size').val() * 1,
+    type: $('#weapon-use').val(),
+    img: $('#weapon-image-url').val(),
+  };
+  weaponsData.updateWeapon(weaponid, updatedWeapon)
+    .then(() => {
+      $('#exampleModal').modal('hide');
+      // eslint-disable-next-line no-use-before-define
+      createWeaponCard();
     })
     .catch((error) => console.error(error));
 };
 
-const clickWeapons = () => {
-  $('#weaponsLink').click(showTheWeapons);
+const updateAWeapon = (e) => {
+  weaponsData.getWeaponById(e.target.id)
+    .then((response) => {
+      $('#exampleModal').modal('show');
+      response.id = e.target.id;
+      newWeaponInfo(response);
+      $('#edit').click(editWeaponInfo);
+    });
 };
 
-export default { clickWeapons, makeNewWeapon };
+const createWeaponCard = () => {
+  let domString = '<h1 class="text-center">Armory</h1>';
+  const user = firebase.auth().currentUser;
+  if (user != null) {
+    domString += '<div class="text-center"><button class="btn add-button" id="add-new-weapon" data-toggle="modal" data-target="#exampleModal">ADD WEAPON</button></div>';
+  }
+  domString += '<div id="weapons-section" class="d-flex flex-wrap">';
+  weaponsData.getAllWeapons()
+    .then((weapons) => {
+      weapons.forEach((weapon) => {
+        domString += weaponCardBuilder.singleWeaponCard(weapon);
+      });
+      domString += '</div>';
+      utilities.printToDom('weaponsPage', domString);
+      // eslint-disable-next-line no-use-before-define
+      $('#weaponsPage').on('click', '.delete-button', deleteWeapon);
+      $('#add-new-weapon').on('click', newWeaponInfo);
+      $('#weaponsPage').on('click', '.edit-button', updateAWeapon);
+    })
+    .catch((error) => console.error(error));
+};
+
+
+export default { displayWeapons, addNewWeapon };

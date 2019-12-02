@@ -3,7 +3,7 @@ import apiKeys from '../apiKeys.json';
 
 const baseUrl = apiKeys.firebaseKeys.databaseURL;
 
-const getWeapons = () => new Promise((resolve, reject) => {
+const getAllWeapons = () => new Promise((resolve, reject) => {
   axios.get(`${baseUrl}/weapons.json`)
     .then((response) => {
       const demWeapons = response.data;
@@ -17,12 +17,10 @@ const getWeapons = () => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
-const getOneWeapon = (weaponId) => new Promise((resolve, reject) => {
+const getWeaponById = (weaponId) => new Promise((resolve, reject) => {
   axios.get(`${baseUrl}/weapons/${weaponId}.json`)
     .then((response) => {
-      const datWeapon = response.data;
-      datWeapon.id = weaponId;
-      resolve(datWeapon);
+      resolve(response.data);
     })
     .catch((error) => reject(error));
 });
@@ -31,6 +29,12 @@ const addNewWeapon = (newWeapon) => axios.post(`${baseUrl}/weapons.json`, newWea
 
 const deleteWeapon = (weaponId) => axios.delete(`${baseUrl}/weapons/${weaponId}.json`);
 
+const updateWeapon = (weaponId, updatedWeapon) => axios.put(`${baseUrl}/weapons/${weaponId}.json`, updatedWeapon);
+
 export default {
-  getWeapons, getOneWeapon, addNewWeapon, deleteWeapon,
+  getAllWeapons,
+  getWeaponById,
+  addNewWeapon,
+  deleteWeapon,
+  updateWeapon,
 };
