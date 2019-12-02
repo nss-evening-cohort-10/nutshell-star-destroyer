@@ -2,7 +2,7 @@ import $ from 'jquery';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import auth from '../Auth/auth';
-import weapons from '../Weapons/weapons';
+
 
 const loginButton = $('#auth');
 const logoutButton = $('#navbar-button-logout');
@@ -21,8 +21,45 @@ const logoutEvent = () => {
   });
 };
 
-const attachEvents = () => {
-  weapons.displayWeapons();
+const buttonClick = (e) => {
+  e.preventDefault();
+  const page = e.target.id;
+  if (page === 'logoLink') {
+    $('#enemiesPage').addClass('hide');
+    $('#sectors').addClass('hide');
+    $('#weaponsPage').addClass('hide');
+    $('#personnel').addClass('hide');
+    $('#homePage').removeClass('hide');
+  } else if (page === 'personnelLink') {
+    $('#enemiesPage').addClass('hide');
+    $('#sectors').addClass('hide');
+    $('#weaponsPage').addClass('hide');
+    $('#personnel').removeClass('hide');
+    $('#homePage').addClass('hide');
+  } else if (page === 'enemiesLink') {
+    $('#sectors').addClass('hide');
+    $('#weaponsPage').addClass('hide');
+    $('#personnel').addClass('hide');
+    $('#enemiesPage').removeClass('hide');
+    $('#homePage').addClass('hide');
+  } else if (page === 'weaponsLink') {
+    $('#enemiesPage').addClass('hide');
+    $('#sectors').addClass('hide');
+    $('#personnel').addClass('hide');
+    $('#weaponsPage').removeClass('hide');
+    $('#homePage').addClass('hide');
+  } else if (page === 'sectorsLink') {
+    $('#enemiesPage').addClass('hide');
+    $('#weaponsPage').addClass('hide');
+    $('#personnel').addClass('hide');
+    $('#sectors').removeClass('hide');
+    $('#homePage').addClass('hide');
+  }
 };
+$('#enemiesLink').click(buttonClick);
+$('#sectorsLink').click(buttonClick);
+$('#weaponsLink').click(buttonClick);
+$('#personnelLink').click(buttonClick);
+$('#logoLink').click(buttonClick);
 
-export default { logoutEvent, attachEvents };
+export default { logoutEvent };
