@@ -4,12 +4,36 @@ import missionData from '../../helpers/data/missionData';
 import missionCard from '../MissionCard/missionCard';
 import utilities from '../../helpers/utilities';
 
+const deleteAMission = (e) => {
+  e.preventDefault();
+  const { missionId } = e.target.id;
+  missionData.deleteMission(e.target.id)
+    .then(() => {
+      // eslint-disable-next-line no-use-before-define
+      missionBuilder(missionId);
+    });
+};
+
 const addNewMission = (e) => {
   e.stopImmediatePropagation();
   const newMission = {
-    
-  }
-}
+    missionTitle: $('#missionTitle').val(),
+    missionImg: $('#missionImg').val(),
+  };
+  missionData.makeMission(newMission)
+    .then(() => {
+      $('#newEnemyModal').modal('hide');
+      // eslint-disable-next-line no-use-before-define
+      missionBuilder();
+    });
+};
+
+const missionModal = (mission) => {
+  let domString = '';
+  domString += missionCard.missionModalBuilder(mission);
+  utilities.printToDom('newEnemyModal', domString);
+  $('#save').click(addNewMission);
+};
 
 const missionBuilder = () => {
   missionData.getAllMissions()
@@ -27,7 +51,8 @@ const missionBuilder = () => {
       });
       domString += '</div>';
       utilities.printToDom('missions', domString);
-      $('#addNewMission').click(addNewMission);
+      $('#missions').on('click', '.deleteMission', deleteAMission);
+      $('#addNewMission').click(missionModal);
     })
     .catch((error) => console.error(error));
 };

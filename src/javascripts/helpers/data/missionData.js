@@ -18,6 +18,21 @@ const getAllMissions = () => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
+const getMissionById = (missionId) => new Promise((resolve, reject) => {
+  axios.get(`${baseUrl}/missions/${missionId}.json`)
+    .then((response) => {
+      resolve(response.data);
+    })
+    .catch((error) => reject(error));
+});
+
 const makeMission = (newMission) => axios.post(`${baseUrl}/missions.json`, newMission);
 
-export default { getAllMissions, makeMission };
+const deleteMission = (missionId) => axios.delete(`${baseUrl}/missions/${missionId}.json`);
+
+export default {
+  getAllMissions,
+  makeMission,
+  deleteMission,
+  getMissionById,
+};

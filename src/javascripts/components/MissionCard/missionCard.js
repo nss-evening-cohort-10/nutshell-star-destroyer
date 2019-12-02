@@ -21,4 +21,34 @@ const makeMissionCard = (mission) => {
   return domString;
 };
 
-export default { makeMissionCard };
+const missionModalBuilder = (mission) => {
+  const domString = `<div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Mission Info</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+        <div class="form-group">
+        <label for="missionTitle">Name</label>
+        <input type="text" class="form-control" id="missionTitle" placeholder="Mission" value="${mission.missionTitle ? mission.missionTitle : ''}">
+      </div>
+      <div class="form-group">
+      <label for="missionImg">Target Photo</label>
+      <input type="text" class="form-control" id="missionImg" placeholder="Target Image" value="${mission.Img ? mission.Img : ''}">
+    </div>
+        </form>
+      </div>
+      <div class="modal-footer" id="${mission.id}">
+      <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+      <button type="button" class="btn" id="${mission.id ? 'edit' : 'save'}">Save</button>
+    </div>
+  </div>
+</div>
+</div>`;
+  return domString;
+};
+export default { makeMissionCard, missionModalBuilder };
