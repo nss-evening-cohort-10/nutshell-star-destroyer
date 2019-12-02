@@ -1,7 +1,7 @@
 {
   "missionWeapon1": {
     "id": "missionWeapon1",
-    "missionId":"",
-    "weaponId": ""
+    "missionId":"mission1",
+    "weaponId": "weapon2"
   }
 }
