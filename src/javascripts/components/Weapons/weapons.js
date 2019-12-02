@@ -8,10 +8,6 @@ import utilities from '../../helpers/utilities';
 const displayWeapons = () => {
   $('#weaponsLink').on('click', () => {
     $('#weaponsPage').show();
-    $('#enemiesPage').hide();
-    $('#sectors').hide();
-    $('#personnel').hide();
-    $('#homePage').hide();
   });
 };
 
