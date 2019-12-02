@@ -2,5 +2,6 @@
   "enemies": "enemies",
   "personnel": "personnel",
   "sectors": "sectors",
-  "weapons": "weapons"
+  "weapons": "weapons",
+  "planetSystems": "planetSystems"
 }

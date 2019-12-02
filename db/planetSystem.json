@@ -1,0 +1,66 @@
+{
+  "system1": {
+  "planetaryImg": "https://vignette.wikia.nocookie.net/starwars/images/7/7f/Star_system_hologram.jpg/revision/latest?cb=20131003092718",
+  "name": "Tabor",
+  "isAlly": "false",
+  "size": "730 Parsecs",
+  "info": "This system contained Tabor V; a planet controlled by the Snake's Guild.",
+  "sectorId": "sector10"
+  },
+  "system2": {
+  "planetaryImg": "https://vignette.wikia.nocookie.net/starwars/images/3/3c/Vagadarr_system.jpg/revision/latest/scale-to-width-down/1000?cb=20170308062719",
+  "name": "Vagadarr",
+  "isAlly": "true",
+  "size": "500 Parsecs",
+  "info": "The Vagadarr system was a star system that contained an unidentified planet.",
+  "sectorId": "sector11"
+  },
+  "system3": {
+  "planetaryImg": "https://vignette.wikia.nocookie.net/starwars/images/0/07/Mykapo_DBfull.png/revision/latest/scale-to-width-down/1000?cb=20161122003436",
+  "name": "Mykapo",
+  "isAlly": "false",
+  "size": "430 Parsecs",
+  "info": "The Mykapo system was a star system located in the galaxy that contained the planet Mykapo and its lone sun. A group of Krawg pirates operated in the Mykapo system.",
+  "sectorId": "sector9"
+  },
+  "system4": {
+  "planetaryImg": "https://vignette.wikia.nocookie.net/starwars/images/c/c7/Tertiary_Usaita_system-TWOAJ.jpg/revision/latest/scale-to-width-down/500?cb=20171026123023",
+  "name": "Tertiary Usaita",
+  "isAlly": "false",
+  "size": "297 Parsecs",
+  "info": "The Tertiary Usaita system was a barren star system, compromised mostly of dust and rock that orbited the red dwarf Tertiary Usaita. It was marked by a navigational beacon that had been left by a survey team from the Old Republic thousands of years before the Galactic Civil War.",
+  "sectorId": "sector8"
+  },
+  "system5": {
+  "planetaryImg": "https://vignette.wikia.nocookie.net/starwars/images/a/a0/Hartaga.jpg/revision/latest/scale-to-width-down/500?cb=20180225150854",
+  "name": "Hartaga",
+  "isAlly": "false",
+  "size": "482 Parsecs",
+  "info": "The Hartaga system was a star system that contained Kiara's Comet Cluster.",
+  "sectorId": "sector7"
+  },
+  "system6": {
+  "planetaryImg": "https://vignette.wikia.nocookie.net/starwars/images/4/48/SWR_Jalindi_planet.png/revision/latest/scale-to-width-down/500?cb=20180121043839",
+  "name": "Jalindi",
+  "isAlly": "true",
+  "size": "371 Parsecs",
+  "info": "The Jalindi system was a star system located in the galaxy that contained the planet Jalindi.",
+  "sectorId": "sector5"
+  },
+  "system7": {
+  "planetaryImg": "https://vignette.wikia.nocookie.net/starwars/images/2/2e/Kellux.png/revision/latest/scale-to-width-down/500?cb=20170217021825",
+  "name": "Kellux",
+  "isAlly": "true",
+  "size": "572 Parsecs",
+  "info": "The Kellux system was a star system that contained the planet Kellux.",
+  "sectorId": "sector4"
+  },
+  "system8": {
+  "planetaryImg": "https://vignette.wikia.nocookie.net/starwars/images/8/87/Kudo_system.jpg/revision/latest/scale-to-width-down/500?cb=20190418012345",
+  "name": "Kudo",
+  "isAlly": "true",
+  "size": "465 Parsecs",
+  "info": "The Kudo system was a star system located in the galaxy that contained Kudo,[2] as well as its third moon, Kudo III.[1] During the Galactic Civil War, the Star Destroyer Celerity was disabled in the Kudo system, and the 204th Imperial Fighter Wing were tasked with protecting a maintenance crew aboard the Summit. Upon entering the system, the cruiser was attacked by TIE fighters.",
+  "sectorId": "sector3"
+  }
+  }

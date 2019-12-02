@@ -2,6 +2,7 @@ import $ from 'jquery';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import sectors from '../../components/Sectors/sectors';
+import systems from '../../components/planetSystem/planetSystem';
 
 
 const authDiv = $('#auth');
@@ -16,12 +17,14 @@ const checkLoginStatus = () => {
       logoutNavbar.removeClass('hide');
       authDiv.addClass('hide');
       sectors.displayAllSectors();
+      systems.createSystemCards();
     } else {
       // nobody is logged in; we should not see boards
       dashboardDiv.addClass('hide');
       logoutNavbar.addClass('hide');
       authDiv.removeClass('hide');
       sectors.displayAllSectors();
+      systems.createSystemCards();
     }
   });
 };
