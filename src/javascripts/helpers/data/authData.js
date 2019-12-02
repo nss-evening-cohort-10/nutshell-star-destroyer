@@ -3,26 +3,25 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import sectors from '../../components/Sectors/sectors';
 import systems from '../../components/planetSystem/planetSystem';
+import weapons from '../../components/Weapons/weapons';
 
-
-const authDiv = $('#auth');
-const dashboardDiv = $('#dashboard');
-const logoutNavbar = $('#logout-button');
+const loginButton = $('#auth');
+const logoutButton = $('#navbar-button-logout');
 
 const checkLoginStatus = () => {
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       // someone is logged in; we should not see auth component
-      dashboardDiv.removeClass('hide');
-      logoutNavbar.removeClass('hide');
-      authDiv.addClass('hide');
+      loginButton.addClass('hide');
+      logoutButton.removeClass('hide');
+      weapons.displayWeapons();
       sectors.displayAllSectors();
       systems.createSystemCards();
     } else {
       // nobody is logged in; we should not see boards
-      dashboardDiv.addClass('hide');
-      logoutNavbar.addClass('hide');
-      authDiv.removeClass('hide');
+      loginButton.removeClass('hide');
+      logoutButton.addClass('hide');
+      weapons.displayWeapons();
       sectors.displayAllSectors();
       systems.createSystemCards();
     }
