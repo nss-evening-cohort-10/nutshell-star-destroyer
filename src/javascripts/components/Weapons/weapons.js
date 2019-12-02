@@ -6,8 +6,13 @@ import weaponCardBuilder from '../weaponCardBuilder/weaponCardBuilder';
 import utilities from '../../helpers/utilities';
 
 const displayWeapons = () => {
-  // eslint-disable-next-line no-use-before-define
-  $('#weaponsLink').click(createWeaponCard);
+  $('#weaponsLink').on('click', () => {
+    $('#weaponsPage').show();
+    $('#enemiesPage').hide();
+    $('#sectors').hide();
+    $('#personnel').hide();
+    $('#homePage').hide();
+  });
 };
 
 const deleteWeapon = (e) => {
@@ -100,4 +105,4 @@ const createWeaponCard = () => {
 };
 
 
-export default { displayWeapons, addNewWeapon };
+export default { createWeaponCard, displayWeapons };

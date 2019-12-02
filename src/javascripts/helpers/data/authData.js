@@ -12,12 +12,12 @@ const checkLoginStatus = () => {
       // someone is logged in; we should not see auth component
       loginButton.addClass('hide');
       logoutButton.removeClass('hide');
-      weapons.displayWeapons();
+      weapons.createWeaponCard();
     } else {
       // nobody is logged in; we should not see boards
       loginButton.removeClass('hide');
       logoutButton.addClass('hide');
-      weapons.displayWeapons();
+      weapons.createWeaponCard();
     }
   });
 };
