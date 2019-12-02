@@ -29,6 +29,7 @@ const addNewMissionWeapon = (newMissionWeapon) => axios.post(`${baseUrl}/mission
 
 const deleteMissionWeapon = (missionWeaponId) => axios.delete(`${baseUrl}/missionWeapons/${missionWeaponId}.json`);
 
+
 export default {
   getMissionWeapons,
   getMissionWeaponById,
