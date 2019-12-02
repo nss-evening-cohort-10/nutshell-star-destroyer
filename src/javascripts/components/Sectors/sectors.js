@@ -5,38 +5,19 @@ import utilities from '../../helpers/utilities';
 import sectorsData from '../../helpers/data/sectorsData';
 
 const displayAllSectors = () => {
-  sectorsData
-    .getAllSectors()
+  let domString = '<h1 class="text-center">Sectors</h1>';
+  const user = firebase.auth().currentUser;
+  if (user != null) {
+    domString += '<div class="text-center"><button class="btn add-button" id="add-new-sector" data-toggle="modal" data-target="#addSectorDataModal">Add Data</button></div>';
+  }
+  domString += '<div id="sectors-section" class="d-flex flex-wrap">';
+  sectorsData.getAllSectors()
     .then((sectors) => {
-      let domString = '';
-      const user = firebase.auth().currentUser;
-      if (user != null) {
-        domString += '<div class="text-center"><button type="button" class="btn btn-outline-light" id="add-new-sector" data-toggle="modal" data-target="#addSectorDataModal">Add Data</button></div>';
-      }
-      domString += '<div id="sectors-section" class="d-flex flex-wrap">';
       sectors.forEach((sector) => {
-        if (user != null) {
-          domString += `<div class="card card-body col-sm-6" id="${sector.id}" style=" max-width: 600px; height: 100%; margin: 2em;">`;
-          domString += `<button class="btn delete-button delete-sector"  id="${sector.id}" style="margin-right:0; margin-left: auto; width: 2em; color:red; font-weight:bold;">X</button>`;
-          domString += `<h5 class="card-title">${sector.name}</h5>
-            <p class="card-text">${sector.info}</p>
-            <p class="card-text"><small class="text-muted">${sector.size}</small></p>
-            <img src="${sector.sectorImg}" class="card-img-top" alt="..." style="width: 100%; height: auto;">
-            <button type="button" class="btn btn-light edit-sector" data-toggle="modal" data-target="#addSectorDataModal" id="${sector.id}">Edit</button>
-        </div>
-      </div>
-      `;
-        } else {
-          domString += `<div class="card card-body col-sm-6" id="${sector.id}" style=" max-width: 600px; height: 100%; margin: 2em;">`;
-          domString += `<h5 class="card-title">${sector.name}</h5>
-            <p class="card-text">${sector.info}</p>
-            <p class="card-text"><small class="text-muted">${sector.size}</small></p>
-            <img src="${sector.sectorImg}" class="card-img-top" alt="..." style="width: 100%; height: auto;"
-        </div>
-      </div>
-      `;
-        }
+        // eslint-disable-next-line no-use-before-define
+        domString += sectorCardBuilder(sector);
       });
+      domString += '</div>';
       utilities.printToDom('sectors', domString);
       // eslint-disable-next-line no-use-before-define
       $(document.body).on('click', '#add-new-sector', newSectorDetails);
@@ -48,12 +29,39 @@ const displayAllSectors = () => {
     .catch((error) => console.error(error));
 };
 
+const sectorCardBuilder = (sector) => {
+  let domString = '';
+  const user = firebase.auth().currentUser;
+  if (user != null) {
+    domString += `
+    <div id="${sector.id}" class="card sectorCard card-body text-center" style=" width: 20em; max-width: 500px; height: 100%; margin: 2em;">
+    <button class="btn delete-button delete-sector"  id="${sector.id}" style="margin-right:0; margin-left: auto; width: 2em; font-weight:bold;">X</button>
+      <img src="${sector.sectorImg}" class="card-img-top" alt="..." style="width: 100%; height: auto;">
+      <br>
+      <h5 class="card-title" id="sector">${sector.name}</h5>
+      <p class="card-text">${sector.info}</p>
+      <p class="card-text"><small class="text-muted">${sector.size}</small></p>
+      <button class="btn edit-sector" data-toggle="modal" data-target="#addSectorDataModal" id="${sector.id}">Edit</button>
+    </div>`;
+  } else {
+    domString += `
+    <div id="${sector.id}" class="card sectorCard card-body text-center" style=" width: 20em; max-width: 500px; height: 100%; margin: 2em;">
+      <img src="${sector.sectorImg}" class="card-img-top" alt="..." style="width: 100%; height: auto;">
+      <br>
+      <h5 class="card-title" id="sector">${sector.name}</h5>
+      <p class="card-text">${sector.info}</p>
+      <p class="card-text"><small class="text-muted">${sector.size}</small></p>
+    </div>`;
+  }
+  return domString;
+};
+
 const sectorModal = (sector) => {
   const domString = `
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="addSectorDataModalTitle">Add A New Sector</h5>
+        <h5 class="modal-title" id="addSectorDataModalTitle" >${sector.id ? 'Update Sector' : 'Add A New Sector'}</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -84,7 +92,7 @@ const sectorModal = (sector) => {
       </div>
       <div class="modal-footer" id="${sector.id}">
         <button type="button" class="btn btn-secondary" data-dismiss="modal" id="close-button">Close</button>
-        <button type="button" class="btn btn-primary" id="${sector.id ? 'update' : 'submit'}">Save Changes</button>
+        <button type="button" class="btn btn-primary" id="${sector.id ? 'update' : 'submit'}">Save</button>
       </div>
     </div>
   </div>
