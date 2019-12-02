@@ -4,7 +4,6 @@ import 'firebase/auth';
 
 import googlebutton from './google.png';
 import utilities from '../../helpers/utilities';
-import weapons from '../Weapons/weapons';
 
 const signMeIn = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
@@ -19,6 +18,5 @@ const loginButton = () => {
   $('#google-auth').click(signMeIn);
 };
 
-weapons.displayWeapons();
 
 export default { loginButton };
