@@ -13,7 +13,6 @@ const init = () => {
   firebase.initializeApp(apiKeys.firebaseKeys);
   authData.checkLoginStatus();
   ourNavbar.logoutEvent();
-  ourNavbar.buttonClick();
   sectors.displayAllSectors();
   enemies.clickForEnemies();
   personnelDisplay.clickCrew();
