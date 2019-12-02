@@ -3,12 +3,7 @@
     "id": "mission1",
     "missionTitle": "Order 66",
     "systemID": "system1",
-    "enemyID": "enemy1"
-  },
-  "mission2": {
-    "id": "mission2",
-    "missionTitle": "Order 2020",
-    "systemID": "system2",
-    "enemyID": "enemy2"
+    "enemyID": "enemy1",
+    "missionImg": "https://lumiere-a.akamaihd.net/v1/images/luke-skywalker-main_5a38c454_461eebf5.jpeg?region=0%2C0%2C1536%2C864"
   }
 }

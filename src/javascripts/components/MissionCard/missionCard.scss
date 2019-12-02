@@ -1,0 +1,28 @@
+#all-missions {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+#missionBtns{
+  display: flex;
+  justify-content: center;
+  margin: 25px;
+};
+
+.card{
+  margin: 25px;
+  width: 300px;
+  height: 500px;
+}
+
+.missionPics{
+  height: 200px;
+  width: 200px;
+}
+
+.deleteMission, .editMission{
+  margin: 7px;
+}
+

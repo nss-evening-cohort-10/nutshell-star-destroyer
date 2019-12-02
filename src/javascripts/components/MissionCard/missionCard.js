@@ -7,11 +7,10 @@ const makeMissionCard = (mission) => {
   domString += `
   <div class="card mission" id="${mission.id}">
   <div class="card-body text-center" ${mission.id}>
-  <h1 class="card-title">Mission:${mission.missionTitle}</h1>
-  <p class="card-text">Enenmy Target: ${mission.enemyID}</p>
-  <p class="card-text">System: ${mission.systemID}</p>
+  <h1 class="card-title">Mission: ${mission.missionTitle}</h1>
+  <img class="missionPics" src="${mission.missionImg}">
   </div>
-  <div>`;
+  <div id="missionBtns">`;
   if (user != null) {
     domString += `
         <button id="${mission.id}" class="btn btn-danger deleteMission">Delete</button>
