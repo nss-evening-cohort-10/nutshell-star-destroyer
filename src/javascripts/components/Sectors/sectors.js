@@ -8,7 +8,7 @@ const displayAllSectors = () => {
   let domString = '<h1 class="text-center">Sectors</h1>';
   const user = firebase.auth().currentUser;
   if (user != null) {
-    domString += '<div class="text-center"><button class="btn add-button" id="add-new-sector" data-toggle="modal" data-target="#addSectorDataModal">Add Data</button></div>';
+    domString += '<div class="text-center"><button class="btn add-button" id="add-new-sector" data-toggle="modal" data-target="#addSectorDataModal">ADD NEW SECTOR</button></div>';
   }
   domString += '<div id="sectors-section" class="d-flex flex-wrap">';
   sectorsData.getAllSectors()
@@ -41,7 +41,7 @@ const sectorCardBuilder = (sector) => {
       <h5 class="card-title" id="sector">${sector.name}</h5>
       <p class="card-text">${sector.info}</p>
       <p class="card-text"><small class="text-muted">${sector.size}</small></p>
-      <button class="btn edit-sector" data-toggle="modal" data-target="#addSectorDataModal" id="${sector.id}">Edit</button>
+      <button class="btn edit-sector" data-toggle="modal" data-target="#addSectorDataModal" id="${sector.id}">EDIT</button>
     </div>`;
   } else {
     domString += `

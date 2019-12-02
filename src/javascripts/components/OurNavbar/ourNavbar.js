@@ -63,13 +63,14 @@ const buttonClick = (e) => {
     $('#weaponsPage').addClass('hide');
     $('#personnel').addClass('hide');
     $('#sectors').addClass('hide');
-    $('#systemModule').removeClass('hide');
     $('#homePage').addClass('hide');
+    $('#systemModule').removeClass('hide');
   }
 };
 
 $('#enemiesLink').click(buttonClick);
 $('#sectorsLink').click(buttonClick);
+$('#systemsLink').click(buttonClick);
 $('#weaponsLink').click(buttonClick);
 $('#personnelLink').click(buttonClick);
 $('#logoLink').click(buttonClick);

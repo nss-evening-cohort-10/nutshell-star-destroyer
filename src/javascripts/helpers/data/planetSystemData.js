@@ -1,5 +1,6 @@
 import axios from 'axios';
 import apiKeys from '../apiKeys.json';
+import 'firebase/auth';
 
 const baseUrl = apiKeys.firebaseKeys.databaseURL;
 
@@ -12,7 +13,7 @@ const getSystems = () => new Promise((resolve, reject) => {
         demSystems[psId].id = psId;
         systems.push(demSystems[psId]);
       });
-      resolve(systems);// Hard code to return systems
+      resolve(systems);
     })
     .catch((error) => reject(error));
 });
