@@ -62,4 +62,4 @@ $('#weaponsLink').click(buttonClick);
 $('#personnelLink').click(buttonClick);
 $('#logoLink').click(buttonClick);
 
-export default { logoutEvent };
+export default { logoutEvent, buttonClick };
