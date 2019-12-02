@@ -1,6 +1,5 @@
   {
   "sector1": {
-  "id": "sector1",
   "sectorImg": "https://raw.githubusercontent.com/nss-evening-cohort-10/nutshell-star-destroyer/master/db/images/sectorMaps/fullMap.PNG",
   "name": "Deep Core",
   "isAlly": "true",
@@ -8,7 +7,6 @@
   "info": "The Deep Core, sometimes referred to as the Core of the Galaxy, is a brightly lit region of the galaxy that lay at its very heart. A densely packed mass of stars and planets, the Deep Core is dangerous to navigate and largely left alone by galactic explorers. At its center exists an ancient, supermassive black hole that binds the galaxy together. Travelling towards the Core and away from the galactic rim was referred to as going 'coreward.'"
   },
   "sector2": {
-  "id": "sector2",
   "sectorImg": "https://vignette.wikia.nocookie.net/starwars/images/c/c7/Senate_District_ROTS.png/revision/latest/top-crop/width/200/height/150?cb=20160228141826",
   "name": "Core",
   "isAlly": "true",
@@ -16,7 +14,6 @@
   "info": "The Core Worlds, also known as the Coruscant Core, the Core systems, or simply the Core, is the area of the galaxy that borders the Deep Core and contains some of the wealthiest and most prestigious planets. Coruscant, the galactic capital during the time of the Galactic Republic and subsequent Galactic Empire, was located in the Core Worlds."
   },
   "sector3": {
-  "id": "sector3",
   "sectorImg": "https://vignette.wikia.nocookie.net/starwars/images/9/98/CNCityBridges-SS.png/revision/latest/scale-to-width-down/250?cb=20120830233413",
   "name": "Colonies",
   "isAlly": "true",
@@ -24,7 +21,6 @@
   "info": "The Colonies iss a region of the galaxy located between the Core Worlds and the Inner Rim. It contains numerous planets, including Abednedo, Bardotta, Devaron, Carida, Castell,Cato Neimoidia, Fondor, Halcyon, Narq, Neimoidia, and Uquine. The Colonies sit along major trade routes, and some of them are extremely wealthy."
   },
   "sector4": {
-  "id": "sector4",
   "sectorImg": "https://vignette.wikia.nocookie.net/starwars/images/1/1d/SSD_Ravager_wreck_TFA.jpg/revision/latest/scale-to-width-down/250?cb=20151222193645",
   "name": "Inner Rim",
   "isAlly": "true",
@@ -32,7 +28,6 @@
   "info": "The Inner Rim, originally known simply as the Rim, is a region of the galaxy located between the Colonies and the Expansion Region. The planet Jakku as well as the planets Bastatha, Arreyel, Li-Toran, Denon, Pasher, Gorse and its moon, Cynda, as well as Onderon are located in the Inner Rim."
   },
   "sector5": {
-  "id": "sector5",
   "sectorImg": "https://vignette.wikia.nocookie.net/starwars/images/1/1e/Maz_Kanatas_castle.png/revision/latest/scale-to-width-down/300?cb=20160416051224",
   "name": "Mid Rim",
   "isAlly": "true",
@@ -40,7 +35,6 @@
   "info": "The Mid Rim is a region of the galaxy located between the Expansion Region and the Outer Rim Territories. The planets Kashyyyk, Malastare, Naboo, Kamino, and Ord Mantell are all located within the Mid Rim."
   },
   "sector6": {
-  "id": "sector6",
   "sectorImg": "https://vignette.wikia.nocookie.net/starwars/images/0/04/Canon_galaxy_map.jpg/revision/latest/top-crop/width/200/height/150?cb=20160104135200",
   "name": "Outer Rim",
   "isAlly": "false",
@@ -48,7 +42,6 @@
   "info": "The Outer Rim Territories, also known as the Outer Rim or Outer Systems, is a sparsely populated region of the galaxy located outside the Mid Rim before Wild Space and the Unknown Regions. The largest region in the galaxy, it is home to diverse worlds and rugged, primitive frontier planets. Tatooine,Polis Massa, Kessel, Mon Calamari, Yavin, Dantooine, Dagobah, Mustafar, Dathomir, and Manadlore are all planets in the Outer Rim. Hutt Space is also considered part of the Outer Rim Territories"
   },
   "sector7": {
-  "id": "sector7",
   "sectorImg": "https://vignette.wikia.nocookie.net/starwars/images/5/5a/Kafrene-City.jpg/revision/latest/scale-to-width-down/250?cb=20170410220351",
   "name": "Expansion Region",
   "isAlly": "false",
@@ -56,7 +49,6 @@
   "info": "The Expansion Region is a region of the galaxy located between the Inner Rim and the Mid Rim. In addition to the Ghost Nebula, which contains the Umbara system, the Expansion Region includes the Cvetaen and Sumitra star systems, as well as the planets Aquaris, Kerkoidia, Thustra, and Sibensko."
   },
   "sector8": {
-  "id": "sector8",
   "sectorImg": "https://vignette.wikia.nocookie.net/starwars/images/c/c4/Starkiller_Base_wide_shot.png/revision/latest/top-crop/width/200/height/150?cb=20160207035428",
   "name": "Unknown Regions",
   "isAlly": "false",
@@ -64,7 +56,6 @@
   "info": "The Unknown Regions, also referred to as Unknown Space and the Unknown Territories, iss a region of the galaxy located in the galactic west beyond the Outer Rim. Largely unexplored throughout galactic history, it remains a mystery to space travelers and serves as a source of tales and wonders."
   },
   "sector9": {
-  "id": "sector9",
   "sectorImg": "https://vignette.wikia.nocookie.net/starwars/images/7/71/Teth_Bomarr_Monastery.png/revision/latest/top-crop/width/200/height/150?cb=20121009005819",
   "name": "Wild Space",
   "isAlly": "false",
@@ -72,7 +63,6 @@
   "info": "Wild Space is the name given to the unmapped expanse beyond the Outer Rim. It iss located 'off the edge of the map', where no one knows what is on the other side. In contrast, the so-called Unknown Regions are mapped but largely unexplored."
   },
   "sector10": {
-  "id": "sector10",
   "sectorImg": "https://raw.githubusercontent.com/nss-evening-cohort-10/nutshell-star-destroyer/master/db/images/sectorMaps/huttSpace.PNG",
   "name": "Hutt Space",
   "isAlly": "false",
@@ -80,7 +70,6 @@
   "info": "Hutt Space iss a region of the galaxy on the border between the Mid Rim and the Outer Rim Territories that is located to the galactic east of the Core Worlds, and is under the control of the Hutt Clan. Largely noted as being a haven to the disreputable denizens of the galaxy, it manages to avoid outright Imperial control owing to its cooperation with Imperial Coruscant, however following the Battle of Yavin, it has seen increasing attempts by the Empire to cut into its trade in an effort to decrease its independence. Following the demise of the Hutt crime lord Jabba Desilijic Tiure, Hutt Space has since been embroiled in conflict as the Hutts attempt to carve up his territory."
   },
   "sector11": {
-  "id": "sector11",
   "sectorImg": "https://raw.githubusercontent.com/nss-evening-cohort-10/nutshell-star-destroyer/master/db/images/sectorMaps/chissAscendancy.PNG",
   "name": "Chiss Ascendancy",
   "isAlly": "true",
