@@ -1,10 +1,12 @@
 .enemyCard{
-margin: 25px;
+margin: 75px;
 // height: fit-content;
 display: flex;
 flex-direction: column;
 align-items: center;
 text-align: center;
+height: 650px;
+width:500px;
 }
     
 .cardImg{
@@ -12,18 +14,6 @@ width: 400px;
 height: 400px;
 }
 
-
-// #enemiesPage {
-//     display: flex;
-//     flex-flow: row wrap;
-//     width: 100%;
-//     height: fit-content;
-// }
-
-.enemyCard{
-  height: 650px;
-  width:500px;
-}
 
 #addNewEnemyBtn , #save{
   background-color: #BC1E22;

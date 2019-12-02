@@ -30,9 +30,12 @@ const makeMission = (newMission) => axios.post(`${baseUrl}/missions.json`, newMi
 
 const deleteMission = (missionId) => axios.delete(`${baseUrl}/missions/${missionId}.json`);
 
+const updateMission = (missionId, updatedMission) => axios.put(`${baseUrl}/missions/${missionId}.json`, updatedMission);
+
 export default {
   getAllMissions,
   makeMission,
   deleteMission,
   getMissionById,
+  updateMission,
 };

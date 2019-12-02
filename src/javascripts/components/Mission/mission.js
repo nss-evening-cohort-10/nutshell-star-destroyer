@@ -35,6 +35,32 @@ const missionModal = (mission) => {
   $('#save').click(addNewMission);
 };
 
+const editMissionInfo = (e) => {
+  e.stopImmediatePropagation();
+  const missionId = e.target.parentNode.id;
+  const updatedMission = {
+    missionTitle: $('#missionTitle').val(),
+    missionImg: $('#missionImg').val(),
+  };
+  missionData.updateMission(missionId, updatedMission)
+    .then(() => {
+      $('#newEnemyModal').modal('hide');
+      // eslint-disable-next-line no-use-before-define
+      missionBuilder();
+    })
+    .catch((error) => console.error(error));
+};
+
+const updateAMission = (e) => {
+  missionData.getMissionById(e.target.id)
+    .then((response) => {
+      $('#newEnemyModal').modal('show');
+      response.id = e.target.id;
+      missionModal(response);
+      $('#edit').click(editMissionInfo);
+    });
+};
+
 const missionBuilder = () => {
   missionData.getAllMissions()
     .then((missions) => {
@@ -52,7 +78,9 @@ const missionBuilder = () => {
       domString += '</div>';
       utilities.printToDom('missions', domString);
       $('#missions').on('click', '.deleteMission', deleteAMission);
+      $('#missions').on('click', '.editMission', updateAMission);
       $('#addNewMission').click(missionModal);
+      // $('#missions').on('click', '.viewMission', showMissionDetails);
     })
     .catch((error) => console.error(error));
 };

@@ -18,7 +18,7 @@ const makeEnemyCard = (enemy) => {
       <div>`;
   if (user != null) {
     domString += `
-        <button href="#" id="enemy-${enemy.id}" class="btn btn-danger deleteEnemy">Delete</button>
+        <button href="#" id="enemy-${enemy.id}" class="btn btn-secondary deleteEnemy">Delete</button>
         <button href="#" id="enemy-enemy-${enemy.id}" class="btn btn-secondary editEnemy" type="button" data-toggle="modal" data-target="#newEnemyModal">Edit</button>`;
     domString += '</div>';
   }

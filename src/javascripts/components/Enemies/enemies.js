@@ -67,7 +67,7 @@ const updateAEnemy = (e) => {
       $('#newEnemyModal').modal('show');
       response.Id = e.target.id;
       newEnemyModal(response);
-      $('#edit').click(editEnemyInfo);
+      $('#editEnemy').click(editEnemyInfo);
     });
 };
 // This function prints the enemy cards to the enemiesPage div in HTML  updated  by 11-29-19 raymond
@@ -82,6 +82,7 @@ const enemiesBuilder = () => {
         domString += '<button id="addNewEnemyBtn" type="button" class="btn" data-toggle="modal" data-target="#newEnemyModal">Add New Enemy</button>';
         domString += '</div>';
       }
+      domString += '<div></div>';
       enemies.forEach((enemy) => {
         domString += enemyCard.makeEnemyCard(enemy);
       });

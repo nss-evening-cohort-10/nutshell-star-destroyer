@@ -9,7 +9,7 @@ const makeMissionCard = (mission) => {
   <div class="card-body text-center" ${mission.id}>
   <h1 class="card-title">Mission: ${mission.missionTitle}</h1>
   <img class="missionPics" src="${mission.missionImg}">
-  <button id="${mission.id}" class="btn btn-danger viewMission">View Details</button>
+  <button id="${mission.id}" class="btn btn-secondary viewMission">View Details</button>
   </div>
   <div id="missionBtns">`;
   if (user != null) {
@@ -33,7 +33,7 @@ const missionModalBuilder = (mission) => {
       <div class="modal-body">
         <form>
         <div class="form-group">
-        <label for="missionTitle">Name</label>
+        <label for="missionTitle">Mission Name</label>
         <input type="text" class="form-control" id="missionTitle" placeholder="Mission" value="${mission.missionTitle ? mission.missionTitle : ''}">
       </div>
       <div class="form-group">
