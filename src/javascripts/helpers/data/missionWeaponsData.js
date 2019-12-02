@@ -6,11 +6,11 @@ const baseUrl = apiKeys.firebaseKeys.databaseURL;
 const getMissionWeapons = () => new Promise((resolve, reject) => {
   axios.get(`${baseUrl}/missionWeapons.json`)
     .then((response) => {
-      const doseMissionWeapons = response.data;
+      const dosemissionWeapons = response.data;
       const missionWeapons = [];
-      Object.keys(doseMissionWeapons).forEach((fbId) => {
-        doseMissionWeapons[fbId].id = fbId;
-        missionWeapons.push(doseMissionWeapons[fbId]);
+      Object.keys(dosemissionWeapons).forEach((fbId) => {
+        dosemissionWeapons[fbId].id = fbId;
+        missionWeapons.push(dosemissionWeapons[fbId]);
       });
       resolve(missionWeapons);
     })

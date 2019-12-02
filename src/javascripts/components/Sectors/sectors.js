@@ -13,7 +13,7 @@ const displayAllSectors = () => {
       if (user != null) {
         domString += '<div class="text-center"><button type="button" class="btn btn-outline-light" id="add-new-sector" data-toggle="modal" data-target="#addSectorDataModal">Add Data</button></div>';
       }
-      domString += '<div class="d-flex flex-wrap">';
+      domString += '<div id="sectors-section" class="d-flex flex-wrap">';
       sectors.forEach((sector) => {
         if (user != null) {
           domString += `<div class="card card-body col-sm-6" id="${sector.id}" style=" max-width: 600px; height: 100%; margin: 2em;">`;
