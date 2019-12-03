@@ -43,7 +43,6 @@ const newEnemyModal = (enemy) => {
 const editEnemyInfo = (e) => {
   e.stopImmediatePropagation();
   const enemyId = $(e.target).parent().attr('id');
-  console.log('test', enemyId);
   const updatedEnemy = {
     name: $('#enemyName').val(),
     imageUrl: $('#enemyImage').val(),
@@ -60,14 +59,12 @@ const editEnemyInfo = (e) => {
 };
 
 const updateAEnemy = (e) => {
-  console.log('enemyId');
   const enemyId = e.target.id.split('edit-')[1];
   enemyData.getEnemyById(enemyId)
     .then((response) => {
       const enemyObj = response;
       $('#newEnemyModal').modal('show');
       enemyObj.id = enemyId;
-      console.log(enemyObj);
       newEnemyModal(enemyObj);
       $('#edit').click(editEnemyInfo);
     });

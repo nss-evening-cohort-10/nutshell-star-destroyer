@@ -80,7 +80,6 @@ const missionBuilder = () => {
       $('#missions').on('click', '.deleteMission', deleteAMission);
       $('#missions').on('click', '.editMission', updateAMission);
       $('#addNewMission').click(missionModal);
-      // $('#missions').on('click', '.viewMission', showMissionDetails);
     })
     .catch((error) => console.error(error));
 };

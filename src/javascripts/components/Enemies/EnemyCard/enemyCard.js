@@ -1,6 +1,5 @@
 import './enemyCard.scss';
 import firebase from 'firebase';
-// import sectorData from '../../../helpers/data/sectorsData';
 
 const makeEnemyCard = (enemy) => {
   let domString = '';
@@ -26,10 +25,6 @@ const makeEnemyCard = (enemy) => {
 };
 
 const enemyModal = (enemy) => {
-  // const request = enemy.id.split('-');
-  // console.log(request);
-  // const enemyId = enemy.id.split('edit-')[0];
-  // console.log(enemy.id);
   const domString = `<div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
