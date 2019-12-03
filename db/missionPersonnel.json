@@ -1,0 +1,31 @@
+{
+  "missionPersonnel1": {
+    "missionId": "mission1",
+    "personnelId": "person1"
+  },
+
+  "missionPersonnel2": {
+    "missionId": "mission1",
+    "personnelId": "person2"
+  },
+
+  "missionPersonnel3": {
+    "missionId": "mission1",
+    "personnelId": "person3"
+  },
+
+  "missionPersonnel4": {
+    "missionId": "mission2",
+    "personnelId": "person6"
+  },
+
+  "missionPersonnel5": {
+    "missionId": "mission1",
+    "personnelId": "person4"
+  },
+
+  "missionPersonnel6": {
+    "missionId": "mission1",
+    "personnelId": "person5"
+  }
+}
