@@ -18,14 +18,18 @@ const makeEnemyCard = (enemy) => {
       <div>`;
   if (user != null) {
     domString += `
-        <button href="#" id="enemy-${enemy.id}" class="btn btn-secondary deleteEnemy">Delete</button>
-        <button href="#" id="enemy-enemy-${enemy.id}" class="btn btn-secondary editEnemy" type="button" data-toggle="modal" data-target="#newEnemyModal">Edit</button>`;
+        <button href="#" id="delete-${enemy.id}" class="btn btn-secondary deleteEnemy">Delete</button>
+        <button href="#" id="edit-${enemy.id}" class="btn btn-secondary editEnemy" type="button" data-toggle="modal" data-target="#newEnemyModal">Edit</button>`;
     domString += '</div>';
   }
   return domString;
 };
 
 const enemyModal = (enemy) => {
+  // const request = enemy.id.split('-');
+  // console.log(request);
+  // const enemyId = enemy.id.split('edit-')[0];
+  // console.log(enemy.id);
   const domString = `<div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -57,11 +61,10 @@ const enemyModal = (enemy) => {
       <div class="modal-footer" id="${enemy.id}">
       <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
       <button type="button" class="btn" id="${enemy.id ? 'edit' : 'save'}">Save</button>
-    </div>
-  </div>
-</div>
-</div>`;
+      </div>
+      </div>
+      </div>
+      </div>`;
   return domString;
 };
-
 export default { makeEnemyCard, enemyModal };

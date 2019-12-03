@@ -19,8 +19,10 @@ const getAllEnemies = () => new Promise((resolve, reject) => {
 });
 
 const getEnemyById = (enemyId) => new Promise((resolve, reject) => {
+  console.log(enemyId);
   axios.get(`${baseUrl}/enemies/${enemyId}.json`)
     .then((response) => {
+      console.log(response);
       resolve(response.data);
     })
     .catch((error) => reject(error));

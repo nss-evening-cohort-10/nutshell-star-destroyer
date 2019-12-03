@@ -24,8 +24,7 @@ const addNewEnemy = (e) => {
 
 const deleteFromDatabase = (e) => {
   e.preventDefault();
-  const enemyToDelete = e.target.id.split('enemy-')[1];
-  console.error(enemyToDelete);
+  const enemyToDelete = e.target.id.split('delete-')[1];
   enemyData.deleteEnemy(enemyToDelete)
     .then(() => {
       // eslint-disable-next-line no-use-before-define
@@ -43,8 +42,8 @@ const newEnemyModal = (enemy) => {
 
 const editEnemyInfo = (e) => {
   e.stopImmediatePropagation();
-  const enemyId = e.target.id.split('enemy-')[1];
-  console.log(enemyId);
+  const enemyId = $(e.target).parent().attr('id');
+  console.log('test', enemyId);
   const updatedEnemy = {
     name: $('#enemyName').val(),
     imageUrl: $('#enemyImage').val(),
@@ -61,13 +60,16 @@ const editEnemyInfo = (e) => {
 };
 
 const updateAEnemy = (e) => {
-  enemyData.getEnemyById(e.target.id.split('enemy-')[1])
+  console.log('enemyId');
+  const enemyId = e.target.id.split('edit-')[1];
+  enemyData.getEnemyById(enemyId)
     .then((response) => {
-      console.log(response);
+      const enemyObj = response;
       $('#newEnemyModal').modal('show');
-      response.Id = e.target.id;
-      newEnemyModal(response);
-      $('#editEnemy').click(editEnemyInfo);
+      enemyObj.id = enemyId;
+      console.log(enemyObj);
+      newEnemyModal(enemyObj);
+      $('#edit').click(editEnemyInfo);
     });
 };
 // This function prints the enemy cards to the enemiesPage div in HTML  updated  by 11-29-19 raymond
@@ -89,7 +91,7 @@ const enemiesBuilder = () => {
       utilities.printToDom('enemiesPage', domString);
       $('#addNewEnemyBtn').click(newEnemyModal);
       $('.deleteEnemy').on('click', deleteFromDatabase);
-      $('body').on('click', '.editEnemy', updateAEnemy);
+      $('#enemiesPage').on('click', '.editEnemy', updateAEnemy);
     })
     .catch((error) => console.error(error));
 };
