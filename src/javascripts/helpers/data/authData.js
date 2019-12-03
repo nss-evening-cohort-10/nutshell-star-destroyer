@@ -36,7 +36,6 @@ const checkLoginStatus = () => {
       mission.missionBuilder();
       enemies.clickForEnemies();
       personnel.displayCrew();
-
     }
   });
 };

@@ -38,7 +38,7 @@ const missionModalBuilder = (mission) => {
       </div>
       <div class="form-group">
       <label for="missionImg">Target Photo</label>
-      <input type="text" class="form-control" id="missionImg" placeholder="Target Image" value="${mission.Img ? mission.Img : ''}">
+      <input type="text" class="form-control" id="missionImg" placeholder="Target Image" value="${mission.missionImg ? mission.missionImg : ''}">
     </div>
         </form>
       </div>
