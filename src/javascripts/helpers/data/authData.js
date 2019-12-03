@@ -1,6 +1,8 @@
 import $ from 'jquery';
 import firebase from 'firebase/app';
 import 'firebase/auth';
+import sectors from '../../components/Sectors/sectors';
+import systems from '../../components/planetSystem/planetSystem';
 import weapons from '../../components/Weapons/weapons';
 
 const loginButton = $('#auth');
@@ -13,11 +15,15 @@ const checkLoginStatus = () => {
       loginButton.addClass('hide');
       logoutButton.removeClass('hide');
       weapons.displayWeapons();
+      sectors.displayAllSectors();
+      systems.createSystemCards();
     } else {
       // nobody is logged in; we should not see boards
       loginButton.removeClass('hide');
       logoutButton.addClass('hide');
       weapons.displayWeapons();
+      sectors.displayAllSectors();
+      systems.createSystemCards();
     }
   });
 };
