@@ -10,7 +10,7 @@ const singleSystemCard = (system) => {
   if (user != null) {
     domString += `
           <div id="${system.id}" class="card systemCard card-body text-center" style=" width: 20em; max-width: 500px; height: 100%; margin: 2em;">
-             <button class="btn delete-button delete-food"  id="${system.id}" style="margin-right:0; margin-left: auto; width: 2em; font-weight:bold;">X</button>
+             <button class="btn delete-button delete-system"  id="${system.id}" style="margin-right:0; margin-left: auto; width: 2em; font-weight:bold;">X</button>
              <img src="${system.planetaryImg}" class="card-img-top" style="width: 100%; height: auto;" alt="..."/>
              <br>
              <h5 class="card-title" id="food">${system.name}</h5>
@@ -21,7 +21,7 @@ const singleSystemCard = (system) => {
           </div>`;
   } else {
     domString += `
-        <div id="${system.id}" class="card foodCard card-body text-center" style=" width: 20em; max-width: 500px; height: 100%; margin: 2em;">
+        <div id="${system.id}" class="card systemCard card-body text-center" style=" width: 20em; max-width: 500px; height: 100%; margin: 2em;">
            <img src="${system.planetaryImg}" class="card-img-top" style="width: 100%; height: auto;" alt="..."/>
            <br>
            <h5 class="card-title" id="food">${system.name}</h5>

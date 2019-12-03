@@ -8,7 +8,7 @@ const displayAllSectors = () => {
   let domString = '<h1 class="text-center">Sectors</h1>';
   const user = firebase.auth().currentUser;
   if (user != null) {
-    domString += '<div class="text-center"><button class="btn add-button" id="add-new-sector" data-toggle="modal" data-target="#addSectorDataModal">ADD NEW SECTOR</button></div>';
+    domString += '<div class="text-center"><button class="btn add-button" id="add-new-sector" data-toggle="modal" data-target="#exampleModal">ADD NEW SECTOR</button></div>';
   }
   domString += '<div id="sectors-section" class="d-flex flex-wrap">';
   sectorsData.getAllSectors()
@@ -41,7 +41,7 @@ const sectorCardBuilder = (sector) => {
       <h5 class="card-title" id="sector">${sector.name}</h5>
       <p class="card-text">${sector.info}</p>
       <p class="card-text"><small class="text-muted">${sector.size}</small></p>
-      <button class="btn edit-sector" data-toggle="modal" data-target="#addSectorDataModal" id="${sector.id}">EDIT</button>
+      <button class="btn edit-sector" data-toggle="modal" data-target="#exampleModal" id="${sector.id}">EDIT</button>
     </div>`;
   } else {
     domString += `
@@ -103,7 +103,7 @@ const sectorModal = (sector) => {
 const newSectorDetails = (sector) => {
   let domString = '';
   domString += sectorModal(sector);
-  utilities.printToDom('addSectorDataModal', domString);
+  utilities.printToDom('exampleModal', domString);
   // eslint-disable-next-line no-use-before-define
   $('#submit').click(addNewSector);
 };
@@ -119,7 +119,7 @@ const addNewSector = (e) => {
   };
   sectorsData.createNewSector(newData)
     .then(() => {
-      $('#addSectorDataModal').modal('hide');
+      $('#exampleModal').modal('hide');
       displayAllSectors();
     })
     .catch((error) => console.error(error));
@@ -137,7 +137,7 @@ const editedSector = (e) => {
   };
   sectorsData.editSector(editedSectorId, updatedSector)
     .then(() => {
-      $('#addSectorDataModal').modal('hide');
+      $('#exampleModal').modal('hide');
       // eslint-disable-next-line no-use-before-define
       displayAllSectors();
     })
@@ -147,7 +147,7 @@ const editedSector = (e) => {
 const updateSectorValues = (e) => {
   sectorsData.getSectorByID(e.target.id)
     .then((response) => {
-      $('#addSectorDataModal').modal('show');
+      $('#exampleModal').modal('show');
       response.id = e.target.id;
       newSectorDetails(response);
       // eslint-disable-next-line no-use-before-define
