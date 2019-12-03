@@ -7,7 +7,6 @@ import ourNavbar from './components/OurNavbar/ourNavbar';
 import enemies from './components/Enemies/enemies';
 import personnelDisplay from './components/Personnel/personnel';
 
-
 const init = () => {
   firebase.initializeApp(apiKeys.firebaseKeys);
   authData.checkLoginStatus();

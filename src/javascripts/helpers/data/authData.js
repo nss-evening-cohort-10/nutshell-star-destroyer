@@ -1,6 +1,7 @@
 import $ from 'jquery';
 import firebase from 'firebase/app';
 import 'firebase/auth';
+import personnel from '../../components/Personnel/personnel';
 import sectors from '../../components/Sectors/sectors';
 import systems from '../../components/planetSystem/planetSystem';
 import weapons from '../../components/Weapons/weapons';
@@ -17,6 +18,7 @@ const checkLoginStatus = () => {
       weapons.displayWeapons();
       sectors.displayAllSectors();
       systems.createSystemCards();
+      personnel.displayCrew();
     } else {
       // nobody is logged in; we should not see boards
       loginButton.removeClass('hide');
@@ -24,6 +26,7 @@ const checkLoginStatus = () => {
       weapons.displayWeapons();
       sectors.displayAllSectors();
       systems.createSystemCards();
+      personnel.displayCrew();
     }
   });
 };
