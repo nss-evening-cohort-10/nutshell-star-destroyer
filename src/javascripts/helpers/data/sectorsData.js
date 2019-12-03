@@ -18,7 +18,24 @@ const getAllSectors = () => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
+const getSectorByID = (id) => new Promise((resolve, reject) => {
+  axios.get(`${baseUrl}/sectors/${id}.json`)
+    .then((response) => {
+      resolve(response.data);
+    })
+    .catch((error) => reject(error));
+});
+
 const createNewSector = (newData) => axios.post(`${baseUrl}/sectors.json`, newData);
 
+const deleteSector = (sectorID) => axios.delete(`${baseUrl}/sectors/${sectorID}.json`);
 
-export default { getAllSectors, createNewSector };
+const editSector = (id, updatedSector) => axios.put(`${baseUrl}/sectors/${id}.json`, updatedSector);
+
+export default {
+  getAllSectors,
+  createNewSector,
+  deleteSector,
+  getSectorByID,
+  editSector,
+};

@@ -3,5 +3,7 @@
   "personnel": "personnel",
   "sectors": "sectors",
   "weapons": "weapons",
-  "missions": "missions"
+  "missions": "missions",
+  "planetSystem": "planetSystem",
+  "missionWeapons": "missionWeapons"
 }

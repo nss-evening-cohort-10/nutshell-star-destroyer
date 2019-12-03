@@ -1,20 +1,19 @@
-import './weaponCardBuilder.scss';
+import './missionWeaponCardBuilder.scss';
 import firebase from 'firebase';
 
-const singleWeaponCard = (weapon) => {
+const singleMissionWeaponCard = (weapon) => {
   let domString = '';
   const user = firebase.auth().currentUser;
   if (user != null) {
     domString += `
-          <div id="${weapon.id}" class="card weaponCard card-body text-center" style=" width: 20em; max-width: 500px; height: 100%; margin: 2em;">
+          <div id="${weapon.id}" class="card weaponCard card-body text-center" style=" width: 20em; max-width: 500px; height: 100%; margin: 2em; bg-#000000">
           <button class="btn delete-button delete-weapon"  id="${weapon.id}" style="margin-right:0; margin-left: auto; width: 2em; font-weight:bold;">X</button>
              <img src="${weapon.img}" class="card-img-top" style="width: 100%; height: auto;" alt="..."/>
              <br>
              <h5 class="card-title" id="weapon">${weapon.name}</h5>
               <p class="card-text">Crew of ${weapon.teamSize}</p>
               <p class="card-text">Use: ${weapon.type}</p>
-              <button class="btn edit-button" id="${weapon.id}" >EDIT</button>
-           </div>`;
+          </div>`;
   } else {
     domString += `
         <div id="${weapon.id}" class="card weaponCard card-body text-center" style=" width: 20em; max-width: 500px; height: 100%; margin: 2em;">
@@ -28,11 +27,11 @@ const singleWeaponCard = (weapon) => {
   return domString;
 };
 
-const weaponModal = (weapon) => {
+const missionWeaponModal = (weapon) => {
   const domString = `<div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Add/Edit Weapon</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Add Weapon</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -80,4 +79,4 @@ const weaponModal = (weapon) => {
   return domString;
 };
 
-export default { singleWeaponCard, weaponModal };
+export default { singleMissionWeaponCard, missionWeaponModal };

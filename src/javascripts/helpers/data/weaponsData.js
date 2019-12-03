@@ -29,6 +29,12 @@ const addNewWeapon = (newWeapon) => axios.post(`${baseUrl}/weapons.json`, newWea
 
 const deleteWeapon = (weaponId) => axios.delete(`${baseUrl}/weapons/${weaponId}.json`);
 
+const updateWeapon = (weaponId, updatedWeapon) => axios.put(`${baseUrl}/weapons/${weaponId}.json`, updatedWeapon);
+
 export default {
-  getAllWeapons, getWeaponById, addNewWeapon, deleteWeapon,
+  getAllWeapons,
+  getWeaponById,
+  addNewWeapon,
+  deleteWeapon,
+  updateWeapon,
 };
