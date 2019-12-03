@@ -34,6 +34,10 @@ const addNewPersonnel = (e) => {
 };
 
 const clickAddNew = () => {
+  let domString = '';
+  // eslint-disable-next-line no-use-before-define
+  domString += createPersonModal();
+  utilities.printToDom('exampleModal', domString);
   $('#add-new-personnel').click(addNewPersonnel);
 };
 
@@ -43,18 +47,12 @@ const personnelEventListeners = () => {
   $('#personnel').on('click', '.delete-personnel', deletePersonOnClick);
   // eslint-disable-next-line no-use-before-define
   $('#personnel').on('click', '.edit', updateAPerson);
+  clickAddNew();
 };
 
-const displayCrew = () => {
-  const user = firebase.auth().currentUser;
-  personnelData.getPersonnelData()
-    .then((personnel) => {
-      let domString = '<h1>Personnel</h1>';
-      if (user !== null) {
-        domString += '<button id="add-personnel" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalCenter">Add New Personnel</button>';
-      }
-      domString += `
-      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+const createPersonModal = (personnel) => {
+  const domString = `
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -89,7 +87,19 @@ const displayCrew = () => {
         </div>
       </div>
       </div>
-      </div>`;
+    </div>
+  `;
+  return domString;
+};
+
+const displayCrew = () => {
+  const user = firebase.auth().currentUser;
+  personnelData.getPersonnelData()
+    .then((personnel) => {
+      let domString = '<h1>Personnel</h1>';
+      if (user !== null) {
+        domString += '<button id="add-new-personnel" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalCenter">Add New Personnel</button>';
+      }
       domString += '<div class="container">';
       domString += '<div class="row">';
       personnel.forEach((person) => {
@@ -125,7 +135,6 @@ const displayCrew = () => {
       });
       domString += '</div></div>';
       utilities.printToDom('personnel', domString);
-      clickAddNew();
       personnelEventListeners();
     })
     .catch((error) => console.error(error));
