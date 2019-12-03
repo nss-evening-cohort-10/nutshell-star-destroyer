@@ -8,10 +8,19 @@ h1 {
   color: #FFFFFF;
   border: 1px solid #64696C;
   text-shadow: 0 0 0.625em #fff, 0 0 1.5625em #fff, -0.0625em 0 0.125em rgba(0,0,0,0.5);
-  margin-bottom: 45em;
+  margin-bottom: 20em;
 }
 
 #add-personnel {
    margin-bottom: 1em;
    margin-left: 1.25%;
+}
+
+.personImage {
+  height: 450px;
+  width: auto;
+}
+
+#add-new-personnel {
+  margin: 0 0 15px 15px;
 }

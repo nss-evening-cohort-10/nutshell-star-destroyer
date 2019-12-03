@@ -4,6 +4,7 @@ import 'firebase/auth';
 import missionData from './missionData';
 import mission from '../../components/Mission/mission';
 import enemies from '../../components/Enemies/enemies';
+import personnel from '../../components/Personnel/personnel';
 import sectors from '../../components/Sectors/sectors';
 import systems from '../../components/planetSystem/planetSystem';
 import weapons from '../../components/Weapons/weapons';
@@ -23,6 +24,7 @@ const checkLoginStatus = () => {
       missionData.getAllMissions();
       mission.missionBuilder();
       enemies.clickForEnemies();
+      personnel.displayCrew();
     } else {
       // nobody is logged in; we should not see boards
       loginButton.removeClass('hide');
@@ -33,6 +35,8 @@ const checkLoginStatus = () => {
       missionData.getAllMissions();
       mission.missionBuilder();
       enemies.clickForEnemies();
+      personnel.displayCrew();
+
     }
   });
 };
