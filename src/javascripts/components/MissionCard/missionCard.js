@@ -5,7 +5,7 @@ const makeMissionCard = (mission) => {
   let domString = '';
   const user = firebase.auth().currentUser;
   domString += `
-  <div class="card mission" id="${mission.id}">
+  <div class="card" id="${mission.id}">
   <div class="card-body text-center" ${mission.id}>
   <h1 class="card-title">Mission: ${mission.missionTitle}</h1>
   <img class="missionPics" src="${mission.missionImg}">
