@@ -1,0 +1,37 @@
+#all-missions {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+#missionBtns{
+  display: flex;
+  justify-content: center;
+  margin: 24px;
+};
+
+.mission{
+  margin: 25px;
+  width: 300px;
+  height: 500px;
+}
+
+.missionPics{
+  height: 200px;
+  width: 200px;
+}
+
+.deleteMission, .editMission{
+  margin: 7px;
+}
+
+.viewMission{
+  margin: 10px;
+}
+
+.editMission {
+  border-color: #BC1E22;
+  color: #FFFFFF;
+  font-weight: bold;
+}

@@ -1,6 +1,9 @@
 import $ from 'jquery';
 import firebase from 'firebase/app';
 import 'firebase/auth';
+import missionData from './missionData';
+import mission from '../../components/Mission/mission';
+import enemies from '../../components/Enemies/enemies';
 import personnel from '../../components/Personnel/personnel';
 import sectors from '../../components/Sectors/sectors';
 import systems from '../../components/planetSystem/planetSystem';
@@ -15,17 +18,23 @@ const checkLoginStatus = () => {
       // someone is logged in; we should not see auth component
       loginButton.addClass('hide');
       logoutButton.removeClass('hide');
-      weapons.displayWeapons();
+      weapons.createWeaponCard();
       sectors.displayAllSectors();
       systems.createSystemCards();
+      missionData.getAllMissions();
+      mission.missionBuilder();
+      enemies.enemiesBuilder();
       personnel.displayCrew();
     } else {
       // nobody is logged in; we should not see boards
       loginButton.removeClass('hide');
       logoutButton.addClass('hide');
-      weapons.displayWeapons();
+      weapons.createWeaponCard();
       sectors.displayAllSectors();
       systems.createSystemCards();
+      missionData.getAllMissions();
+      mission.missionBuilder();
+      enemies.enemiesBuilder();
       personnel.displayCrew();
     }
   });

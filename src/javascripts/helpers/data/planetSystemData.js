@@ -18,4 +18,12 @@ const getSystems = () => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
-export default { getSystems };
+const getSystemsById = (planetSystemId) => new Promise((resolve, reject) => {
+  axios.get(`${baseUrl}/planetSystem/${planetSystemId}.json`)
+    .then((response) => {
+      resolve(response.data);
+    })
+    .catch((error) => reject(error));
+});
+
+export default { getSystems, getSystemsById };

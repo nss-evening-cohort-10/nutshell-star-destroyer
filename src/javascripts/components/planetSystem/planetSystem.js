@@ -17,7 +17,7 @@ const singleSystemCard = (system) => {
               <p>Size: ${system.size}</p>
               <p>Ally?: ${system.isAlly}</p>
               <p>${system.info}</p>
-              <button type="button" class="btn edit-system" data-toggle="modal" data-target="#exampleModal" id="${system.id}">EDIT</button>
+              <button type="button" class="btn edit-system" id="${system.id}">EDIT</button>
           </div>`;
   } else {
     domString += `
@@ -38,7 +38,7 @@ const createSystemCards = () => {
   const user = firebase.auth().currentUser;
   if (user != null) {
     // eslint-disable-next-line max-len
-    domString += '<div class="text-center"><button id="add-new-system" class="btn add-button" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" style="margin-left: 10px; color: white;">ADD NEW PLANETARY SYSTEM</button></div>';
+    domString += '<div class="text-center"><button id="add-new-system" class="btn add-button" style="margin-left: 10px; color: white;">ADD NEW PLANETARY SYSTEM</button></div>';
   }
   domString += '<div id="systemDivs" class="d-flex flex-wrap">';
   systemData.getSystems()
