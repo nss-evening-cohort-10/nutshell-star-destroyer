@@ -22,7 +22,7 @@ const getCompleteMission = (missionId) => new Promise((resolve, reject) => {
           planetSystemData.getSystemsById(enemy.systemId)
             .then((system) => {
               console.log('test2', system);
-              missionObj.system = system.id;
+              missionObj.systemId = system.id;
             })
             .catch((error) => reject(error));
         });
