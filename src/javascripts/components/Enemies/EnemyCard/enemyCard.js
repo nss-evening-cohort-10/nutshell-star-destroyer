@@ -11,7 +11,7 @@ const makeEnemyCard = (enemy) => {
       <img src="${enemy.imageUrl}" class="cardImg">
       <br>
       <h5 class="title">${enemy.name}</h5>
-      <p>Base Sector: ${enemy.baseSector}</p>
+      <p>Planet System: ${enemy.systemId}</p>
       <p>Last Known Location: ${enemy.LKL}</p>
       <button href="#" id="edit-${enemy.id}" class="btn editEnemy" data-toggle="modal" data-target="#newEnemyModal" style="width: 90%;">Edit</button>
     </div>
@@ -22,7 +22,7 @@ const makeEnemyCard = (enemy) => {
       <img src="${enemy.imageUrl}" class="cardImg">
       <br>
       <h5 class="title">${enemy.name}</h5>
-      <p>Base Sector: ${enemy.baseSector}</p>
+      <p>Planet System: ${enemy.systemId}</p>
       <p>Last Known Location: ${enemy.LKL}</p>
     </div>
     `;
@@ -50,8 +50,8 @@ const enemyModal = (enemy) => {
       <input type="text" class="form-control" id="enemyImage" placeholder="Enter Image Url" value="${enemy.imageUrl ? enemy.imageUrl : ''}">
     </div>
           <div class="form-group">
-          <label for="enemySector">Base Sector</label>
-          <input type="text" class="form-control" id="enemySector" placeholder="Enter Enemy Base Sector" value="${enemy.baseSector ? enemy.baseSector : ''}">
+          <label for="enemySystem">Planet System</label>
+          <input type="text" class="form-control" id="enemySystem" placeholder="Enter Enemy Planet System" value="${enemy.systemId ? enemy.systemId : ''}">
         </div>
           <div class="form-group">
           <label for="enemyLKL">Last Known Location</label>

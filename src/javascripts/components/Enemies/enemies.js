@@ -10,7 +10,7 @@ const addNewEnemy = (e) => {
   const newEnemy = {
     name: $('#enemyName').val(),
     imageUrl: $('#enemyImage').val(),
-    baseSector: $('#enemySector').val(),
+    systemId: $('#enemySystem').val(),
     LKL: $('#enemyLKL').val(),
   };
   enemyData.makeEnemy(newEnemy)
@@ -46,7 +46,7 @@ const editEnemyInfo = (e) => {
   const updatedEnemy = {
     name: $('#enemyName').val(),
     imageUrl: $('#enemyImage').val(),
-    baseSector: $('#enemySector').val(),
+    systemId: $('#enemySystem').val(),
     LKL: $('#enemyLKL').val(),
   };
   enemyData.editEnemy(enemyId, updatedEnemy)

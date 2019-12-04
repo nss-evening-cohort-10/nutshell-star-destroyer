@@ -1,7 +1,7 @@
 import missionData from './missionData';
 import enemyData from './enemyData';
 // import missionWeaponsData from './missionWeaponsData';
-// import planetSystemData from './planetSystemData';
+import planetSystemData from './planetSystemData';
 
 // import axios from 'axios';
 // import apiKeys from '../apiKeys.json';
@@ -19,8 +19,13 @@ const getCompleteMission = (missionId) => new Promise((resolve, reject) => {
         .then((enemy) => {
           console.log('test', enemy);
           missionObj.enemyID = enemy.id;
-        })
-        .catch((error) => reject(error));
+          planetSystemData.getSystemsById(enemy.systemId)
+            .then((system) => {
+              console.log('test2', system);
+              missionObj.system = system.id;
+            })
+            .catch((error) => reject(error));
+        });
     });
 });
 export default { getCompleteMission };
