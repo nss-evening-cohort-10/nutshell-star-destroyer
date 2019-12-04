@@ -78,13 +78,14 @@ const enemiesBuilder = () => {
       domString += '<h1>Enemies</h1>';
       const user = firebase.auth().currentUser;
       if (user != null) {
-        domString += '<button id="addNewEnemyBtn" type="button" class="btn" data-toggle="modal" data-target="#newEnemyModal">Add New Enemy</button>';
+        domString += '<button id="addNewEnemyBtn" class="btn add-button" data-toggle="modal" data-target="#newEnemyModal">ADD NEW ENEMY</button>';
         domString += '</div>';
       }
-      domString += '<div></div>';
+      domString += '<div class="d-flex flex-wrap">';
       enemies.forEach((enemy) => {
         domString += enemyCard.makeEnemyCard(enemy);
       });
+      domString += '</div>';
       utilities.printToDom('enemiesPage', domString);
       $('#addNewEnemyBtn').click(newEnemyModal);
       $('.deleteEnemy').on('click', deleteFromDatabase);

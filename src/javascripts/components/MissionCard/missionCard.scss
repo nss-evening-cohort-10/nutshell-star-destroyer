@@ -24,10 +24,14 @@
 
 .deleteMission, .editMission{
   margin: 7px;
-  background-color: #BC1E22;
 }
 
 .viewMission{
   margin: 10px;
-  background-color: #BC1E22;
+}
+
+.editMission {
+  border-color: #BC1E22;
+  color: #FFFFFF;
+  font-weight: bold;
 }

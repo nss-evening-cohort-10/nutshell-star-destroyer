@@ -4,22 +4,28 @@ import firebase from 'firebase';
 const makeEnemyCard = (enemy) => {
   let domString = '';
   const user = firebase.auth().currentUser;
-  domString += `
-    <div class="card enemyCard" id="${enemy.id}">
-      <div class="card-header">
-        <h5 class="title">${enemy.name}</h5>
-      </div>
-      <div class="card-body">
-        <img src="${enemy.imageUrl}" class="cardImg">
-        <p>Base Sector: ${enemy.baseSector}</p>
-        <p>Last Known Location: ${enemy.LKL}</p>
-      </div>
-      <div>`;
   if (user != null) {
     domString += `
-        <button href="#" id="delete-${enemy.id}" class="btn btn-secondary deleteEnemy">Delete</button>
-        <button href="#" id="edit-${enemy.id}" class="btn btn-secondary editEnemy" type="button" data-toggle="modal" data-target="#newEnemyModal">Edit</button>`;
-    domString += '</div>';
+    <div class="card enemyCard card-body text-center" id="${enemy.id}">
+    <button href="#" id="delete-${enemy.id}" class="btn delete-button deleteEnemy" style="margin-right:0; margin-left: auto; width: 2em; font-weight:bold;">X</button>
+      <img src="${enemy.imageUrl}" class="cardImg">
+      <br>
+      <h5 class="title">${enemy.name}</h5>
+      <p>Base Sector: ${enemy.baseSector}</p>
+      <p>Last Known Location: ${enemy.LKL}</p>
+      <button href="#" id="edit-${enemy.id}" class="btn editEnemy" data-toggle="modal" data-target="#newEnemyModal" style="width: 90%;">Edit</button>
+    </div>
+        `;
+  } else {
+    domString += `
+    <div class="card enemyCard card-body text-center" id="${enemy.id}">
+      <img src="${enemy.imageUrl}" class="cardImg">
+      <br>
+      <h5 class="title">${enemy.name}</h5>
+      <p>Base Sector: ${enemy.baseSector}</p>
+      <p>Last Known Location: ${enemy.LKL}</p>
+    </div>
+    `;
   }
   return domString;
 };

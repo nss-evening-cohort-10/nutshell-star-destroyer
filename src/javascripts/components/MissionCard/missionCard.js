@@ -4,19 +4,25 @@ import firebase from 'firebase';
 const makeMissionCard = (mission) => {
   let domString = '';
   const user = firebase.auth().currentUser;
-  domString += `
-  <div class="card mission" id="${mission.id}">
-  <div class="card-body text-center" ${mission.id}>
-  <h1 class="card-title">Mission: ${mission.missionTitle}</h1>
-  <img class="missionPics" src="${mission.missionImg}">
-  <button id="${mission.id}" class="btn btn-secondary viewMission">View Details</button>
-  </div>
-  <div id="missionBtns">`;
   if (user != null) {
     domString += `
-        <button id="${mission.id}" class="btn btn-danger deleteMission">Delete</button>
-        <button id="${mission.id}" class="btn btn-secondary editMission" type="button" data-toggle="modal" data-target="#newMissionModal">Edit</button>`;
-    domString += '</div>';
+    <div class="card card-body text-center mission" id="${mission.id}" style=" width: 20em; max-width: 500px; height: 100%; margin: 2em;">
+      <button id="${mission.id}" class="btn delete-button deleteMission" style="margin-right:0; margin-left: auto; width: 2em; font-weight:bold;">X</button>
+      <img class="missionPics" src="${mission.missionImg}" style="width: 100%; height: auto;" alt="...">
+      <br>
+      <h5 class="card-title">Mission: ${mission.missionTitle}</>
+      <button id="${mission.id}" class="btn add-button viewMission">View Details</button>
+      <br>
+      <button id="${mission.id}" class="btn editMission" data-toggle="modal" data-target="#newMissionModal" style="width: 90%;">EDIT</button>
+    </div>`;
+  } else {
+    domString += `
+    <div class="card card-body text-center mission" id="${mission.id}" style=" width: 20em; max-width: 500px; height: 100%; margin: 2em;">
+      <img class="missionPics" src="${mission.missionImg}" style="width: 100%; height: auto;" alt="...">
+      <br>
+      <h5 class="card-title">Mission: ${mission.missionTitle}</h5>
+      button id="${mission.id}" class="btn btn-secondary viewMission">View Details</button>
+    </div>`;
   }
   return domString;
 };
