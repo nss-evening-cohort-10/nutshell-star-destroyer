@@ -29,6 +29,7 @@ const buttonClick = (e) => {
     $('#weaponsPage').addClass('hide');
     $('#personnel').addClass('hide');
     $('#homePage').removeClass('hide');
+    $('#missions').addClass('hide');
     $('#systemModule').addClass('hide');
   } else if (page === 'personnelLink') {
     $('#enemiesPage').addClass('hide');
@@ -36,6 +37,7 @@ const buttonClick = (e) => {
     $('#weaponsPage').addClass('hide');
     $('#personnel').removeClass('hide');
     $('#homePage').addClass('hide');
+    $('#missions').addClass('hide');
     $('#systemModule').addClass('hide');
   } else if (page === 'enemiesLink') {
     $('#sectors').addClass('hide');
@@ -43,6 +45,7 @@ const buttonClick = (e) => {
     $('#personnel').addClass('hide');
     $('#enemiesPage').removeClass('hide');
     $('#homePage').addClass('hide');
+    $('#missions').addClass('hide');
     $('#systemModule').addClass('hide');
   } else if (page === 'weaponsLink') {
     $('#enemiesPage').addClass('hide');
@@ -50,6 +53,7 @@ const buttonClick = (e) => {
     $('#personnel').addClass('hide');
     $('#weaponsPage').removeClass('hide');
     $('#homePage').addClass('hide');
+    $('#missions').addClass('hide');
     $('#systemModule').addClass('hide');
   } else if (page === 'sectorsLink') {
     $('#enemiesPage').addClass('hide');
@@ -57,17 +61,28 @@ const buttonClick = (e) => {
     $('#personnel').addClass('hide');
     $('#sectors').removeClass('hide');
     $('#homePage').addClass('hide');
+    $('#missions').addClass('hide');
+    $('#systemsModule').addClass('hide');
+  } else if (page === 'missionsLink') {
     $('#systemModule').addClass('hide');
+    $('#enemiesPage').addClass('hide');
+    $('#weaponsPage').addClass('hide');
+    $('#personnel').addClass('hide');
+    $('#sectors').addClass('hide');
+    $('#homePage').addClass('hide');
+    $('#missions').removeClass('hide');
   } else if (page === 'systemsLink') {
     $('#enemiesPage').addClass('hide');
     $('#weaponsPage').addClass('hide');
     $('#personnel').addClass('hide');
     $('#sectors').addClass('hide');
     $('#homePage').addClass('hide');
+    $('#missions').addClass('hide');
     $('#systemModule').removeClass('hide');
   }
 };
 
+$('#missionsLink').click(buttonClick);
 $('#enemiesLink').click(buttonClick);
 $('#sectorsLink').click(buttonClick);
 $('#systemsLink').click(buttonClick);

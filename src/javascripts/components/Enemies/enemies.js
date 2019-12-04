@@ -1,20 +1,17 @@
 import $ from 'jquery';
+import firebase from 'firebase';
 import enemyData from '../../helpers/data/enemyData';
 import enemyCard from './EnemyCard/enemyCard';
 import utilities from '../../helpers/utilities';
 
-// let currentEditId = '';
-
-
 const addNewEnemy = (e) => {
-  e.preventDefault();
+  // e.preventDefault();
+  e.stopImmediatePropagation();
   const newEnemy = {
     name: $('#enemyName').val(),
     imageUrl: $('#enemyImage').val(),
     baseSector: $('#enemySector').val(),
     LKL: $('#enemyLKL').val(),
-    isDead: $('#enemyDead').val(),
-    isCaptured: $('#enemyCaptured').val(),
   };
   enemyData.makeEnemy(newEnemy)
     .then(() => {
@@ -27,8 +24,7 @@ const addNewEnemy = (e) => {
 
 const deleteFromDatabase = (e) => {
   e.preventDefault();
-  const enemyToDelete = e.target.id.split('enemy-')[1];
-  console.error(enemyToDelete);
+  const enemyToDelete = e.target.id.split('delete-')[1];
   enemyData.deleteEnemy(enemyToDelete)
     .then(() => {
       // eslint-disable-next-line no-use-before-define
@@ -37,59 +33,66 @@ const deleteFromDatabase = (e) => {
     .catch((error) => console.error(error));
 };
 
-// const getEnemyToUpdate = (e) => {
-//   const idOfEnemyToUpdate = e.target.id.split('enemy-enemy-')[1];
-//   enemyData.getEnemyById(idOfEnemyToUpdate)
-//     .then((actualEnemyToUpdate) => {
-//       console.log(actualEnemyToUpdate);
-//       currentEditId = actualEnemyToUpdate.id;
-//       $('#enemyName').val(actualEnemyToUpdate.name);
-//       $('#enemyImage').val(actualEnemyToUpdate.imageUrl);
-//       $('#enemySector').val(actualEnemyToUpdate.baseSector);
-//       $('#enemyLKL').val(actualEnemyToUpdate.LKL);
-//       $('#enemyDead').val(actualEnemyToUpdate.isDead);
-//       $('#enemyCaptured').val(actualEnemyToUpdate.isCaptured);
-//     });
-// };
+const newEnemyModal = (enemy) => {
+  let domString = '';
+  domString += enemyCard.enemyModal(enemy);
+  utilities.printToDom('newEnemyModal', domString);
+  $('#save').click(addNewEnemy);
+};
 
-// const clickToUpdateEnemy = (e) => {
-//   // e.preventDefault();
-//   const changedEnemy = {
-//     name: $('#enemyName').val(),
-//     imageUrl: $('#enemyImage').val(),
-//     baseSector: $('#enemySector').val(),
-//     LKL: $('#enemyLKL').val(),
-//     isDead: $('#enemyDead').val(),
-//     isCaptured: $('#enemyCaptured').val(),
-//   };
-//   console.log(e);
-//   console.log(changedEnemy);
-//   enemyData.editEnemy(`${currentEditId}`, changedEnemy)
-//     .then(() => {
-//       $('#newEnemyModal').modal('hide');
-//       // eslint-disable-next-line no-use-before-define
-//       enemiesBuilder();
-//     });
-// };
+const editEnemyInfo = (e) => {
+  e.stopImmediatePropagation();
+  const enemyId = $(e.target).parent().attr('id');
+  const updatedEnemy = {
+    name: $('#enemyName').val(),
+    imageUrl: $('#enemyImage').val(),
+    baseSector: $('#enemySector').val(),
+    LKL: $('#enemyLKL').val(),
+  };
+  enemyData.editEnemy(enemyId, updatedEnemy)
+    .then(() => {
+      $('#newEnemyModal').modal('hide');
+      // eslint-disable-next-line no-use-before-define
+      enemiesBuilder();
+    })
+    .catch((error) => console.error(error));
+};
+
+const updateAEnemy = (e) => {
+  const enemyId = e.target.id.split('edit-')[1];
+  enemyData.getEnemyById(enemyId)
+    .then((response) => {
+      const enemyObj = response;
+      $('#newEnemyModal').modal('show');
+      enemyObj.id = enemyId;
+      newEnemyModal(enemyObj);
+      $('#edit').click(editEnemyInfo);
+    });
+};
+// This function prints the enemy cards to the enemiesPage div in HTML  updated  by 11-29-19 raymond
 
 const enemiesBuilder = () => {
-  let domString = '<div id="button-holder" class="card">';
-  domString += '<h1>Enemies</h1>';
-  domString += '<button id="addNewEnemyBtn" type="button" class="btn btn-primary" data-toggle="modal" data-target="#newEnemyModal">Add New Enemy</button>';
-  domString += '</div>';
   enemyData.getAllEnemies()
     .then((enemies) => {
+      let domString = '<div  class="text-center" id="button-holder">';
+      domString += '<h1>Enemies</h1>';
+      const user = firebase.auth().currentUser;
+      if (user != null) {
+        domString += '<button id="addNewEnemyBtn" type="button" class="btn" data-toggle="modal" data-target="#newEnemyModal">Add New Enemy</button>';
+        domString += '</div>';
+      }
+      domString += '<div></div>';
       enemies.forEach((enemy) => {
         domString += enemyCard.makeEnemyCard(enemy);
       });
       utilities.printToDom('enemiesPage', domString);
-      $('#save-new-enemy').click(addNewEnemy);
+      $('#addNewEnemyBtn').click(newEnemyModal);
       $('.deleteEnemy').on('click', deleteFromDatabase);
-      // $('.editEnemy').on('click', getEnemyToUpdate);
-      // $('#save-enemy-changes').on('click', clickToUpdateEnemy);
+      $('#enemiesPage').on('click', '.editEnemy', updateAEnemy);
     })
     .catch((error) => console.error(error));
 };
+
 
 const clickForEnemies = () => {
   $('#enemiesLink').click(enemiesBuilder);
