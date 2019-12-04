@@ -21,7 +21,7 @@ const makeMissionCard = (mission) => {
       <img class="missionPics" src="${mission.missionImg}" style="width: 100%; height: auto;" alt="...">
       <br>
       <h5 class="card-title">Mission: ${mission.missionTitle}</h5>
-      button id="${mission.id}" class="btn btn-secondary viewMission">View Details</button>
+      <button id="${mission.id}" class="btn btn-secondary viewMission">View Details</button>
     </div>`;
   }
   return domString;
