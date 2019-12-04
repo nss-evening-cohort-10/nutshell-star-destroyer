@@ -94,9 +94,4 @@ const enemiesBuilder = () => {
     .catch((error) => console.error(error));
 };
 
-
-const clickForEnemies = () => {
-  $('#enemiesLink').click(enemiesBuilder);
-};
-
-export default { clickForEnemies };
+export default { enemiesBuilder };
