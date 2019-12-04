@@ -8,7 +8,7 @@ const displayCrew = () => {
   let domString = '<h1>Personnel</h1>';
   const user = firebase.auth().currentUser;
   if (user !== null) {
-    domString += '<button id="add-new-personnel" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal">Add New Personnel</button>';
+    domString += '<div class="text-center"><button id="add-new-personnel" class="btn add-button" data-toggle="modal" data-target="#exampleModal">ADD NEW PERSONNEL</button></div>';
   }
   personnelData.getPersonnelData()
     .then((personnel) => {
@@ -35,31 +35,25 @@ const personnelCardBuilder = (person) => {
   const user = firebase.auth().currentUser;
   if (user !== null) {
     domString += `
-    <div class="col-md-6">
-      <div class="card personnel-card">
-        <img src="${person.personImg}" class="card-img-top personImage" alt="...">
-        <div class="card-body">
-          <h5 class="card-title"> ${person.name}</h5>
+      <div class="card card-body personnel-card text-center" style=" width: 20em; max-width: 500px; height: 100%; margin: 2em;">
+        <button id="${person.id}" data-boardID="${person.id}" class="btn delete-button delete-personnel" style="margin-right:0; margin-left: auto; width: 2em; font-weight:bold;">X</button>
+        <img src="${person.personImg}" class="card-img-top personImage" style="width: 100%; height: auto;" alt="...">
+        <br>
+        <h5 class="card-title"> ${person.name}</h5>
           <p class="card-text">Sector: ${person.sectorId}</p>
           <p class="card-text">Weapon: ${person.weaponId}</p>
-          <button id="${person.id}" class="btn btn-dark edit-personnel">Edit</button>
-          <button id="${person.id}" data-boardID="${person.id}" class="btn btn-dark delete-personnel">Delete</button>
-        </div>
+          <button id="${person.id}" class="btn edit-personnel">EDIT</button>
       </div>
-    </div>
     `;
   } else {
     domString += `
-    <div class="col-md-6">
-      <div class="card personnel-card">
-        <img src="${person.personImg}" class="card-img-top personImage" alt="...">
-        <div class="card-body">
-          <h5 class="card-title"> ${person.name}</h5>
+      <div class="card card-body personnel-card text-center" style=" width: 20em; max-width: 500px; height: 100%; margin: 2em;">
+        <img src="${person.personImg}" class="card-img-top personImage" style="width: 100%; height: auto;" alt="...">
+        <br>
+        <h5 class="card-title"> ${person.name}</h5>
           <p class="card-text">Sector: ${person.sectorId}</p>
           <p class="card-text">Weapon: ${person.weaponId}</p>
-        </div>
       </div>
-    </div>
     `;
   }
   return domString;
