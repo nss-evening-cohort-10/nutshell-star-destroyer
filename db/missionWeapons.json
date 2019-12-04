@@ -2,6 +2,36 @@
   "missionWeapon1": {
     "id": "missionWeapon1",
     "missionId": "mission1",
-    "weaponId": "weapon2"
+    "weaponId": "weapon11"
+  },
+  "missionWeapon2": {
+    "id": "missionWeapon2",
+    "missionId": "mission1",
+    "weaponId": "weapon9"
+  },
+  "missionWeapon3": {
+    "id": "missionWeapon3",
+    "missionId": "mission1",
+    "weaponId": "weapon14"
+  },
+  "missionWeapon4": {
+    "id": "missionWeapon4",
+    "missionId": "mission1",
+    "weaponId": "weapon9"
+  },
+  "missionWeapon5": {
+    "id": "missionWeapon5",
+    "missionId": "mission1",
+    "weaponId": "weapon16"
+  },
+  "missionWeapon6": {
+    "id": "missionWeapon6",
+    "missionId": "mission1",
+    "weaponId": "weapon17"
+  },
+  "missionWeapon7": {
+    "id": "missionWeapon7",
+    "missionId": "mission1",
+    "weaponId": "weapon15"
   }
 }
