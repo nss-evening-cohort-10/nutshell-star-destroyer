@@ -3,7 +3,7 @@
         "id": "enemy1",
         "imageUrl": "https://lumiere-a.akamaihd.net/v1/images/luke-skywalker-main_5a38c454_461eebf5.jpeg?region=0%2C0%2C1536%2C864",
         "name": "Luke Skywalker",
-        "baseSector": "sector1",
+        "systemId": "system1",
         "LKL": "sector6",
         "isDead": true,
         "isCaptured": false
@@ -12,7 +12,7 @@
         "id": "enemy2",
         "imageUrl": "https://lumiere-a.akamaihd.net/v1/images/han-solo-main_a4c8ff79.jpeg?region=0%2C0%2C1920%2C1080&width=1536",
         "name": "Han Solo",
-        "baseSector": "sector2",
+        "systemId": "system2",
         "LKL": "sector5",
         "isDead": true,
         "isCaptured": false
@@ -21,7 +21,7 @@
         "id": "enemy3",
         "imageUrl": "https://lumiere-a.akamaihd.net/v1/images/leia-organa-feature-image_d0f5e953.jpeg?region=0%2C0%2C1280%2C720",
         "name": "Leia Organa",
-        "baseSector": "sector3",
+        "systemId": "system3",
         "LKL": "sector4",
         "isDead": false,
         "isCaptured": true
@@ -30,7 +30,7 @@
         "id": "enemy4",
         "imageUrl": "https://lumiere-a.akamaihd.net/v1/images/poe-dameron_70f5aee2.jpeg?region=0%2C0%2C1560%2C878&width=1536",
         "name": "Poe Dameron",
-        "baseSector": "sector4",
+        "systemId": "system4",
         "LKL": "sector3",
         "isDead": false,
         "isCaptured": false
@@ -39,7 +39,7 @@
         "id": "enemy5",
         "imageUrl": "https://lumiere-a.akamaihd.net/v1/images/talj-rey-main-image-2_668bb5dc.jpeg?region=0%2C0%2C1560%2C878&width=1536",
         "name": "Rey",
-        "baseSector": "sector5",
+        "systemId": "system5",
         "LKL": "sector2",
         "isDead": false,
         "isCaptured": false
@@ -48,7 +48,7 @@
         "id": "enemy6",
         "imageUrl": "https://lumiere-a.akamaihd.net/v1/images/finn-main_952e10d2.jpeg?region=0%2C0%2C1560%2C878&width=1536",
         "name": "Finn",
-        "baseSector": "sector6",
+        "systemId": "system6",
         "LKL": "sector1",
         "isDead": false,
         "isCaptured": true

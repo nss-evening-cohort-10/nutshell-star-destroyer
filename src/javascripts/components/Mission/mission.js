@@ -68,7 +68,7 @@ const missionBuilder = () => {
       domString += '<h1> Missions </h1>';
       const user = firebase.auth().currentUser;
       if (user != null) {
-        domString += '<button id="addNewMission" type="button" class="btn btn-danger" data-toggle="modal" data-target="#newEnemyModal">Add New Mission</button>';
+        domString += '<button id="addNewMission" class="btn add-button" data-toggle="modal" data-target="#newEnemyModal">ADD NEW MISSION</button>';
         domString += '</div>';
       }
       domString += '<div id="all-missions">';

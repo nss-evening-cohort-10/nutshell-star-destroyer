@@ -5,10 +5,6 @@ import weaponsData from '../../helpers/data/weaponsData';
 import weaponCardBuilder from '../weaponCardBuilder/weaponCardBuilder';
 import utilities from '../../helpers/utilities';
 
-const displayWeapons = () => {
-  // eslint-disable-next-line no-use-before-define
-  $('#weaponsLink').click(createWeaponCard);
-};
 
 const deleteWeapon = (e) => {
   e.preventDefault();
@@ -100,4 +96,4 @@ const createWeaponCard = () => {
 };
 
 
-export default { displayWeapons, addNewWeapon };
+export default { createWeaponCard };

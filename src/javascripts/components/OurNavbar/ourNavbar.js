@@ -62,7 +62,7 @@ const buttonClick = (e) => {
     $('#sectors').removeClass('hide');
     $('#homePage').addClass('hide');
     $('#missions').addClass('hide');
-    $('#systemsModule').addClass('hide');
+    $('#systemModule').addClass('hide');
   } else if (page === 'missionsLink') {
     $('#systemModule').addClass('hide');
     $('#enemiesPage').addClass('hide');

@@ -18,23 +18,23 @@ const checkLoginStatus = () => {
       // someone is logged in; we should not see auth component
       loginButton.addClass('hide');
       logoutButton.removeClass('hide');
-      weapons.displayWeapons();
+      weapons.createWeaponCard();
       sectors.displayAllSectors();
       systems.createSystemCards();
       missionData.getAllMissions();
       mission.missionBuilder();
-      enemies.clickForEnemies();
+      enemies.enemiesBuilder();
       personnel.displayCrew();
     } else {
       // nobody is logged in; we should not see boards
       loginButton.removeClass('hide');
       logoutButton.addClass('hide');
-      weapons.displayWeapons();
+      weapons.createWeaponCard();
       sectors.displayAllSectors();
       systems.createSystemCards();
       missionData.getAllMissions();
       mission.missionBuilder();
-      enemies.clickForEnemies();
+      enemies.enemiesBuilder();
       personnel.displayCrew();
     }
   });
