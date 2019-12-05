@@ -1,6 +1,6 @@
 import missionData from './missionData';
 import enemyData from './enemyData';
-// import missionWeaponsData from './missionWeaponsData';
+import sectorData from './sectorsData';
 import planetSystemData from './planetSystemData';
 
 // import axios from 'axios';
@@ -23,8 +23,13 @@ const getCompleteMission = (missionId) => new Promise((resolve, reject) => {
             .then((system) => {
               console.log('test2', system);
               missionObj.systemId = system.id;
-            })
-            .catch((error) => reject(error));
+              sectorData.getSectorByID(system.sectorId)
+                .then((sector) => {
+                  console.log('test3', sector);
+                  missionObj.sector = sector.id;
+                })
+                .catch((error) => reject(error));
+            });
         });
     });
 });
