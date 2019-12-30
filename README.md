@@ -16,3 +16,5 @@ Use this application to view the Star Destroyer Database and edit its content.
 * Install [http-server](https://www.npmjs.com/package/http-server) from npm.
 * At the root of this project, run the following command: `hs -p 8080`
 * In your browser, navigate to `https://localhost:8080`
+
+https://nutshell-star-destroyer.firebaseapp.com/
